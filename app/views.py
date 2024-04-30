@@ -17,7 +17,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 def home(request):     
-    return render(request, 'uifiles/live.html')
+    return render(request, 'uifiles/home.html')
 
 def contactus(request):     
     return render(request, 'uifiles/contact.html')
