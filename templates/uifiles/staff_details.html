@@ -1,0 +1,35 @@
+{% extends 'uifiles/base.html' %}
+{% load static %}
+{% block content %}
+        <!-- Start breadcumb Area -->
+        <section class="whyChose01">
+            <div class="container">
+                <div class="price-btn blue" style="float: right;">
+                    <a class="blue btn btn-warning" href="/update_profile_details/{{ user.id}}/">Edit</a>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="mapThumb1">
+                            <img src="{{ user.profile_image.url }}" alt="ImmiPress">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 my-auto">
+                        <div class="staf_details">
+                            <p>Name           <span>:</span>{{ user.first_name|default:'' }}{{ user.last_name|default:'' }}</p>
+                            <p>Email          <span>:</span> {{ user.email|default:''}}</p>
+                            <p>Phone          <span>:</span>{{ user.phone|default:'' }}</p>
+                            <p>Date of_Birth  <span>:</span> {{ user.date_of_birth|default:'' }}</p>
+                            <p>ReferalCode    <span>:</span> {{ user.referal_code|default:''}}</p>
+                            <p>Pincode        <span>:</span>{{ user.pincode|default:'' }}</p>
+                            <p>User Address   <span>:</span> {{ user.address|default:'' }}</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End breadcumb Area -->
+      
+                
+       
+
+{% endblock %}

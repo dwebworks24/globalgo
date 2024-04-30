@@ -1,0 +1,31 @@
+{% extends 'uifiles/base.html' %}
+{% load static %}
+{% block content %}
+<section class="ServicePageSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h5 class="subTitle">Visa Categories</h5>
+                <h2 class="secTitle">Outstanding <span class="typewrite" data-period="2000" data-type="[ &quot;Immigration&quot;, &quot;Study&quot;, &quot;Family&quot;, &quot;Tourist&quot; ]"><span class="wrap"></span></span><br> Visa Services.</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for item in visa_type%}
+            <!-- Service Item -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="serviceItem02 si04 text-center">
+                    <div class="serviceWrapper">
+                        <div class="serIcon"><i class="flaticon-analytics"></i></div>
+                        <h3><a href="single-service.html">{{item.Visa_Types}}</a></h3>
+                        <p>{{item.Description}}</p>
+                        <a class="immiPressBtn" href="/visa_application_list/"><span>Read More</span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Service Item -->
+            {% endfor %}
+  
+        </div>
+    </div>
+</section>
+{% endblock %}

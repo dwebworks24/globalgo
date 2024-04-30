@@ -1,0 +1,29 @@
+.d-none {
+    visibility: hidden;
+    position: relative;
+    
+}
+.d-none:after {
+    visibility: visible !important;
+    /* content: "DesignedBy|DT7Solutions.com" !important; */
+    position: absolute !important;
+    padding-left: -40px;
+    right: 95%;
+    font-size: 15px;
+    
+}
+.bg{
+    background-image: url(../images/bg/banner.jpg);
+
+}
+
+.jazzy-logo img{
+    display: none !important;
+}
+.brand-text {
+    display: none;
+}
+
+.dropdown-item  {
+    display: block;
+}

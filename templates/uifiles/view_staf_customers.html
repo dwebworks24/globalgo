@@ -1,0 +1,67 @@
+{% extends 'uifiles/base.html' %}
+{% load static %}
+{% block content %}
+        <!-- Start Slider Area -->
+        <div class="signup-area page-padding">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-md-12 col-sm-12 col-xs-12">
+                        <table id="customers_id" class="display">
+                            <thead>
+                                <tr>
+                                    <th>Profile</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Date of Birth</th>
+                                    <th>Address</th>
+                                    <th>Action</th>
+                                 
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in  staff_customer%}
+                                <tr>
+                                    <td class="table-img float-left"> <img src="{{ item.profile_image.url }}" alt=""></td>
+                                    <td>{{ item.first_name}}{{ item.last_name}}</td>
+                                    <td>{{ item.email}}</td>
+                                    <td>{{ item.phone}}</td>
+                                    <td>{{ item.date_of_birth}}</td>
+                                    <td>{{ item.address}}</td>
+                                    <td> <i class="fas fa fa-trash"></i>
+                                         </td>
+                                    </td>
+                                    
+                                </tr>
+                                {% endfor %}
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+             </div>
+        </div>
+{% endblock %}
+
+    <script>
+        (function ($) {
+            $(document).ready(function () {
+                var table = $('#customers_id').DataTable({
+                    paging: true,
+                    pageLength: 10,
+                    ordering: true,
+                    bProcessing: false,
+                    columnDefs: [{
+                        targets: -1,
+                        orderable: false
+                    }],
+                    buttons: [
+                    'pdfHtml5',
+                    'excelHtml5' 
+                ]
+                });
+                // Initialize filterTable plugin
+                table.filterTable('#contact-filter');
+            });
+        })(jQuery);
+    </script>

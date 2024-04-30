@@ -1,0 +1,167 @@
+
+{% extends 'uifiles/base.html' %}
+{% load static %}
+{% block content %}      
+
+        
+
+      
+
+        <!-- BEGIN: Hero Banner Start -->
+        <section class="pageBanner" style="background-image: url(../../static/assets/images/bg/contact.png);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="bannerTitle">Contact Us</h2>
+                        <div class="breadcrumbs"><a href="index.html">Home</a><span>/</span>Contact</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: Hero Banner End -->
+
+        <!-- BEGIN: Contact Section Start -->
+        <section class="contactSection02">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-6">
+                        <div class="contactFWrapper">
+                            <h5 class="subTitle">Get in touch</h5>
+                            <h2 class="secTitle">Have be any question?<br> feel free to Contact</h2>
+                            <div class="contactForm">
+                                <form id="contact_form">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="input-box">
+                                                <input type="text" name="firstName" placeholder="Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="input-box">
+                                                <input type="text" name="conEmail" placeholder="Email address">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="input-box">
+                                                <input type="text" name="conPhone" placeholder="Phone" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-12 col-sm-6">
+                                            <div class="input-box">
+                                                <input type="text" name="conSubject" placeholder="Subject">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="input-box">
+                                                <textarea name="conMessage" placeholder="Message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <button type="submit" value="Send Message" class="immiPressBtn">
+                                                <span>Send Message</span>
+                                            </button>
+                                            <div class="alert con_message"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-6">
+                        <div class="conInfoWrapper" style="background-image: url(../../static/assets/images/bg/9.jpg);">
+                            <h3>Customer Ratings</h3>
+                            <div class="starRatings">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <h2>4.9 / 5.0</h2>
+                            <h4>By 700+ Visa Approved Customers</h4>
+                            <!-- Icon Box -->
+                            <div class="iconBox05 ib0501">
+                                <div class="ibBox"><i class="flaticon-phone-call"></i></div>
+                                <h3 class="ibTitle">Any Questions? Call us</h3>
+                                <p>+1(602)760-6618<br>+91 9182714452</p>
+                            </div>
+                            <!-- Icon Box -->
+                            <!-- Icon Box -->
+                            <div class="iconBox05">
+                                <div class="ibBox"><i class="flaticon-email"></i></div>
+                                <h3 class="ibTitle">Any Questions? Email us</h3>
+                                <p>explorenexoverseas@gmail.com</p>
+                            </div>
+                            <!-- Icon Box -->
+                            <!-- Icon Box -->
+                            <div class="iconBox05">
+                                <div class="ibBox"><i class="flaticon-location"></i></div>
+                                <h3 class="ibTitle">1-28,A-sitaramapuram,<br>Telaprolu,Unguturu,Krishna Dist,Andhra Pradesh</p>
+                            </div>
+                            <!-- Icon Box -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: Contact Section End -->
+
+        <!-- BEGIN: Contact Form Success Modal Message -->
+        <div class="modal" id="message_sent" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header alert-success">
+                  <h5 class="modal-title">Message Sent Successfully</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Thank you for contacting us. We will get back to you shortly.<br>Have a great day!</p>
+                </div>
+                <div class="modal-footer alert-success">
+                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!-- END: Contact Form Success Modal Message -->
+
+
+        <!-- BEGIN: Contact Form Fail Modal Message -->
+        <div class="modal" id="message_fail" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header alert-danger">
+                    <h5 class="modal-title">Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Oops! Something went wrong, please try again.</p>
+                </div>
+                <div class="modal-footer alert-danger">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Contact Form Fail Modal Message End -->
+
+        <!-- Begin:: Google Maps -->
+        <section class="mapsSection">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="gmaps">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122309.55998253853!2d80.78276823390728!3d16.668186625853327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3609e638c4e805%3A0x534100d7b7e9342a!2z4LC44LCa4LC_4LC14LC-4LCy4LCv4LCCIOCwuOCxgOCwpOCwvuCwsOCwvuCwruCwquCxgeCwsOCwgijgsI4p!5e0!3m2!1ste!2sin!4v1713590544498!5m2!1ste!2sin"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End:: Google Maps -->
+
+       
+
+        <!-- Bact To Top -->
+        <a href="javascript:void(0);" id="backtotop"><i class="fa-solid fa-arrow-up"></i></a>
+        <!-- Bact To Top -->
+{% endblock %}
+       

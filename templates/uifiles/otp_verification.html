@@ -1,0 +1,42 @@
+{% extends 'uifiles/base.html' %}
+{% load static %}
+{% block content %}
+   
+        <!-- End breadcumb Area -->
+        <div class="login-area page-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="login-page">
+                            <div class="login-form p-5">
+                                <div class="row contactForm d-flex justify-content-center">
+                                    <div class="card" style="width: 500px">
+                                        <div class="card-body p-5">
+                                            <div class="cwBg1">
+                                                <h2 class="secTitle text-center">Verify Your OTP</h2>
+                                                <div class="contactForm">
+                                                    <form class="log-form p-4" autocomplete="off">
+                                                        <p>Please check your register email </p>
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                            <input type="number" id="otp" name="otp" class="form-control" placeholder="please enter you opt" required="" data-error="Please enter your valid otp">
+                                                        </div>
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                            <button type="button"  class="login-btn immiPressBtn"  onclick="verifyotp()">
+                                                                <span>Verify Otp</span> </button>
+                                                        </div>
+                                                    </form> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <!-- Start Slider Area -->
+     {% endblock %}
+		

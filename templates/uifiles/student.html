@@ -1,0 +1,66 @@
+{% extends 'uifiles/base.html' %}
+{% load static %}
+{% block content %}
+        <div class="page-area">
+            <div class="breadcumb-overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="breadcrumb text-center">
+                            <div class="section-headline white-headline">
+                                <h3>Login</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End breadcumb Area -->
+        <div class="login-area page-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="login-page">
+                            <div class="login-form">
+                                <h4 class="login-title">LOGIN</h4>
+                                <div class="row">
+                                    <form  method="POST"  class="log-form">
+                                        {% csrf_token %}
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required="" data-error="Please enter your name">
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="" data-error="Please enter your message subject">
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="check-group flexbox">
+                                                <label class="check-box">
+                                                    <input type="checkbox" class="check-box-input" checked="">
+                                                    <span class="remember-text">Remember me</span>
+                                                </label>
+
+                                                <a class="text-muted" href="#">Forgot password?</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <button type="submit" id="submit" class="login-btn">Login</button>
+                                            <div id="msgSubmit" class="h3 text-center hidden"></div> 
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="clear"></div>
+                                            <div class="separetor"><span>Or with Sign</span></div>
+                                            <div class="acc-not">Don't have an account  <a href="/signup/"> Sign up</a></div>
+                                            
+                                        </div> 
+                                    </form> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <!-- Start Slider Area -->
+     {% endblock %}
+		

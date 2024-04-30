@@ -1,0 +1,1723 @@
+
+
+
+/*------------------- 1. Responsive For Extra large Device -------------------*/
+@media (min-width: 1200px) and (max-width: 1600px){
+    .blDThumb{
+        margin: 0;
+    }
+    .ppPostItem{
+        padding-right: 0;
+    }
+    .mailchimpWidget02 .tj-stretch-element-inside-column{
+        display: none;
+    }
+    .footer_04 .copyRight{
+        margin-left: auto;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .heroSection04{
+        .prevArrow{
+            left: 28px;
+        }
+        .nextArrow{
+            right: 28px;
+        }
+    }
+    .topbar02{
+        padding: 0;
+    }
+    .header04{
+        padding: 0;
+
+        .immiPressBtn{
+            padding: 0 25px;
+            margin-left: 18px;
+        }
+        .mainMenu ul li {
+            margin-right: 20px;
+        }
+    }
+    .heroSection01 .heroSlider01 .singleSlide .sliderContent{
+        margin-left: 0;
+    }
+    .topbar01{
+        .topLeftShape{
+            left: 5px;
+            bottom: -10px;
+            svg{
+                width: 70px;
+            }
+        } 
+        .topRightShape{
+            right: 5px;
+            bottom: -10px;
+            svg{
+                width: 70px;
+            }
+        } 
+        .topBarWrapper{
+            margin: 0;
+
+            .infoText{
+                padding-right: 15px;
+                margin-left: 10px;
+            }
+            .infoText.infoText02{
+                padding-left: 18px;
+            }
+            .topBarSocial{
+                padding: 16px 5px 12px 20px;
+            }
+        }
+    }
+    .header01{
+        padding: 0;
+
+        .immiPressBtn {
+            margin-left: 30px;
+        }
+    }
+    .mainMenu ul li{
+        margin-right: 20px;
+    }
+    .mainMenu ul li:nth-last-child(1) .sub-menu li .sub-menu,
+    .mainMenu ul li:nth-last-child(2) .sub-menu li .sub-menu{
+        left: auto;
+        right: 100%;
+    }
+    .aboutWidget {
+        margin: 81px -45px 0 0px;
+        padding-right: 27px;
+    }
+    .serviceMenu {
+        position: relative;
+        margin: 79px 15px 0 45px;
+    }
+    .contactWidget{
+        margin-left: 0;
+    }
+    .tj-stretch-element-inside-column{
+        height: 100%;
+
+        .straceThumb{
+            height: 100%;
+
+            img{
+                height: 100%;
+                width: auto;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .contactFWrapper02{
+        margin: 0;
+    }
+    .header03 .mainMenu ul li,
+    .header02 .mainMenu ul li{
+        margin-right: 18px;
+    }
+    .header03{
+        padding: 0 15px;
+    }
+    .header03 .immiPressBtn{
+        padding: 0 22px;
+    }
+    .header03 > svg{
+        left: -90px;
+    }
+    .header03 svg.last {
+        left: -80px;
+    }
+    .heroSection03 .sliderContent h2{
+        font-size: 60px;
+        line-height: 85px;
+    }
+    .bannerThumb{
+
+        .heroThumb{
+            margin-left: 0;
+            
+            img{
+                max-width: 75%;
+            }
+        }
+        .bgBorder{
+            left: 0;
+            
+            img{
+                max-width: 100%;
+            }
+        }
+        .bnFlag{
+            left: 0;
+            
+            img{
+                max-width: 100%;
+            }
+        }
+    }
+    .galleryWidget{
+        padding-left: 30px;
+    }
+    .footer_02 .serviceMenu{
+        margin-right: 50px;
+    }
+    .footer_02 .aboutWidget{
+        padding-right: 27px;
+    }
+}
+@media (min-width: 1600px) and (max-width: 1800px){
+    .header03 > svg{
+        left: -50px;
+    }
+    .header03 svg.last {
+        left: -40px;
+    }
+    .topbar01{
+        .topLeftShape{
+            left: 15px;
+            bottom: -5px;
+            svg{
+                width: 120px;
+                height: auto;
+            }
+        } 
+        .topRightShape{
+            right: 15px;
+            bottom: -5px;
+            svg{
+                width: 120px;
+                height: auto;
+            }
+        }  
+    }
+    .header01{
+        padding: 0 45px;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1365px){
+    .mailchimpWidget02{
+        margin: 0;
+        padding-left: 0;
+    }
+    .heroSection04{
+        .prevArrow{
+            left: 20px;
+        }
+        .nextArrow{
+            right: 20px;
+        }
+        .heroSlider02 {
+            .singleSlide{
+                height: 800px;
+            }
+            .sliderContent{
+                padding-left: 80px;
+            }
+        }
+    }
+    .mailchimpWidget02 .tj-stretch-element-inside-column{
+        display: none;
+    }
+    .topbar02{
+        padding: 0;
+    }
+    .header04{
+        padding: 0;
+
+        .immiPressBtn{
+            display: none;
+        }
+        .mainMenu ul li {
+            margin-right: 20px;
+        }
+    }
+    .topbar01{
+        .topLeftShape, .topRightShape{
+            display: none;
+        }
+    }
+    .header01{
+        padding: 0;
+
+        .immiPressBtn {
+            margin-left: 0;
+            padding: 0 25px;
+            font-size: 15px;
+        }
+    }
+    .mainMenu ul li{
+        margin-right: 15px;
+    }
+    .mainMenu ul li .megaMenu{
+        right: -180px;
+    }
+    .mainMenu > ul > li:last-of-type > .sub-menu{
+        left: auto;
+        right: 0;
+    }
+    .mainMenu ul li:nth-last-child(1) .sub-menu li .sub-menu,
+    .mainMenu ul li:nth-last-child(2) .sub-menu li .sub-menu,
+    .mainMenu ul li:nth-last-child(3) .sub-menu li .sub-menu{
+        left: auto;
+        right: 100%;
+    }
+    .header03{
+        padding: 0;
+
+        > svg{
+            left: -75px;
+        }
+        svg.last{
+            left: -65px;
+        }
+
+        .mainMenu ul li{
+            margin-right: 20px;
+        }
+
+        .immiPressBtn{
+            display: none;
+        }
+    }
+}
+@media (min-width: 1200px) and (max-width: 1400px){
+    .coachingItem03{
+        min-height: 249px;
+    }
+    .heroSection01 .heroSlider01 .singleSlide{
+        height: 700px;
+    }
+    .heroSection04{
+        .heroSlider02 {
+            .singleSlide{
+                height: 750px;
+            }
+        }
+    }
+    .heroSection02{
+        padding: 210px 0 120px;
+
+        .sliderContent h2{
+            font-size: 75px;
+            line-height: 90px;
+        }
+    }
+}
+
+/*------------------- 2. Responsive Desktop Device -------------------*/
+@media (max-width: 1199px){
+    .footer_01{
+        background-position: left center; 
+    }
+    .heroSection02{
+        padding: 190px 0 120px;
+    }
+    .sidebar{
+        margin-left: 0;
+    }
+    .sidebar.lft{
+        margin-right: 0;
+    }
+    .blDThumb{
+        margin: 0;
+    }
+    .postCommetnListBox{
+        margin-right: 0;
+    }
+    .blDContent .wp-block-quote, .blDContent blockquote.wp-block-quote{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .blDContent p,
+    .blDContent p.sbText{
+        margin-right: 0;
+    }
+    .teamDetailsArea{
+        margin: 0 0 60px;
+        padding: 65px 25px 80px;
+    }
+    .skArea{
+        margin: 0;
+    }
+    .coachingDConArea,
+    .serviceDConArea{
+        margin: 0;
+    }
+    .mailchimpWidget02 p,
+    .abSocial a:last-child{
+        margin-right: 0;
+    }
+    .mailchimpWidget02 .tj-stretch-element-inside-column{
+        display: none;
+    }
+    .mailchimpWidget.mailchimpWidget02{
+        margin-left: 0;
+        padding-left: 0;
+        margin-right: 0;
+    }
+    .conInfoWrapper{
+        padding-left: 25px;
+        padding-right: 25px;
+
+        .starRatings {
+            font-size: 35px;
+            line-height: 45px;
+            letter-spacing: 8px;
+        }
+    }
+    .iconBox05 p{
+        word-wrap: break-word;
+    }
+    .heroSection04{
+        .prevArrow{
+            left: 20px;
+        }
+        .nextArrow{
+            right: 20px;
+        }
+        .heroSlider02 .singleSlide{
+            height: 700px;
+            padding-top: 90px;
+            .sliderContent{
+                padding-left: 50px;
+    
+                h2{
+                    font-size: 65px;
+                    line-height: 75px;
+                }
+            }
+        }
+    }
+    .abFact .abContent{
+        left: -160px;
+        bottom: -180px;
+        padding: 65px 15px 15px 160px;
+    }
+    .topbar02{
+        padding: 0;
+    }
+    .header04{
+        padding: 0;
+
+        .immiPressBtn{
+            display: none;
+        }
+    }
+    .bannerThumb{
+        .heroThumb{
+            margin-left: 0;
+            img{
+                max-width: 70%;
+            }
+        }
+        .bgBorder{
+            left: 0;
+            img{
+                max-width: 100%;
+            }
+        }
+        .bnFlag{
+            left: 0;
+            img{
+                max-width: 100%;
+            }
+        }
+    }
+    .contactFWrapper02{
+        margin: 0 -15px;
+
+        .cwBg{
+            padding-left: 22px;
+            padding-right: 22px;
+        }
+    }
+    /*-- Home One --*/
+    .topbar01{
+
+        .topLeftShape, .topRightShape{
+            display: none;
+        }
+        .topBarWrapper{
+            margin: 0;
+
+            .infoText{
+                padding-right: 15px;
+                margin-left: 0;
+            }
+            .infoText.infoText02{
+                padding-left: 18px;
+            }
+        }
+        .linkText{
+            display: none;
+        }
+        .topBarSocial {
+            padding: 16px 0 12px 20px;
+            border-right: none;
+            margin-left: auto;
+
+            a{
+                margin-right: 15px;
+
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+        .searchBar{
+            padding-left: 15px;
+            margin-right: 5px;
+
+            [type="search"]{
+                width: 200px;
+            }
+        }
+    }
+    .logo01 img{
+        height: 48px;
+    }
+    .header01{
+        padding: 0;
+
+        .immiPressBtn{
+            display: none;
+        }
+    }
+    .heroSection01 .heroSlider01 .singleSlide{
+        height: 700px;
+    }
+    .heroSection01 .heroSlider01 .singleSlide .sliderContent{
+        margin-left: 0;
+
+        h2{
+            font-size: 75px;
+            line-height: 85px;
+        }
+    }
+    .serviceItem01 .serContent{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .secTitle{
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .iconBox02{
+        margin: 24px 0 0;
+    }
+    .qutation br{
+        display: none;
+    }
+    .hideM{
+        display: none;
+    }
+    .heroSection01 .heroSlider01 .owl-dots{
+        right: 20px;
+    }
+    .header03{
+        padding: 0;
+
+        .immiPressBtn{
+            display: none;
+        }
+    }
+    .coachingItem03{
+        margin: 0 0 24px;
+    }
+    .coachingInfo .coachingDCon{
+        padding: 0;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px){
+    .countryTabTabsNav li button{
+        font-size: 18px;
+        padding: 0 26px;
+    }
+    .commentList li .children li{
+        margin-left: 15px;
+    }
+    .ppPostItem{
+        padding: 0;
+        margin-bottom: 30px;
+
+        img{
+            position: relative;
+            left: 0;
+            top: 0;
+            margin: 0 0 15px;
+        }
+        .biMeta{
+            margin-bottom: 10px;
+        }
+    }
+    .comingSoonContent h2 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .commoncount{
+        .countdown-section{
+            margin: 0 30px;
+        }
+    }
+    .iconBox07{
+        padding: 0 0 6px;
+    }
+    .coachingInfo .col-lg-5 {
+        width: 45%;
+    }
+    .coachingInfo .col-lg-7 {
+        width: 55%;
+    }
+    .serviceDcon .sDcon{
+        padding: 0;
+    }
+    .contacInfotWidget .infoContent{
+        margin-right: 25px;
+    }
+    .aboutWidget{
+        margin-left: 0;
+    }
+    .serviceMenu{
+        margin-left: 35px;
+        margin-right: 0;
+    }
+    .contactWidget{
+        margin-left: 0;
+    }
+    .mainMenu > ul > li:last-of-type > .sub-menu{
+        left: auto;
+        right: 0;
+    }
+    .blogItem03 .blogContent{
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+    .blogItem03 .blogContent .biMeta{
+        font-size: 15px;
+    }
+    .blogItem03 .blogContent .biMeta span{
+        margin-left: 10px;
+    }
+    .blogItem03 .blogContent .biMeta svg{
+        margin-right: 5px;
+    }
+    .heroSection03 .sliderContent h2{
+        font-size: 50px;
+        line-height: 65px;
+    }
+    .mainMenu ul li:nth-last-child(1) .sub-menu li .sub-menu,
+    .mainMenu ul li:nth-last-child(2) .sub-menu li .sub-menu,
+    .mainMenu ul li:nth-last-child(3) .sub-menu li .sub-menu,
+    .mainMenu ul li:nth-last-child(4) .sub-menu li .sub-menu{
+        left: auto;
+        right: 100%;
+    }
+    .mainMenu ul li .megaMenu{
+        width: 950px;
+        right: -80px;
+    }
+    .header02 .mainMenu ul li .megaMenu{
+        right: -160px;
+    }
+    .header01{
+        padding: 0;
+        .immiPressBtn{
+            display: none;
+        }
+        .mainMenu ul li{
+            margin-right: 15px;
+            padding: 33px 0;
+
+            a{
+                font-size: 17px;
+            }
+        }
+    }
+    .coachingItem02 .immiPressBtn,
+    .coachingItem02 .coachingContent{
+        margin-right: 30px;
+    }
+    .ci04 .immiPressBtn,
+    .ci04 .coachingContent{
+        margin-right: 0;
+        margin-left: 30px;
+        padding-right: 30px;
+    }
+    .heroSection02 .sliderContent h2{
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .footer_02 .aboutWidget{
+        padding-right: 18px;
+        margin-right: -20px;
+    }
+    .footer_02 .serviceMenu {
+        margin: 79px 25px 0 20px;
+    }
+    .mailchimpWidget{
+        margin-left: -25px;
+        padding-left: 25px;
+    }
+    .header03 .mainMenu ul li,
+    .header02 .mainMenu ul li {
+        margin-right: 10px;
+    }
+    .header03 .popupBtn,
+    .header02 .popupBtn {
+        margin-left: 10px;
+        width: 50px;
+        height: 50px;
+    }
+    .header03 .mainMenu > ul > li > a,
+    .header02 .mainMenu > ul > li > a{
+        font-size: 16px;
+    }
+    .contactFWrapper02{
+        margin-right: 0;
+    }
+    .header03 > svg{
+        left: -115px;
+        height: 94px;
+    }
+    .header03 svg.last{
+        left: -105px;
+    }
+    .header03 .mainMenu ul li .megaMenu{
+        right: -145px;
+    }
+    .testimonialSlider02 .testimonilaItem02{
+        padding-right: 30px;
+    }
+    .galleryWidget{
+        padding-left: 25px;
+        margin-left: -10px;
+    }
+    .galleryShots a:nth-child(3), .galleryShots a:nth-child(6), .galleryShots a:last-child {
+        margin-right: 10px;
+    }
+    .blogItem02 .blogContent .biMeta{
+        font-size: 15px;
+    }
+    .searchBtn{
+        display: none;
+    }
+    .header04 .mainMenu ul li {
+        margin-right: 15px;
+    }
+    .header03 .logo01,
+    .logo01{
+        padding: 23px 0;
+    }
+    .header03 .mainMenu ul li,
+    .mainMenu ul li {
+        padding: 33px 0;
+    }
+    .header01 .mainMenu ul li:hover::after{
+        top: 35px;
+    }
+    .header01 .mainMenu ul li:hover::before {
+        bottom: 35px;
+    }
+    .iconBox03 .ibTitle{
+        font-size: 22px;
+    }
+}
+/*------------------- 3. Responsive For Tab Device -------------------*/
+@media (min-width: 768px) and (max-width: 991px){
+    .footer_04 .serviceMenu{
+        margin-left: 0;
+    }
+    .footer_04 .aboutWidget{
+        margin-right: 20px;
+    }
+    .heroSection04 .heroSlider02 .singleSlide .sliderContent p{
+        max-width: 550px;
+    }
+    .heroSection02 .sliderContent p{
+        margin-right: 30px;
+    }
+    .commoncount{
+        .countdown-section{
+            margin: 0 30px;
+        }
+    }
+    .coachingInfo .col-lg-5 {
+        width: 49%;
+    }
+    .coachingInfo .col-lg-7 {
+        width: 51%;
+    }
+    .topbar01 .topBarWrapper .infoText.infoText02{
+        display: none;
+    }
+    .topbar01 .topBarSocial{
+        border-left: 1px solid var(--body-color);
+    }
+    .heroSection02 .sliderContent h2{
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .footer_02 .contactWidget{
+        margin-left: 0;
+    }
+    .heroSection03 .sliderContent h2{
+        font-size: 36px;
+        line-height: 50px;
+    }
+    .heroSection03 .btnInfo .immiPressBtn{
+        padding: 0 21px;
+    }
+    .header03 > svg{
+        left: -70px;
+        height: 95px;
+    }
+    .header03 svg.last{
+        left: -60px;
+    }
+    .header04 .immiPressBtn{
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 25px;
+        margin-left: 12px;
+    }
+}
+/*------------------- 4. Responsive in Tab -------------------*/
+@media (max-width: 991px){
+    .sidebar{
+        margin-top: 50px;
+    }
+    .sidebar.lft{
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+    .teamDContent{
+        padding: 0;
+    }
+    .teamDContent ul li span{
+        min-width: 120px;
+    }
+    .teamDetailsArea p{
+        margin-right: 0;
+    }
+    .skArea{
+        margin: 0 0 30px;
+    }
+    .iconBox07{
+        padding-bottom: 30px;
+    }
+    .coachingDConArea,
+    .serviceDConArea{
+        margin: 0 0 50px;
+    }
+    .footer_04 .copyRight{
+        margin-left: auto;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .mailchimpWidget02{
+        margin: 0;
+    }
+    .searchBtn {
+        width: 50px;
+        height: 50px;
+        line-height: 48px;
+        font-size: 18px;
+        margin-left: 10px;
+    }
+	.iconBox04 {
+		padding: 0 0 0 105px;
+	}
+    .sliderContent h2{
+        font-size: 70px;
+        line-height: 80px;
+    }
+    .coachingItem02, .blogItem02, .iconBox03, .blogItem01, .coachingItem01, .teamItem01, .serviceItem01{
+        margin: 0 0 24px;
+    }
+    .logo01 {
+        padding: 25px 0;
+    }
+    .header01 .immiPressBtn{
+        display: inline-block;
+        margin-left: 15px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 15px;
+        padding: 0 15px;
+    }
+    .header03 .popupBtn,
+    .popupBtn{
+        width: 50px;
+        height: 50px;
+    }
+    /*-- Mobile Menu --*/
+    .menuBtn{
+        display: block;
+        font-size: 16px;
+        line-height: 50px;
+        color: #fff;
+        padding: 0;
+        position: relative;
+        margin: 0;
+        background: $heading-color;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        text-align: center;
+        margin-left: auto;
+
+        &:hover, &.active{
+            background: $primay-color;
+            color: #fff;
+        }
+        &.mbText{
+            width: auto;
+            padding: 0 18px;
+            background: var(--primay-color);
+
+            i{
+                margin-right: 8px;
+            }
+        }
+        span{
+            display: inline-block;
+            font-size: 15px;
+            text-transform: uppercase;
+            position: relative;
+            top: -1px;
+            font-weight: 600;
+        }
+    }
+    .header04 .mainMenu,
+    .header03 .mainMenu,
+    .header02 .mainMenu,
+    header .mainMenu {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background: #FFF;
+        box-shadow: 0 0 50px 0 rgb(29 35 58 / 8%);
+        border-radius: 0;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        max-height: calc(100vh - 130px);
+        overflow-y: auto;
+        display: none;
+        z-index: 99;
+
+        > ul{
+            display: block;
+            width: 100%;
+
+            > li{
+                display: block;
+                margin: 0;
+                padding: 0;
+
+                > a{
+                    width: 100%;
+                    display: block;
+                    padding: 11px 20px;
+                    border-top: 1px solid #eee;
+
+                    &::after{
+                        position: absolute !important;
+                        margin: 0 !important;
+                        top: 12px !important;
+                        right: 20px;
+                    }
+                }
+
+                &::after, &::before{
+                    display: none;
+                }
+
+                .sub-menu, .megaMenu{
+                    display: none;
+                    position: relative;
+                    top: 0;
+                    left: auto;
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: inherit;
+                    border: none;
+                    border-radius: 0;
+                    padding: 0;
+                    margin: 0;
+                    box-shadow: none;
+                    transition: none;
+                    min-width: 100%;
+
+                    li{
+                        padding: 0;
+                        border: none;
+
+                        a{
+                            width: 100%;
+                            display: block;
+                            padding: 11px 20px;
+                            padding-left: 35px;
+                            border-top: 1px solid #eee;
+                        }
+                        .sub-menu li a{
+                            padding-left: 45px;
+                        }
+                    }
+
+                    li.menu-item-has-children > a::after{
+                        transform: none;
+                    }
+                    .sub-menu{
+                        top: 0;
+                        left: 0;
+                    }
+                }
+                .megaMenu{
+                    width: 100%;
+                    right: auto;
+                    padding: 20px;
+
+                    .mgmenuItem{
+                        margin: 0 0 30px;
+                    }
+                }
+                &:hover > .sub-menu {
+                    pointer-events: inherit;
+                    top: 0;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    .header04 .mainMenu,
+    .header02 .mainMenu{
+        background: var(--heading-color);
+
+        > ul > li > a{
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+    .header01 .mainMenu ul li:nth-last-child(1) .sub-menu li .sub-menu, 
+    .header01 .mainMenu ul li:nth-last-child(2) .sub-menu li .sub-menu, 
+    .header01 .mainMenu ul li:nth-last-child(3) .sub-menu li .sub-menu, 
+    .header01 .mainMenu ul li:nth-last-child(4) .sub-menu li .sub-menu {
+        left: 0;
+        right: auto;
+    }
+    .mainMenu ul li .sub-menu li:hover .sub-menu {
+        top: 0;
+    }
+    .header04 .menuBtn{
+        background: var(--primay-color);
+    }
+    /*-- Mobile Menu --*/
+    .aboutWidget{
+        margin-left: 0;
+        padding-right: 20px;
+    }
+    .galleryWidget, .footer_04 .aboutWidget,
+    .footer_02 .mailchimpWidget,
+    .footer_02 .aboutWidget{
+        border: none;
+    }
+    .serviceMenu{
+        margin-left: 30px;
+        margin-right: 0;
+    }
+    .footer_04 .serviceMenu,
+    .footer_02 .serviceMenu{
+        border-right: none;
+    }
+    .contactWidget{
+        margin-left: 0;
+    }
+    .abSocial a{
+        margin-right: 4px;
+    }
+    .blogItem03{
+        margin: 0 0 24px;
+    }
+    .iconBox07{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+/*------------------- 5. Responsive For Mobile Device -------------------*/
+@media (max-width: 767px){
+    .iconBox03 > span::before,
+    .iconBox03 > span::after{
+        width: 50px;
+    }
+    .container-sm, .container {
+        max-width: 100%;
+    }
+    .singleComment{
+        padding-left: 0;
+
+        > img{
+            position: relative;
+            margin: 0 0 25px;
+        }
+    }
+    .commentList li .children li{
+        margin-left: 15px;
+    }
+    .ppPostItem{
+        padding-right: 0;
+        padding-top: 0;
+
+        .biMeta span.date {
+            margin-right: 15px;
+        }
+    }
+    .teamDContent {
+        padding: 50px 0 0;
+    }
+    .teamDetailsArea .col-lg-7,
+    .teamDetailsArea .col-lg-5{
+        width: 100%;
+    }
+    .comingPageSection{
+        padding: 90px 0 70px;
+    }
+    .comingSoonContent .mailForm .immiPressBtn{
+        padding: 0 15px;
+    }
+    .commoncount{
+        display: block;
+
+        .countdown-section{
+            float: none;
+            margin: 0 0 30px;
+            display: block;
+        }
+    }
+    .comingSoonContent h2 {
+        font-size: 48px;
+        line-height: 58px;
+    }
+    .errorContent{
+        overflow: hidden;
+
+        h1{
+            font-size: 200px;
+            line-height: 1;
+        }
+        h2{
+            font-size: 45px;
+            line-height: 55px;
+        }
+    }
+    .borderRight{
+        border: none;
+    }
+    .contacInfotWidget .infoContent{
+        margin-right: 25px;
+    }
+    .pageBanner .bannerTitle{
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .topbar02{
+        padding: 0;
+        .topBarWrapper{
+            display: block;
+            text-align: center;
+        }
+        .infoText{
+            display: none;
+        }
+    }
+    .abFact .abContent{
+        left: -210px;
+        bottom: -255px;
+        padding: 50px 15px 15px 185px;
+    }
+    .abFact .abContent h2{
+        font-size: 35px;
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+    .abFact .abContent h5{
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .conInfoWrapper{
+        margin: 40px 0 0;
+    }
+    .conInfoWrapper .starRatings{
+        font-size: 35px;
+    }
+    .footer_04 .copyRight{
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    .galleryWidget{
+        margin: 25px 0 0;
+        border: none;
+        padding-left: 0;
+    }
+    .countrySlider.owl-carousel .owl-nav,
+    .coachingSlider.owl-carousel .owl-nav,
+    .serviceSlider.owl-carousel .owl-nav{
+        position: relative;
+        top: 0;
+        text-align: center;
+        margin: 20px 0 0;
+    }
+    .coachingItem02 .immiPressBtn,
+    .coachingItem02 .coachingContent{
+        margin-right: 30px;
+    }
+    .ci04 .immiPressBtn,
+    .ci04 .coachingContent{
+        margin-right: 0;
+        margin-left: 30px;
+        padding-right: 30px;
+    }
+    .contactFWrapper02{
+        margin: 50px 0 0;
+
+        .cwBg{
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+    .header03,
+    .header02{
+
+        .popupBtn{
+            margin-left: 12px;
+        }
+        .menuBtn.mbText i{
+            display: none;
+        }
+    }
+    .header01 .immiPressBtn{
+        display: none;
+    }
+    .footer_02 .aboutWidget,
+    .aboutWidget{
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .testimonialSlider01 .testimonilaItem01 .qutation{
+        font-size: 35px;
+    }
+    .secTitle {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 30px;
+
+        br{
+            display: none;
+        }
+    }
+    .sliderContent .subTitle{
+        font-size: 20px;
+    }
+    .heroSection01 .heroSlider01 .singleSlide .sliderContent h2,
+    .heroSection03 .sliderContent h2,
+    .sliderContent h2{
+        font-size: 55px;
+        line-height: 65px;
+        max-width: 450px;
+
+        br{
+            display: none;
+        }
+    }
+    .heroSection01 .heroSlider01 .owl-dots{
+        right: 10px;
+    }
+    .heroSection01 .heroSlider01 .singleSlide{
+        height: 650px;
+    }
+    .heroSection04{
+        .heroSlider02 .singleSlide{
+            height: 550px;
+            padding-top: 40px;
+            
+            .sliderContent{
+                padding-left: 0;
+
+                h2{
+                    font-size: 40px;
+                    line-height: 52px;
+                    max-width: 430px;
+                    margin-bottom: 30px;
+                }
+                p{
+                    max-width: 400px;
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        .prevArrow,
+        .nextArrow{
+            display: none;
+        }
+    }
+    .topbar01{
+        position: relative;
+
+        .topBarWrapper{
+            display: block;
+            margin-left: 0;
+
+            .searchBar{
+                padding: 0;
+                margin: 10px 0 0;
+                border-bottom: 1px solid var(--body-color);
+
+               [type="search"]{
+                width: 100%;
+               }
+            }
+            .infoText{
+                padding: 12px 0;
+                border: none;
+            }
+            .infoText{
+                display: none;
+            }
+            .topBarSocial{
+                padding: 10px 0;
+                text-align: center;
+                border-right: none;
+            }
+            .linkText{
+                display: none;
+            }
+        }
+        
+    }
+    .bannerThumb{
+        text-align: center;
+        margin: auto;
+
+        .heroThumb{
+            margin: 45px 0 0;
+            
+            img{
+                max-width: 65%;
+            }
+        }
+        .bgBorder{
+            left: 0;
+            top: 30px;
+    
+            img{
+                max-width: 100%;
+            }
+        }
+        .bnFlag{
+            img{
+                max-width: 80%;
+            }
+        }
+    }
+    .heroSection02{
+        padding: 150px 0 80px;
+
+        .sliderContent{
+            h2{
+                max-width: 80%;
+                margin-bottom: 30px;
+            }
+            p{
+                margin-bottom: 32px;
+            }
+        }
+
+        .btnInfo .immiPressBtn{
+            padding: 0 25px;
+            margin: 0 15px 0 0;
+        }
+    }
+    .header03 > svg{
+        display: none;
+    }
+    .header03.fixedHeader,
+    .header03{
+        background: var(--heading-color);
+
+        .popupBtn:hover {
+            border-color: var(--primay-color);
+
+            svg{
+                fill: var(--primay-color);
+            }
+        }
+    }
+    .tmjAccordion .card .card-body br{
+        display: none;
+    }
+    .testimonialSlider02 .testimonilaItem02{
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .testimonialSlider02 .testimonilaItem02 .quoteIcon{
+        right: 15px;
+        width: 70px;
+        height: auto;
+    }
+    .footer_01{
+        padding-bottom: 25px;
+    }
+    .footer_02 .serviceMenu,
+    .serviceMenu{
+        margin: 20px 0 0;
+        border: none;
+    }
+    .footer_02 .contactWidget,
+    .contactWidget{
+        margin: 30px 0 0;
+    }
+    .mailchimpWidget{
+        margin: 35px 0 0;
+        padding: 0;
+        border: none;
+    }
+    .footer_02 .aboutWidget,
+    .aboutWidget{
+        border: none;
+        padding-right: 0;
+    }
+    .copyright{
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .crMenu{
+        text-align: center;
+        padding-bottom: 0px;
+    }
+    .header03 .logo01,
+    .logo01 {
+        padding: 15px 0;
+    }
+    .heroSection01 .heroSlider01 .singleSlide{
+        height: 550px;
+    }
+	.animImage{
+		top: 60px;
+	}
+    .serviceMenu {
+        padding-bottom: 0;
+    }
+    .brhr{
+        margin-top: 65px;
+    }
+    .testimonialSlider01 .testimonilaItem01 .qutation {
+        font-size: 30px;
+        line-height: 45px;
+    }
+    .teamItem01{
+        .teamThumb .share {
+            right: -95px;
+            top: -85px;
+            padding: 0 0 35px 26px;
+    
+            svg{
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .teamContent{
+            h3 a{
+                padding: 10px 20px 9px 15px;
+            }
+            .designation{
+                padding: 3px 18px 5px 18px;
+            }
+        }
+    }
+	.contactFWrapper .secTitle{
+		margin-bottom: 30px;
+	}
+    .footer_02{
+        padding-top: 0;
+    }
+    .heroSection03 .sliderContent h2{
+        max-width: 80%;
+    }
+    .heroSection03{
+        padding: 80px 0;
+    }
+    .galleryShots a:nth-child(3), .galleryShots a:nth-child(6), .galleryShots a:last-child {
+        margin-right: 10px;
+    }
+    .errorPageSection{
+        padding: 90px 0 80px;
+    }
+    .gmaps iframe{
+        height: 450px;
+    }
+    .serviceDcon .sDcon{
+        padding: 20px 0 0;
+    }
+    .singleBlog,
+    .blogPageSection,
+    .singleCoachingSection,
+    .singleServiceSection,
+	.singleCountrySection{
+		padding: 80px 0 70px;
+	}
+    .coachingItem03{
+        min-height: 249px;
+    }
+    .faqTabTabsNav{
+        margin: 0 0 20px;
+        li{
+            margin: 0 10px 10px 0;
+            button{
+                height: 50px;
+                line-height: 50px;
+                padding: 0 15px;
+                font-size: 15px;
+            }
+        }
+    }
+    .countryTabTabsNav li button{
+        height: 50px;
+        font-size: 17px;
+        line-height: 50px;
+        padding: 0 17px;
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 575px){
+    .countryTabTabsNav li button:hover::after, .countryTabTabsNav li button.active::after{
+        bottom: -6px;
+    }
+    .faqTabTabsNav li button{
+        font-size: 14px;
+    }
+    .comingSoonContent h2 {
+        font-size: 34px;
+        line-height: 46px;
+        margin-bottom: 30px;
+    }
+    .coachingItem03{
+        min-height: auto;
+    }
+    .coachingInfo .col-lg-7,
+    .coachingInfo .col-lg-5{
+        width: 100%;
+    }
+    .pageBanner .bannerTitle {
+        font-size: 32px;
+        line-height: 40px;
+        margin: 60px 0 48px;;
+    }
+    .heroSection04 .heroSlider02 .singleSlide{
+        height: 510px;
+    }
+    .heroSection04 .heroSlider02 .singleSlide .sliderContent h2 {
+        font-size: 32px;
+        line-height: 42px;
+        max-width: 430px;
+        margin-bottom: 25px;
+    }
+    .heroSection04 .heroSlider02 .singleSlide .sliderContent p{
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 25px;
+    }
+    .coachingDConArea h3,
+    .singleCountrySection .serviceDConArea > h3,
+    .serviceDcon h3{
+        font-size: 30px;
+    }
+    .coachingInfo .coachingDCon,
+    .serviceDcon .sDcon{
+        padding: 40px 0 0;
+    }
+    .coachingItem01,
+    .countryItem01,
+    .serviceItem02,
+    .countryItem02,
+    .serviceItem02.si04,
+    .countryItem02.ciItem02 {
+        max-width: 306px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .blogItem02,
+    .serviceItem01,
+    .blogItem01,
+    .blogItem03,
+    .coachingItem02,
+    .teamItem01{
+        max-width: 416px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .iconBox03{
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .iconBox06{
+        max-width: 272px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .conInfoWrapper{
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+    .heroSection02 .sliderContent h2{
+        max-width: 100%;
+    }
+    .heroSection02 .sliderContent p{
+        margin-right: 0;
+    }
+    .heroSection01 .heroSlider01 .owl-dots{
+        display: none;
+    }
+    .preloader{
+        .immiPressBtn {
+            font-size: 14px;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 25px;
+        }
+        .middleGif img {
+            max-width: 41%;
+        }
+    }
+    .heroSection03 .btnInfo .immiPressBtn:last-child{
+        margin-left: 10px;
+        padding: 0 20px;
+    }
+    .heroSection01{
+        
+        .btnInfo{
+            display: block;
+
+            .immiPressBtn{
+                margin: 0 0 10px;
+            }
+        }
+    }
+    .biDMeta span {
+        margin-left: 15px;
+    }
+    .pTitle{
+        font-size: 30px;
+        line-height: 45px;
+    }
+    .ppPostItem{
+        padding: 0;
+        margin-bottom: 30px;
+
+        img{
+            position: relative;
+            left: 0;
+            top: 0;
+            margin: 0 0 15px;
+        }
+        .biMeta{
+            margin-bottom: 10px;
+        }
+    }
+    .errorContent h1{
+        font-size: 150px;
+        line-height: 1;
+    }
+    .iconBox05 p{
+        font-size: 20px;
+    }
+    .blogItem03 .blogContent{
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+    .blogItem03 .blogContent .biMeta{
+        font-size: 15px;
+    }
+    .blogItem03 .blogContent .biMeta span{
+        margin-left: 10px;
+    }
+    .heroSection03 .sliderContent .subTitle,
+    .sliderContent .subTitle{
+        font-size: 19px;
+        margin-bottom: 15px;
+    }
+    .blogItem03 .blogContent .biMeta svg{
+        margin-right: 5px;
+    }
+    .testimonialSlider02 .testimonilaItem02 .quoteIcon{
+        top: 15px;
+        width: 45px;
+    }
+    .heroSection03 .btnInfo .immiPressBtn{
+        padding: 0 20px;
+        margin: 0;
+        font-size: 16px;
+    }
+    .popupSidebarSsec .widgetArea .aboutWidgetArea > p{
+        margin-right: 0;
+    }
+    .header04 .logo01 img{
+        height: 42px;
+    }
+    .header03,
+    .header02{
+
+        .logo01 img{
+            height: 40px;
+        }
+        .menuBtn span{
+            font-size: 14px;
+        }
+        .menuBtn.mbText {
+            padding: 0 12px;
+        }
+        .popupBtn{
+            width: 45px;
+            height: 45px;
+            margin-left: 12px;
+        }
+    }
+    .withText span{
+        display: none;
+    }
+    .heroSection01 .heroSlider01 .singleSlide .sliderContent h2,
+    .sliderContent h2{
+        font-size: 40px;
+        line-height: 52px;
+
+        br{
+            display: none;
+        }
+    }
+    .heroSection03 .sliderContent h2{
+        max-width: 100%;
+        font-size: 30px;
+        line-height: 42px;
+        margin-bottom: 30px;
+    }
+    .heroSection01 .heroSlider01 .singleSlide .sliderContent h2{
+        max-width: 300px;
+    }
+    .secTitle{
+        margin: 0 0 30px;
+    }
+    .abVideo .videoBtn {
+        left: -245px;
+        bottom: -280px;
+
+        .popup_video {
+            font-size: 50px;
+            margin: -240px 0 0 190px;
+        }
+    }
+}

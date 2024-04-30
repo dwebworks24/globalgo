@@ -1,0 +1,51 @@
+{% extends 'uifiles/base.html' %}
+{% load static %}
+{% block content %}
+       
+        <!-- End breadcumb Area -->
+        <div class="team-page-area page-padding-2">
+            <div class="container">
+               <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center d-flex justify-content-center">
+                            <div>
+                                <h3>Staff members</h3>
+                            </div>
+                            <div>
+                                <a class="feature-btn" href="/staffsignup/">Add Staff</a>
+                            </div>
+                           
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="team-member text-center">
+                        <!-- Single team member -->
+                        {% for item in users %}
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="single-member">
+                                <div class="team-img">
+                                    <a href="#">
+                                        <img src="{{ item.profile_image.url }}" alt="">
+                                    </a>
+                                </div>
+                                <div class="team-content">
+                                    <h5><a href="#">{{item.username}}</a></h5>
+                                    <p>Software developer</p>
+                                    <ul class="team-hover">
+                                        <li><a href="/profile_view/{{item.id}}/"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="/profile_edit/{{item.id}}/"><i class="fa fa-gears"></i></a></li>
+                                        <li><a href="/view_staff_customers/{{item.id}}/"><i class="fa fa-users"></i></a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Slider Area -->
+     {% endblock %}
+		

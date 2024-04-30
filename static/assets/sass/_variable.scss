@@ -1,0 +1,20 @@
+:root {
+  --primay-color        : #E94D4E;
+  --body-color          : #536184;
+  --heading-color       : #233152;
+  --body-font           : 'Poppins';
+  --heading-font        : 'Roboto';
+}
+
+// Color Variation
+$primay-color         : var(--primay-color);
+$body-color           : var(--body-color);
+$heading-color        : var(--heading-color);
+
+// Typography
+$body-font       : var(--body-font);
+$heading-font    : var(--heading-font);
+$body-font-size  : 16px;
+$body-line-Height: 26px;
+$body-font-weight: 400;
+$heading-font-weight: 600;

@@ -1,0 +1,45 @@
+@use "sass:math";
+
+@mixin background-content($repeat: no-repeat, $size: cover, $position: center center) {
+	background-repeat: $repeat;
+	background-size: $size;
+	background-position: $position;
+}
+
+@mixin transition( $time: 0.4s) {
+	-webkit-transition: all $time ease;
+	-o-transition: all $time ease;
+	transition: all $time ease;
+}
+
+@mixin overlay($opacity: $opacity, $z-index: 0) {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: $opacity;
+	z-index: $z-index;
+}
+
+@mixin equal-size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin height-lh($height, $lineheight: $height) {
+	height: $height;
+	line-height: $lineheight;
+}
+
+@mixin equal-size-lineHeight($width, $height: $width, $Lheight: $width) {
+	width: $width;
+	height: $height;
+	line-height: $Lheight;
+}
+
+@mixin flex-position($display, $contet, $items) {
+	display: $display;
+	justify-content: $contet;
+	align-items: $items;
+}
