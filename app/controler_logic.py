@@ -32,11 +32,11 @@ def login_logic(request):
             if user is not None and user.is_active:
                 login(request, user)
                 if user:
-                    if user.role.name == "admin":
+                    if user.role == "admin":
                         print('admin')
                         return JsonResponse({'redirect_url': '/admin/'})
                     
-                    elif user.role.name == "staff":
+                    elif user.role == "staff":
                         print("staff")
                         return JsonResponse({'redirect_url': '/staff_view/'})
                     else:
@@ -73,7 +73,6 @@ def UserRegister(request):
             
             if Users.objects.filter(email=user_email).exists():
                 return JsonResponse({'message': 'Email already exists.'}, status=400)
-            roledata = Role.objects.all()
             new_user = Users()
             new_user.username=user_name
             new_user.email=user_email
@@ -85,7 +84,7 @@ def UserRegister(request):
             new_user.is_active = True
             new_user.is_staff = True
             new_user.is_superuser = False
-            new_user.role = roledata[2]
+            new_user.role = 'stff'
             new_user.save()
             save_User_data = Users.objects.filter(username=user_name,email=user_email,phone=phone)
             user_id = save_User_data[0].id

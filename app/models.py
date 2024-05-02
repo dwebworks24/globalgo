@@ -27,12 +27,18 @@ class UserManager(BaseUserManager):
         user.is_superuser = True
         user.save(using=self._db)
         return user
-class Role(models.Model):
-    name = models.CharField(max_length=255, unique=True)
+    
+# class Role(models.Model):
+#     name = models.CharField(max_length=255,default='admin',unique=True)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
+user_roles = (
+        ('admin', 'admin'),
+        ('staff', 'staff'),
+        ('customer','customer'),
+    )
 
     
 class Users(AbstractBaseUser, PermissionsMixin):
@@ -62,7 +68,7 @@ class Users(AbstractBaseUser, PermissionsMixin):
     # Custom user manager
     objects = UserManager()
 
-    role = models.ForeignKey('Role', models.DO_NOTHING, default=None, null=False,blank=False,db_column='role_id')
+    role = models.CharField(choices=user_roles,max_length=100,null=True,blank=True,default='admin')
 
     def __str__(self):
         return self.username
@@ -71,7 +77,7 @@ class Users(AbstractBaseUser, PermissionsMixin):
         return True
 
     def has_module_perms(self, app_label):
-        return True
+         return True
 
 
 class Country(models.Model):
@@ -115,77 +121,64 @@ class VisaTypes(models.Model):
         return self.Country.countery_name
 
 
-# class DependentDetails(models.Model):
-#     Dependent_first_name = models.CharField(max_length=100, blank=True, null=True)
-#     Dependent_last_name = models.CharField(max_length=100, blank=True, null=True)
-#     Dependent_email = models.EmailField()
-#     dDependent_phone = models.CharField(max_length=20, blank=True, null=True)
-#     Dependent_PhoneNumber_two = models.CharField(max_length=13, blank=True, null=True)
-#     UploadPassport_front = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
-#     UploadPassport_back = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
-#     Aadhar_front = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
-#     Aadhar_back = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
-#     user = models.ForeignKey('Users', models.DO_NOTHING, null=False,blank=False,db_column='user-dependent_id')
-#     application_user = models.ForeignKey('VisaApplication', models.DO_NOTHING, null=False,blank=False,db_column='VisaApplication_id')
-#     class Meta:
-#         managed = True
-#         db_table = 'dependent_list'
+class DependentDetails(models.Model):
+    dependent_first_name = models.CharField(max_length=100, blank=True, null=True)
+    dependent_last_name = models.CharField(max_length=100, blank=True, null=True)
+    dependent_email = models.EmailField()
+    dependent_phone = models.CharField(max_length=13, blank=True, null=True)
+    dependent_phone_number_two = models.CharField(max_length=13, blank=True, null=True)
+    upload_passport_front = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
+    upload_passport_back = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
+    aadhar_front = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
+    aadhar_back = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
+    # user = models.ForeignKey('Users', models.DO_NOTHING, null=False,blank=False,db_column='user-dependent_id')
+    application_user = models.ForeignKey('VisaApplication', models.DO_NOTHING, null=False,blank=False,db_column='VisaApplication_id')
+    class Meta:
+        managed = True
+        db_table = 'dependent_list'
 
-# class PointOfContact(models.Model):
-#     first_name = models.CharField(max_length=100, blank=True, null=True)
-#     last_name = models.CharField(max_length=100, blank=True, null=True)
-#     email = models.EmailField()
-#     phone = models.CharField(max_length=20,blank=True, null=True)
-#     address_line1 = models.CharField(max_length=255,blank=True, null=True)
-#     address_line2 = models.CharField(max_length=255,blank=True, null=True)
-#     city =  models.CharField(max_length=100,blank=True, null=True)
-#     state =  models.CharField(max_length=100,blank=True, null=True)
-#     zipcode =  models.CharField(max_length=100,blank=True, null=True)
-#     user = models.ForeignKey('Users', models.DO_NOTHING, null=False,blank=False,db_column='point_of_contact_user_id')
-#     application_user = models.ForeignKey('VisaApplication', models.DO_NOTHING, null=False,blank=False,db_column='visaApplication_id')
-#     class Meta:
-#         managed = True
-#         db_table = 'poin_of_contact'
+class PointOfContact(models.Model):
+    first_name = models.CharField(max_length=100, blank=True, null=True)
+    last_name = models.CharField(max_length=100, blank=True, null=True)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20,blank=True, null=True)
+    address_line1 = models.CharField(max_length=255,blank=True, null=True)
+    address_line2 = models.CharField(max_length=255,blank=True, null=True)
+    city =  models.CharField(max_length=100,blank=True, null=True)
+    state =  models.CharField(max_length=100,blank=True, null=True)
+    zipcode =  models.CharField(max_length=100,blank=True, null=True)
+    # user = models.ForeignKey('Users', models.DO_NOTHING, null=False,blank=False,db_column='point_of_contact_user_id')
+    application_user = models.ForeignKey('VisaApplication', models.DO_NOTHING, null=False,blank=False,db_column='visaApplication_id')
+    class Meta:
+        managed = True
+        db_table = 'point_of_contact'
 
-# class SecurityQuestion(models.Model):
-#     username = models.CharField(max_length=100, blank=True, null=True)
-#     password = models.CharField(max_length=100, blank=True, null=True)
-#     questio1 = models.CharField(max_length=255)
-#     answer1 = models.CharField(max_length=255)
-#     questio2 = models.CharField(max_length=255)
-#     answer2 = models.CharField(max_length=255)
-#     questio3 = models.CharField(max_length=255)
-#     answer3 = models.CharField(max_length=255)
-#     user = models.ForeignKey('VisaApplication', models.DO_NOTHING, null=False,blank=False,db_column='visaApplication_id')
+class SecurityQuestion(models.Model):
+    username = models.CharField(max_length=100, blank=True, null=True)
+    password = models.CharField(max_length=100, blank=True, null=True)
+    questio1 = models.CharField(max_length=255)
+    answer1 = models.CharField(max_length=255)
+    questio2 = models.CharField(max_length=255)
+    answer2 = models.CharField(max_length=255)
+    questio3 = models.CharField(max_length=255)
+    answer3 = models.CharField(max_length=255)
+    application_user = models.ForeignKey('VisaApplication', models.DO_NOTHING, null=False,blank=False,db_column='visaApplication_id')
     
-#     class Meta:
-#         managed = True
-#         db_table = 'security_question'
+    class Meta:
+        managed = True
+        db_table = 'security_question'
 
 
-# class VisaApplication(models.Model):
-#     ApplicationNo = models.IntegerField()
-#     PhoneNumber_two = models.CharField(max_length=13, blank=True, null=True)
-#     UploadPassport_front = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
-#     UploadPassport_back = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
-#     Aadhar_front = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
-#     Aadhar_back = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
-#     PointOfContact_email = models.EmailField()
-#     PointOfContact_phone = models.CharField(blank=True, null=True,max_length=20)
-#     PointOfContact_address = models.TextField(blank=True, null=True,max_length=255)
-    
-    
+class VisaApplication(models.Model):
+    applicationNo = models.IntegerField()
+    phone_number_two = models.CharField(max_length=13, blank=True, null=True)
+    upload_passport_front = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
+    upload_passport_back = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
+    aadhar_front = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
+    aadhar_back = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
+    user = models.ForeignKey('Users', models.DO_NOTHING, null=False,blank=False,db_column='user_visa_application_id')
 
-
-#     image = models.ImageField(upload_to='country_images/', blank=True, null=True)
-#     countery_name = models.CharField(max_length=100, blank=True, null=True)
-#     country_logo = models.ImageField(upload_to='country_images/', blank=True, null=True)
-#     image = models.ImageField(upload_to='country_images/', blank=True, null=True)
-#     Description = models.TextField(blank=True, null=True)
-#     user = models.ForeignKey('Users', models.DO_NOTHING, null=False,blank=False,db_column='user_id')
-#     created_by = models.ForeignKey('Users', models.DO_NOTHING, null=False,blank=False,related_name='created_country',db_column='created_by')
-#     created_at = models.DateTimeField(auto_now_add=True)
-    
-#     class Meta:
-#         managed = True
-#         db_table = 'country_list'
+    class Meta:
+        managed = True
+        db_table = 'visa_application'
+ 

@@ -20,8 +20,7 @@ class AdminUserlist(admin.ModelAdmin):
         return response
     export_to_csv.short_description = "Download selected as csv"
 
-class AdminRole(admin.ModelAdmin):
-    list_display=('id','name')
+
 
 class AdminCountry(admin.ModelAdmin):
     list_display=('id','countery_name')
@@ -29,7 +28,24 @@ class AdminCountry(admin.ModelAdmin):
 class AdminCountryTpes(admin.ModelAdmin):
     list_display=('id','Country','Visa_Types','Description')
 
+class AdminDependentDetails(admin.ModelAdmin):
+    list_display=('id','dependent_first_name','dependent_last_name','dependent_email','dependent_phone')
+
+
+class AdminPointOfContact(admin.ModelAdmin):
+    list_display=('id','first_name','email','phone','address_line1','city','state','zipcode')
+
+
+class AdminSecurityQuestion(admin.ModelAdmin):
+    list_display=('id','username','password','questio1','answer1','questio2','answer2','questio3','answer3')
+
+class AdminVisaApplication(admin.ModelAdmin):
+    list_display=('applicationNo','phone_number_two')
+                  
 admin.site.register(Users,AdminUserlist)
-admin.site.register(Role,AdminRole)
 admin.site.register(Country,AdminCountry)
 admin.site.register(VisaTypes,AdminCountryTpes)
+admin.site.register(DependentDetails,AdminDependentDetails)
+admin.site.register(PointOfContact,AdminPointOfContact)
+admin.site.register(SecurityQuestion,AdminSecurityQuestion)
+admin.site.register(VisaApplication,AdminVisaApplication)

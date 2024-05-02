@@ -271,7 +271,7 @@ def visa_application_list(request):
     context = {}
     try:
 
-        context['user'] = Users.objects.all()
+        context['user'] = VisaApplication.objects.filter(user_visa_application_id =request.user.id)
         return render(request, 'uifiles/application_list.html',context)
     
     except template.TemplateDoesNotExist:
