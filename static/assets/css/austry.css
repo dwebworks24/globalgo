@@ -17154,3 +17154,8 @@ ul {
   background-image: url(../images/shapes/customer_reviews.png) !important;
 }
 
+
+#visa-applications-table{
+  text-align: center !important;
+ background-color: red;
+}

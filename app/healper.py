@@ -7,8 +7,9 @@ from cryptography.fernet import Fernet
 from typing import List
 import pyotp 
 import json
+from .models import *
 from django.core import signing
-
+from django.db.models import Max
 
 
 def encrypt_user_id(user_id):
@@ -72,3 +73,11 @@ def send_smtp_mail(SUBJECT,BODY,HTML_DATA=None,RECIPIENT=[],CC_EMAILS=[],attachm
         pass
 
 
+
+def generate_visa_application():
+    now = datetime.now()
+    day = now.day
+    month = now.month
+    year = now.year
+    g_string = f"{year}{month:02d}{day:02d}"
+    return g_string

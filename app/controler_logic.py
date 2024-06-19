@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.hashers import check_password
 from django.views.decorators.csrf import csrf_exempt
 from .models import *
-from .healper import decrypt_user_id
+from .healper import decrypt_user_id,generate_visa_application
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from cryptography.fernet import Fernet
@@ -84,10 +84,17 @@ def UserRegister(request):
             new_user.is_active = True
             new_user.is_staff = True
             new_user.is_superuser = False
-            new_user.role = 'stff'
+            new_user.role = 'customer'
             new_user.save()
             save_User_data = Users.objects.filter(username=user_name,email=user_email,phone=phone)
             user_id = save_User_data[0].id
+            application_id = generate_visa_application()
+            application_number = f"{application_id}{user_id}"
+            visa_application_obj = VisaApplication()
+            visa_application_obj.applicationNo = int(application_number)
+            visa_application_obj.user_id = user_id
+            visa_application_obj.save()
+
             
             return JsonResponse({'message': 'User registered successfully.','user_id':user_id})
         except KeyError:
@@ -261,3 +268,44 @@ def password_reset(request):
             return JsonResponse({'message': 'An error occurred: {}'.format(str(e))}, status=500)
     else:
         return JsonResponse({'message': 'Only POST requests are allowed.'}, status=405)
+    
+# step form saveing logic
+@csrf_exempt
+def add_user_info(request): 
+    if request.method == 'POST':
+        try:
+            post_data = request.POST
+            post_files = request.FILES
+            customer_id = post_data.get('customer_id')
+            first_name = post_data.get('first_name')
+            last_name = post_data.get('last_name')
+            email = post_data.get('email')
+            phone_number = post_data.get('phone_number')
+            second_phone_number = post_data.get('second_phone_number', None)
+
+            passport_front = post_files.get('passport_front', None)
+            passport_back = post_files.get('passport_back', None)
+            aadhar_front = post_files.get('aadhar_front', None)
+            aadhar_back = post_files.get('aadhar_back', None)
+
+            user = Users.objects.filter(id=customer_id).first()
+            user.first_name=first_name
+            user.last_name=last_name
+            user.save()
+
+            applicant = VisaApplication.objects.filter(user_id=customer_id).first()
+            applicant.phone_number_two=second_phone_number
+            applicant.upload_passport_front=passport_front
+            applicant.upload_passport_back=passport_back
+            applicant.aadhar_front=aadhar_front
+            applicant.aadhar_back=aadhar_back
+            applicant.user=user
+            applicant.save()
+            
+            
+
+            return JsonResponse({'message': 'User added successfully'})
+        except Exception as e:
+            return JsonResponse({'message': str(e)}, status=401)
+    else:
+        return JsonResponse({'message': 'Invalid request method'}, status=405)

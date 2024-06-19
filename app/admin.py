@@ -40,7 +40,7 @@ class AdminSecurityQuestion(admin.ModelAdmin):
     list_display=('id','username','password','questio1','answer1','questio2','answer2','questio3','answer3')
 
 class AdminVisaApplication(admin.ModelAdmin):
-    list_display=('applicationNo','phone_number_two')
+    list_display=('applicationNo','phone_number_two','user_id')
                   
 admin.site.register(Users,AdminUserlist)
 admin.site.register(Country,AdminCountry)

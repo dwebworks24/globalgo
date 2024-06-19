@@ -36,7 +36,8 @@ urlpatterns = [
     path('updateprofile/',updateprofile, name="updateprofile"),
     path('visa_application_list/',visa_application_list, name="visa_application_list"),
     
-    
+    # control logic
+     path('add_user_info/',add_user_info, name="add_user_info"),
     
 
 ]

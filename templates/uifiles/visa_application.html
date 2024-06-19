@@ -11,7 +11,7 @@
                         <div class=" col-md-12 col-sm-12 col-xs-12">
                             <div class="signup-page">
                                 <div class="login-form signup-form">
-                                    <h4 class="login-title ">visito visa application {{customer.username}}</h4>
+                                    <h4 class="login-title text-center">visito visa application {{customer.username}}-{{applicant.applicationNo}}</h4>
                                     <div class="row">
                                         <div>
                                             <div>
@@ -27,7 +27,7 @@
                                                                 <span class="form-stepper-circle">
                                                                     <span>1</span>
                                                                 </span>
-                                                                <div class="label">Admission Exam Details</div>
+                                                                <div class="label">REGISTRATION</div>
                                                             </a>
                                                         </li>
                                                         <!-- Step 2 -->
@@ -37,7 +37,7 @@
                                                                 <span class="form-stepper-circle text-muted">
                                                                     <span>2</span>
                                                                 </span>
-                                                                <div class="label text-muted">Education Details</div>
+                                                                <div class="label text-muted">DEPENDENT DETAILS</div>
                                                             </a>
                                                         </li>
                                                         <!-- Step 3 -->
@@ -47,7 +47,7 @@
                                                                 <span class="form-stepper-circle text-muted">
                                                                     <span>3</span>
                                                                 </span>
-                                                                <div class="label text-muted">Professional Details
+                                                                <div class="label text-muted">US POINT OF CONTACT
                                                                 </div>
                                                             </a>
                                                         </li>
@@ -59,7 +59,7 @@
                                                                 <span class="form-stepper-circle text-muted">
                                                                     <span>4</span>
                                                                 </span>
-                                                                <div class="label text-muted">Visa Interview Details
+                                                                <div class="label text-muted">START APPLICATION(CGI)
                                                                 </div>
                                                             </a>
                                                         </li>
@@ -71,13 +71,12 @@
                                                                 <span class="form-stepper-circle text-muted">
                                                                     <span>5</span>
                                                                 </span>
-                                                                <div class="label text-muted">Visa Interview Questions
+                                                                <div class="label text-muted">SECURITY QUESTIONS
                                                                 </div>
                                                             </a>
                                                         </li>
 
                                                     </ul>
-
 
                                                     <!-- Step Wise Form Content -->
                                                     <form id="userAccountSetupForm" class="contactForm"
@@ -85,128 +84,180 @@
                                                         method="POST">
                                                         <!-- Step 1 Content -->
                                                         <section id="step-1" class="form-step">
-                                                            <h4 class="font-normal">Admission Exam Details</h4>
+                                                            <h4 class="font-normal">Customer Information</h4>
+                                                            <input type="hidden" name="customer_id" id="customer_id" value="{{customer.id}}">
                                                             <div class="row">
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="Graduation">Admit Exam </label>
-                                                                    <select id="Graduation" name="Graduation"
-                                                                        class="form-control" required
-                                                                        data-error="Please select your Graduation">
-                                                                        <option value="" selected disabled>Select
-                                                                            Graduation GPA(MAX 10.0)</option>
-                                                                        <option value="GRE">GRE</option>
-                                                                        <option value="GMAT">GMAT</option>
-                                                                        <option value="SAT">SAT</option>
-                                                                        <option value="EXCEMPT">EXCEMPT</option>
-                                                                        <option value="OTHERS">OTHERS</option>
-                                                                        <!-- Add more options as needed -->
-                                                                    </select>
+                                                                    <label for="">First Name</label>
+                                                                    <input type="text" id="first_name" name="first_name"
+                                                                        value="{{customer.first_name}}" class="form-control"
+                                                                        placeholder="Please enter first name" required
+                                                                        data-error="Please enter your first name">
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Admit Exam Score</label>
-                                                                    <input type="text" id="admit_exam_score"
-                                                                        name="admit_exam_score" value=""
+                                                                    <label for="">Last Name</label>
+                                                                    <input type="text" id="last_name" name="last_name"
+                                                                        value="{{customer.last_name}}" class="form-control"
+                                                                        placeholder="Please enter first name" required
+                                                                        data-error="Please enter your first name">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="">Email</label>
+                                                                    <input type="text" id="email" name="email" value="{{customer.email}}"
                                                                         class="form-control"
-                                                                        placeholder="Please enter admit exam score"
-                                                                        required
-                                                                        data-error="Please enter your admit_exam_score">
+                                                                        placeholder="Please enter email" 
+                                                                        data-error="Please enter your email">
                                                                 </div>
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="english_test">English Test </label>
-                                                                    <select id="english_test" name="english_test"
-                                                                        class="form-control" required
-                                                                        data-error="Please select your english test">
-                                                                        <option value="" selected disabled>Select
-                                                                            English Test</option>
-                                                                        <option value="TOEFL">TOEFL</option>
-                                                                        <option value="IELTS">IELTS</option>
-                                                                        <option value="DUOLINGO">DUOLINGO</option>
-                                                                        <option value="EXCEMPT">EXCEMPT</option>
-                                                                        <option value="OTHERS">OTHERS</option>
-                                                                        <!-- Add more options as needed -->
-                                                                    </select>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                                                                    <label for="">Phone Number</label>
+                                                                    <input type="text" id="phone_number"
+                                                                        name="phone_number" value="{{customer.phone}}"
+                                                                        class="form-control"
+                                                                        placeholder="Please enter phone number" 
+                                                                        data-error="Please enter your phone number">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                                                                    <label for="">Second Phone Number (optional)</label>
+                                                                    <input type="number" id="second_phone_number"
+                                                                        name="second_phone_number" value="{{applicant.phone_number_two}}"
+                                                                        class="form-control"
+                                                                        placeholder="Please enter phone number" required
+                                                                        data-error="Please enter your phone number">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                                                                    <label for="">Upload Passport Front</label>
+                                                                    <input type="file" id="passport_front"
+                                                                        name="passport_front" value=""
+                                                                        class="form-control"
+                                                                        placeholder="Please enter phone number" 
+                                                                        data-error="Please enter your phone number">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                                                                    <label for="">Upload Passport Back</label>
+                                                                    <input type="file" id="passport_back" name="passport_back" value=""
+                                                                        class="form-control"
+                                                                        placeholder="Please enter phone number" 
+                                                                        data-error="Please enter your phone number">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                                                                    <label for="">Upload Aadhar Front</label>
+                                                                    <input type="file" id="aadhar_front" name="aadhar_front" value=""
+                                                                        class="form-control"
+                                                                        placeholder="Please enter phone number" required
+                                                                        data-error="Please enter your phone number">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                                                                    <label for="">Upload Aadhar Back</label>
+                                                                    <input type="file" id="aadhar_back" name="aadhar_back" value=""
+                                                                        class="form-control"
+                                                                        placeholder="Please enter phone number" required
+                                                                        data-error="Please enter your phone number">
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">English Score</label>
-                                                                    <input type="text" id="english_score"
-                                                                        name="english_score" value=""
-                                                                        class="form-control"
-                                                                        placeholder="Please Enter Your english score"
-                                                                        required
-                                                                        data-error="Please enter your english score">
-                                                                </div>
-                                                            </div>
-
                                                             <div class="mt-3">
-                                                                <button class="button btn-navigate-form-step"
-                                                                    type="button" step_number="2">Next</button>
+                                                                <button class="button bg-success" onclick="save_customer_info()" type="button">submit</button>
+                                                                <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
                                                             </div>
                                                         </section>
                                                         <!-- Step 2 -->
                                                         <section id="step-2" class="form-step d-none">
-                                                            <h4 class="font-normal">Education Details</h4>
+                                                            <h4 class="font-normal">Dependent Details</h4>
                                                             <!-- Step 2 input fields -->
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="graduation_level">Graduation
-                                                                        Level</label>
-                                                                    <select id="graduation_level"
-                                                                        name="graduation_level" class="form-control"
-                                                                        required
-                                                                        data-error="Please select your graduation level">
-                                                                        <option value="" selected disabled>Please select
-                                                                            graduation level</option>
-                                                                        <option value="HIGH SCHOO">HIGH SCHOOL</option>
-                                                                        <option value="BACHELOR-3">BACHELOR(3 YEARS)
-                                                                        </option>
-                                                                        <option value="BACHELOR-4">BACHELOR(4 YEARS)
-                                                                        </option>
-                                                                        <option value="OTHERS">OTHERS</option>
-                                                                        <option value="OTHERS">OTHERS</option>
-                                                                        <!-- Add more options as needed -->
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Graduation Majors</label>
-                                                                    <input type="text" id="graduation_majors"
-                                                                        name="graduation_majors" value=""
-                                                                        class="form-control"
-                                                                        placeholder="Please enter graduation majors"
-                                                                        required
-                                                                        data-error="Please enter your graduation">
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Graduation GPA (max 10.0)</label>
-                                                                    <input type="text" id="graduation_gap"
-                                                                        name="username" value="" class="form-control"
-                                                                        placeholder="Please enter your graduation"
-                                                                        required
-                                                                        data-error="Please enter your graduation">
+                                                            <div id="dependents-container">
+                                                                <div class="row dependent-row">
+                                                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                        <label for="dependent_first_name">First
+                                                                            Name</label>
+                                                                        <input type="text" id="dependent_first_name"
+                                                                            name="dependent_first_name[]"
+                                                                            class="form-control"
+                                                                            placeholder="Please enter first name"
+                                                                            required
+                                                                            data-error="Please enter your first name">
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                        <label for="dependent_last_name">Last
+                                                                            Name</label>
+                                                                        <input type="text" id="dependent_last_name"
+                                                                            name="dependent_last_name[]"
+                                                                            class="form-control"
+                                                                            placeholder="Please enter last name"
+                                                                            required
+                                                                            data-error="Please enter your last name">
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                        <label for="dependent_email">Email</label>
+                                                                        <input type="email" id="dependent_email"
+                                                                            name="dependent_email[]"
+                                                                            class="form-control"
+                                                                            placeholder="Please enter email" required
+                                                                            data-error="Please enter your email">
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                                                                        <label for="dependent_phone_number">Phone
+                                                                            Number</label>
+                                                                        <input type="text" id="dependent_phone_number"
+                                                                            name="dependent_phone_number[]"
+                                                                            class="form-control"
+                                                                            placeholder="Please enter phone number"
+                                                                            required
+                                                                            data-error="Please enter your phone number">
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                                                                        <label
+                                                                            for="dependent_second_phone_number">Second
+                                                                            Phone Number (optional)</label>
+                                                                        <input type="text"
+                                                                            id="dependent_second_phone_number"
+                                                                            name="dependent_second_phone_number[]"
+                                                                            class="form-control"
+                                                                            placeholder="Please enter second phone number">
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                                                                        <label for="dependent_passport_front">Upload
+                                                                            Passport Front</label>
+                                                                        <input type="file" id="dependent_passport_front"
+                                                                            name="dependent_passport_front[]"
+                                                                            class="form-control" required
+                                                                            data-error="Please upload passport front">
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                                                                        <label for="dependent_passport_back">Upload
+                                                                            Passport Back</label>
+                                                                        <input type="file" id="dependent_passport_back"
+                                                                            name="dependent_passport_back[]"
+                                                                            class="form-control" required
+                                                                            data-error="Please upload passport back">
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                                                                        <label for="dependent_aadhar_front">Upload
+                                                                            Aadhar Front</label>
+                                                                        <input type="file" id="dependent_aadhar_front"
+                                                                            name="dependent_aadhar_front[]"
+                                                                            class="form-control" required
+                                                                            data-error="Please upload Aadhar front">
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                                                                        <label for="dependent_aadhar_back">Upload Aadhar
+                                                                            Back</label>
+                                                                        <input type="file" id="dependent_aadhar_back"
+                                                                            name="dependent_aadhar_back[]"
+                                                                            class="form-control" required
+                                                                            data-error="Please upload Aadhar back">
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Graduation Institution</label>
-                                                                    <input type="text" id="graduation_institution"
-                                                                        name="graduation_institution" value=""
-                                                                        class="form-control"
-                                                                        placeholder="Please Enter graduation institution"
-                                                                        required
-                                                                        data-error="Please enter your graduation institution">
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Graduation Country</label>
-                                                                    <input type="text" id="phone" name="phone" value=""
-                                                                        class="form-control"
-                                                                        placeholder="Please enter your graduation countery"
-                                                                        required
-                                                                        data-error="Please enter your graduation countery">
-                                                                </div>
 
+                                                            <div>
+                                                                <div>
+                                                                    <button class="btn btn-primary btn-sm mt-3"
+                                                                        type="button" onclick="add_depented()">+ Add
+                                                                        Dependent</button>
+                                                                </div>
                                                             </div>
                                                             <div class="mt-3">
+                                                                <button class="button bg-success"
+                                                                    type="button">Submit</button>
                                                                 <button class="button btn-navigate-form-step"
                                                                     type="button" step_number="1">Prev</button>
                                                                 <button class="button btn-navigate-form-step"
@@ -214,144 +265,268 @@
                                                             </div>
                                                         </section>
                                                         <!-- Step 3 -->
-                                                        <section id="step-3" class="form-step d-none">
-                                                            <h4 class="font-normal">Professional Details</h4>
+                                                        <section id="step-3" id="professionalDetailsForm"
+                                                            class="form-step d-none">
+                                                            <h4 class="font-normal">US POINT OF CONTACT</h4>
                                                             <!-- Step 3 input fields -->
                                                             <div class="row">
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Professional experience Type</label>
-                                                                    <input type="text" id="experience_type"
-                                                                        name="Professional Details " value=""
-                                                                        class="form-control"
-                                                                        placeholder="please experience type">
+                                                                    <label for="first_name">First Name</label>
+                                                                    <input type="text" id="first_name" name="first_name"
+                                                                        value="" class="form-control"
+                                                                        placeholder="Please enter your first name">
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Years of Professional
+                                                                    <label for="last_name">Last Name</label>
+                                                                    <input type="text" id="last_name" name="last_name"
+                                                                        value="" class="form-control"
+                                                                        placeholder="Please enter your last name">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="experience_type">Professional Experience
+                                                                        Type</label>
+                                                                    <input type="text" id="experience_type"
+                                                                        name="professional_details" value=""
+                                                                        class="form-control"
+                                                                        placeholder="Please enter experience type">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="years_experience">Years of Professional
                                                                         Experience</label>
                                                                     <input type="text" id="years_experience"
                                                                         name="years_experience" value=""
                                                                         class="form-control"
-                                                                        placeholder="Please enter your years experience">
+                                                                        placeholder="Please enter your years of experience">
                                                                 </div>
-
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="organization_yes_no">Are you associated
+                                                                        with an organization?</label>
+                                                                    <div>
+                                                                        <input type="radio" id="organization_yes"
+                                                                            name="organization_yes_no" value="yes"
+                                                                            onclick="showOrganizationDetails()"> Yes
+                                                                        <input type="radio" id="organization_no"
+                                                                            name="organization_yes_no" value="no"
+                                                                            onclick="hideOrganizationDetails()"> No
+                                                                    </div>
+                                                                </div>
+                                                                <div id="organization_details" class="d-none">
+                                                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                        <label for="organization_name">Organization
+                                                                            Name</label>
+                                                                        <input type="text" id="organization_name"
+                                                                            name="organization_name" value=""
+                                                                            class="form-control"
+                                                                            placeholder="Please enter organization name">
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                        <label for="organization_address">Organization
+                                                                            Address</label>
+                                                                        <input type="text" id="organization_address"
+                                                                            name="organization_address" value=""
+                                                                            class="form-control"
+                                                                            placeholder="Please enter organization address">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="relationship_to_you">Relationship to
+                                                                        You</label>
+                                                                    <select id="relationship_to_you"
+                                                                        name="relationship_to_you" class="form-control">
+                                                                        <option value="brother">Brother</option>
+                                                                        <option value="brother">Sister</option>
+                                                                        <option value="brother">uncle</option>
+                                                                        <option value="other">Other</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="us_street_name">US Street Name</label>
+                                                                    <input type="text" id="us_street_name"
+                                                                        name="us_street_name" value=""
+                                                                        class="form-control"
+                                                                        placeholder="Please enter US street name">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="us_street_address">US Street
+                                                                        Address</label>
+                                                                    <input type="text" id="us_street_address"
+                                                                        name="us_street_address" value=""
+                                                                        class="form-control"
+                                                                        placeholder="Please enter US street address">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="city">City</label>
+                                                                    <input type="text" id="city" name="city" value=""
+                                                                        class="form-control"
+                                                                        placeholder="Please enter city">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="state">State</label>
+                                                                    <input type="text" id="state" name="state" value=""
+                                                                        class="form-control"
+                                                                        placeholder="Please enter state">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="zipcode">Zip Code</label>
+                                                                    <input type="text" id="zipcode" name="zipcode"
+                                                                        value="" class="form-control"
+                                                                        placeholder="Please enter zip code">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="phone">Phone</label>
+                                                                    <input type="text" id="phone" name="phone" value=""
+                                                                        class="form-control"
+                                                                        placeholder="Please enter phone number">
+                                                                </div>
+                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="email">Email</label>
+                                                                    <input type="text" id="email" name="email" value=""
+                                                                        class="form-control"
+                                                                        placeholder="Please enter email">
+                                                                </div>
                                                             </div>
                                                             <div class="mt-3">
                                                                 <button class="button btn-navigate-form-step"
-                                                                    type="button" step_number="3">Prev</button>
+                                                                    type="button" step_number="2">Prev</button>
                                                                 <button class="button btn-navigate-form-step"
                                                                     type="button" step_number="4">Next</button>
                                                             </div>
                                                         </section>
                                                         <!-- Step 4 -->
                                                         <section id="step-4" class="form-step d-none">
-                                                            <h4 class="font-normal">Visa Interview Details</h4>
+                                                            <h4 class="font-normal">Start Application</h4>
                                                             <!-- Step 5 input fields -->
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Interview Date</label>
-                                                                    <input type="date" id="interview_date"
-                                                                        name="interview_date" value=""
-                                                                        class="form-control" required
-                                                                        data-error="Please enter your interview date">
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Interview Time</label>
-                                                                    <input type="text" id="interview_time"
-                                                                        name="interview_time" value=""
-                                                                        class="form-control"
-                                                                        placeholder="Please enter your Interview time"
-                                                                        required data-error="Please enter your time">
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Interview City</label>
-                                                                    <input type="text" id="interview_city"
-                                                                        name="interview_city" value=""
-                                                                        class="form-control"
-                                                                        placeholder="Please enter your interview city"
-                                                                        required
-                                                                        data-error="Please enter your interview city">
-                                                                </div>
-                                                            </div>
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Interview Countery</label>
-                                                                    <input type="text" id="interview_countery"
-                                                                        name="interview_countery" value=""
-                                                                        class="form-control"
-                                                                        placeholder="Please Enter Your interview_ countery"
-                                                                        required
-                                                                        data-error="Please enter your interview countery">
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Interview Attempt</label>
-                                                                    <input type="text" id="interview_attempt"
-                                                                        name="interview_attempt" value=""
-                                                                        class="form-control"
-                                                                        placeholder="Please Enter Your interview attempt"
-                                                                        required
-                                                                        data-error="Please enter your interview attempt">
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="">Interview Outcome</label>
-                                                                    <input type="text" id="interview_outcome"
-                                                                        name="interview_outcome" value=""
-                                                                        class="form-control"
-                                                                        placeholder="Please enter your interview outcome"
-                                                                        required
-                                                                        data-error="Please enter your interview outcome">
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="row">
+                                                            <div class="row mt-3">
                                                                 <div class="col-md-6 col-sm-12 col-xs-12">
-                                                                    <label for="">University Name & Location</label>
-                                                                    <textarea id="university_names"
-                                                                        name="university_names" rows="7"
-                                                                        placeholder="Please enter your 1-20 university names"
-                                                                        class="form-control" required
-                                                                        data-error="Please enter your 1-20 university names"></textarea>
-                                                                    <div class="help-block with-errors"></div>
+                                                                    <label for="">Start CGI Application</label><br>
+                                                                    <a href="https://atlasauth.b2clogin.com/f50ebcfb-eadd-41d8-9099-a7049d073f5c/b2c_1a_atoproduction_atlas_susi/oauth2/v2.0/authorize?client_id=607d08d6-b63b-4735-ad82-05dfcff7efa4&redirect_uri=https%3A%2F%2Fwww.usvisascheduling.com%2Fsignin-aad-b2c_1&response_type=code%20id_token&scope=openid&state=OpenIdConnect.AuthenticationProperties%3DXvNL3GIkw_w_dC9QUvx7FF8LxShGiPQj1rLa1ZrGlTM9CF3PgtHauwdXV0vlhI64yzx6JDBm0H5O3b0YgHyoRM0tUQy7LbYfWlt1bNdumJ95rjF2_ug9OPvpcL36oPe3R5EnnoW9Aop_BGFCIn1fXYk65TPY-imO6cJBKHPdQhyGapnNkN5rdfWj2B4eaziOHX5A4JA4yUD7547O80xRs9sK6k7IJAMBnOA_s4uhkiKfwbfuzjUDgIasvZ35PnX9sQfESXUQX5kgszY11dvndrirt8gSNqRB-dRkizntTMYt7t79d90XQJGejRYtKmdUPGlpH7g-jHmC-3VsBXpo5nxu7qrxvxXni_nDcrIVhBSuk7g_nlLQOzSC8-zlNw68HZnt0RxPZmNNHmIV07jbrTNynEXzXHuZbwdfcZgQKxMShEvUgKMbr8MmcvIgSjPJ&response_mode=form_post&nonce=638540244870173647.ZjhhZjEyYjktMjFlZS00MTVhLWE3YWQtMzM3ZWU5Y2YyMzU0ZmI4MWRhMGYtNzA1My00YTljLWI4MTktM2IxODE5YmZjYjFj&ui_locales=en-US&x-client-SKU=ID_NET472&x-client-ver=6.35.0.0"
+                                                                        target="_blank">Click here to proceed</a>
                                                                 </div>
-
                                                             </div>
+
+                                                            <div class="row mt-3">
+                                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                    <label for="">Username</label>
+                                                                    <input type="text" id="username" name="username"
+                                                                        value="" class="form-control"
+                                                                        placeholder="Enter your username" required
+                                                                        data-error="Please enter your username">
+                                                                </div>
+                                                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                                                    <label for="">Password</label>
+                                                                    <input type="password" id="password" name="password"
+                                                                        value="" class="form-control"
+                                                                        placeholder="Enter your password" required
+                                                                        data-error="Please enter your password">
+                                                                </div>
+                                                                <h4 class="font-normal mt-3">Security Questions</h4>
+                                                                <div class="row">
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                        <label for="relationship_to_you">Select Security
+                                                                            Question 1*</label>
+                                                                        <select id="relationship_to_you"
+                                                                            name="relationship_to_you"
+                                                                            class="form-control">
+                                                                            <option value="brother">Brother</option>
+                                                                            <option value="brother">Sister</option>
+                                                                            <option value="brother">uncle</option>
+                                                                            <option value="other">Other</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                        <label for="security_answer_1">Answer to
+                                                                            Security Question 1*</label>
+                                                                        <input type="text" id="security_answer_1"
+                                                                            name="security_answer_1"
+                                                                            class="form-control"
+                                                                            placeholder="Enter your security question"
+                                                                            required>
+                                                                    </div>
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                        <label for="relationship_to_you">Select Security
+                                                                            Question 2*</label>
+                                                                        <select id="relationship_to_you"
+                                                                            name="relationship_to_you"
+                                                                            class="form-control">
+                                                                            <option value="brother">Brother</option>
+                                                                            <option value="brother">Sister</option>
+                                                                            <option value="brother">uncle</option>
+                                                                            <option value="other">Other</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                        <label for="security_question_1">Answer to
+                                                                            Security Question 2*</label>
+                                                                        <input type="text" id="security_question_1"
+                                                                            name="security_question_1"
+                                                                            class="form-control"
+                                                                            placeholder="Enter your security question"
+                                                                            required>
+                                                                    </div>
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                        <label for="relationship_to_you">Select Security
+                                                                            Question 3*</label>
+                                                                        <select id="relationship_to_you"
+                                                                            name="relationship_to_you"
+                                                                            class="form-control">
+                                                                            <option value="brother">Brother</option>
+                                                                            <option value="brother">Sister</option>
+                                                                            <option value="brother">uncle</option>
+                                                                            <option value="other">Other</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                        <label for="security_answer_3">Answer to
+                                                                            Security Question 3*</label>
+                                                                        <input type="text" id="security_answer_3"
+                                                                            name="security_answer_3"
+                                                                            class="form-control"
+                                                                            placeholder="Enter your security question"
+                                                                            required>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+
                                                             <div class="mt-3">
                                                                 <button class="button btn-navigate-form-step"
                                                                     type="button" step_number="3">Prev</button>
-
-                                                                <button class="button submit-btn" type="submit">
-                                                                    question </button>
-
                                                                 <button class="button btn-navigate-form-step"
                                                                     type="button" step_number="5">Next</button>
 
                                                             </div>
                                                         </section>
                                                         <!-- Step 5 -->
-
                                                         <section id="step-5" class="form-step d-none">
-                                                            <h4 class="font-normal">Visa Interview Questions</h4>
+                                                            <h4 class="font-normal">Security Questions</h4>
 
                                                             <div class="row">
-                                                                <div class="col-md-5 col-sm-12 col-xs-12">
-                                                                    <label for="">Enter Question</label>
-                                                                    <input type="date" id="interview_question"
-                                                                        name="interview_question" value=""
-                                                                        class="form-control" required
-                                                                        data-error="Please enter your interview question">
+                                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                    <label for="">Start CEAC Application</label><br>
+                                                                    <a href="https://ceac.state.gov/GenNIV/Default.aspx"
+                                                                        target="_blank">Click here to proceed</a>
                                                                 </div>
                                                                 <div class="col-md-5 col-sm-12 col-xs-12">
-                                                                    <label for="">Enter Response</label>
-                                                                    <input type="text" id="interview_response"
-                                                                        name="interview_response" value=""
+                                                                    <label for="username">Username</label>
+                                                                    <input type="text" id="username" name="username"
                                                                         class="form-control"
-                                                                        placeholder="Please enter your response">
+                                                                        placeholder="Enter your username" required>
                                                                 </div>
-                                                                <div class="col-md-2 col-sm-12 col-xs-12">
-                                                                    <button class="button submit-btn" type="submit"
-                                                                        style="margin-top: 35px;"
-                                                                        onClick="addquestionrow()">+ Add</button>
+                                                                <div class="col-md-5 col-sm-12 col-xs-12">
+                                                                    <label for="username">Username</label>
+                                                                    <input type="text" id="username" name="username"
+                                                                        class="form-control"
+                                                                        placeholder="Enter your username" required>
+                                                                </div>
+                                                                <h4 class="font-normal mt-3">Security Questions</h4>
+                                                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                    <label for="security_answer_1">Answer to Security
+                                                                        Question 1</label>
+                                                                    <input type="text" id="security_answer_1"
+                                                                        name="security_answer_1" class="form-control"
+                                                                        placeholder="Enter your answer" required>
+                                                                </div>
 
-                                                                </div>
                                                             </div>
                                                             <div class="mt-3">
                                                                 <button class="button btn-navigate-form-step"
@@ -377,10 +552,11 @@
         </div>
     </div>
 </section>
-      
+
+
 {% endblock %}
 <script>
-    function addquestionrow(){
+    function addquestionrow() {
         alert('its working')
     }
 </script>

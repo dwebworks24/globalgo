@@ -241,6 +241,7 @@ def visa_application(request,userid):
     context = {}
     try:
         save_user = Users.objects.filter(id=userid).first()
+        context['applicant'] = VisaApplication.objects.filter(user_id=userid).first()
         context['customer'] = save_user 
         return render(request, 'uifiles/visa_application.html',context)
     
@@ -270,8 +271,10 @@ def update_profile_details(request, user_id):
 def visa_application_list(request):
     context = {}
     try:
-
-        context['user'] = VisaApplication.objects.filter(user_visa_application_id =request.user.id)
+        context['application'] = VisaApplication.objects.filter(user__referal_code = request.user.referal_code).values(
+            'id','applicationNo','user__first_name','user__last_name','user__email','user__phone','user__id'
+        )
+        # context['user'] = Users.objects.filter(referal_code =request.user.referal_code)
         return render(request, 'uifiles/application_list.html',context)
     
     except template.TemplateDoesNotExist:

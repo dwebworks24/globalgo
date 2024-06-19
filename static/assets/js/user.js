@@ -314,3 +314,218 @@ $(document).ready(function() {
     );
     
 });
+
+
+
+function add_depented() {
+
+    const dependentsContainer = document.getElementById('dependents-container');
+
+    const newDependent = document.createElement('div');
+    newDependent.classList.add('row', 'dependent-row');
+    newDependent.innerHTML = `
+    <h4 class="font-normal mt-2 text-warning">Dependent Details</h4>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <label for="dependent_first_name">First Name</label>
+                <input type="text" id="dependent_first_name" name="dependent_first_name[]" class="form-control"
+                    placeholder="Please enter first name" required data-error="Please enter your first name">
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <label for="dependent_last_name">Last Name</label>
+                <input type="text" id="dependent_last_name" name="dependent_last_name[]" class="form-control"
+                    placeholder="Please enter last name" required data-error="Please enter your last name">
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <label for="dependent_email">Email</label>
+                <input type="email" id="dependent_email" name="dependent_email[]" class="form-control"
+                    placeholder="Please enter email" required data-error="Please enter your email">
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                <label for="dependent_phone_number">Phone Number</label>
+                <input type="text" id="dependent_phone_number" name="dependent_phone_number[]" class="form-control"
+                    placeholder="Please enter phone number" required data-error="Please enter your phone number">
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                <label for="dependent_second_phone_number">Second Phone Number (optional)</label>
+                <input type="text" id="dependent_second_phone_number" name="dependent_second_phone_number[]" class="form-control"
+                    placeholder="Please enter second phone number">
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                <label for="dependent_passport_front">Upload Passport Front</label>
+                <input type="file" id="dependent_passport_front" name="dependent_passport_front[]" class="form-control"
+                    required data-error="Please upload passport front">
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                <label for="dependent_passport_back">Upload Passport Back</label>
+                <input type="file" id="dependent_passport_back" name="dependent_passport_back[]" class="form-control"
+                    required data-error="Please upload passport back">
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                <label for="dependent_aadhar_front">Upload Aadhar Front</label>
+                <input type="file" id="dependent_aadhar_front" name="dependent_aadhar_front[]" class="form-control"
+                    required data-error="Please upload Aadhar front">
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                <label for="dependent_aadhar_back">Upload Aadhar Back</label>
+                <input type="file" id="dependent_aadhar_back" name="dependent_aadhar_back[]" class="form-control"
+                    required data-error="Please upload Aadhar back">
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 mt-3">
+            <button class="btn btn-danger btn-sm" type="button" onclick="removeDependent(this)">- Remove Dependent</button>
+        </div>
+        `;
+
+    dependentsContainer.appendChild(newDependent);
+}
+
+function removeDependent(button) {
+    const dependentRow = button.closest('.dependent-row');
+    dependentRow.remove();
+}
+
+
+
+// function saveDependents() {
+//     const form = document.getElementById('dependents-form');
+//     const formData = new FormData(form);
+
+//     const dependentsData = [];
+//     const firstNames = formData.getAll('dependent_first_name[]');
+//     const lastNames = formData.getAll('dependent_last_name[]');
+//     const emails = formData.getAll('dependent_email[]');
+//     const phoneNumbers = formData.getAll('dependent_phone_number[]');
+//     const secondPhoneNumbers = formData.getAll('dependent_second_phone_number[]');
+//     const passportFronts = formData.getAll('dependent_passport_front[]');
+//     const passportBacks = formData.getAll('dependent_passport_back[]');
+//     const aadharFronts = formData.getAll('dependent_aadhar_front[]');
+//     const aadharBacks = formData.getAll('dependent_aadhar_back[]');
+
+//     for (let i = 0; i < firstNames.length; i++) {
+//         dependentsData.push({
+//             firstName: firstNames[i],
+//             lastName: lastNames[i],
+//             email: emails[i],
+//             phoneNumber: phoneNumbers[i],
+//             secondPhoneNumber: secondPhoneNumbers[i],
+//             passportFront: passportFronts[i],
+//             passportBack: passportBacks[i],
+//             aadharFront: aadharFronts[i],
+//             aadharBack: aadharBacks[i]
+//         });
+//     }
+
+//     // Save or process the dependentsData array
+//     console.log(dependentsData);
+
+//     // Example: Send the data to a server
+//     fetch('/save-dependents', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(dependentsData)
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Success:', data);
+//     })
+//     .catch((error) => {
+//         console.error('Error:', error);
+//     });
+// }
+
+
+
+// step3
+function showOrganizationDetails() {
+    document.getElementById('organization_details').classList.remove('d-none');
+}
+
+function hideOrganizationDetails() {
+    document.getElementById('organization_details').classList.add('d-none');
+}
+
+// save form ######################################################
+function save_customer_info(){
+    
+    let formData = new FormData();
+
+        // Get form values and files
+    const customer_id = $('#customer_id').val();
+    const first_name = $('#first_name').val();
+    const last_name = $('#last_name').val();
+    const email = $('#email').val();
+    const phone_number = $('#phone_number').val();
+    const second_phone_number = $('#second_phone_number').val();
+
+    const passport_front = $('#passport_front')[0].files[0];
+    const passport_back = $('#passport_back')[0].files[0];
+    const aadhar_front = $('#aadhar_front')[0].files[0];
+    const aadhar_back = $('#aadhar_back')[0].files[0];
+
+        // Append values to formData
+    formData.append('customer_id', customer_id);
+    formData.append('first_name', first_name);
+    formData.append('last_name', last_name);
+    formData.append('email', email);
+    formData.append('phone_number', phone_number);
+    formData.append('second_phone_number', second_phone_number);
+
+    formData.append('passport_front', passport_front);
+    formData.append('passport_back', passport_back);
+    formData.append('aadhar_front', aadhar_front);
+    formData.append('aadhar_back', aadhar_back);
+
+    $.ajax({
+        url: '/add_user_info/',
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+            show_success(response['message'])
+        
+        },
+        error: function(xhr, status, error) {
+            show_error(response.responseJSON['message'])
+        }
+    });
+}
+
+
+// function submitForm() {
+//     const formData = {
+//         first_name: document.getElementById('first_name').value,
+//         last_name: document.getElementById('last_name').value,
+//         experience_type: document.getElementById('experience_type').value,
+//         years_experience: document.getElementById('years_experience').value,
+//         organization_yes_no: document.querySelector('input[name="organization_yes_no"]:checked').value,
+//         organization_name: document.getElementById('organization_name').value,
+//         organization_address: document.getElementById('organization_address').value,
+//         relationship_to_you: document.getElementById('relationship_to_you').value,
+//         us_street_name: document.getElementById('us_street_name').value,
+//         us_street_address: document.getElementById('us_street_address').value,
+//         city: document.getElementById('city').value,
+//         state: document.getElementById('state').value,
+//         zipcode: document.getElementById('zipcode').value,
+//         phone: document.getElementById('phone').value,
+//         email: document.getElementById('email').value
+//     };
+
+//     fetch('/save', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(formData)
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         console.log('Success:', data);
+//         // Handle success (e.g., navigate to next step, show a success message)
+//     })
+//     .catch((error) => {
+//         console.error('Error:', error);
+//         // Handle error
+//     });
+// }
