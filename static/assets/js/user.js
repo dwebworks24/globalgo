@@ -385,54 +385,7 @@ function removeDependent(button) {
 
 
 
-// function saveDependents() {
-//     const form = document.getElementById('dependents-form');
-//     const formData = new FormData(form);
 
-//     const dependentsData = [];
-//     const firstNames = formData.getAll('dependent_first_name[]');
-//     const lastNames = formData.getAll('dependent_last_name[]');
-//     const emails = formData.getAll('dependent_email[]');
-//     const phoneNumbers = formData.getAll('dependent_phone_number[]');
-//     const secondPhoneNumbers = formData.getAll('dependent_second_phone_number[]');
-//     const passportFronts = formData.getAll('dependent_passport_front[]');
-//     const passportBacks = formData.getAll('dependent_passport_back[]');
-//     const aadharFronts = formData.getAll('dependent_aadhar_front[]');
-//     const aadharBacks = formData.getAll('dependent_aadhar_back[]');
-
-//     for (let i = 0; i < firstNames.length; i++) {
-//         dependentsData.push({
-//             firstName: firstNames[i],
-//             lastName: lastNames[i],
-//             email: emails[i],
-//             phoneNumber: phoneNumbers[i],
-//             secondPhoneNumber: secondPhoneNumbers[i],
-//             passportFront: passportFronts[i],
-//             passportBack: passportBacks[i],
-//             aadharFront: aadharFronts[i],
-//             aadharBack: aadharBacks[i]
-//         });
-//     }
-
-//     // Save or process the dependentsData array
-//     console.log(dependentsData);
-
-//     // Example: Send the data to a server
-//     fetch('/save-dependents', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(dependentsData)
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log('Success:', data);
-//     })
-//     .catch((error) => {
-//         console.error('Error:', error);
-//     });
-// }
 
 
 
@@ -445,7 +398,7 @@ function hideOrganizationDetails() {
     document.getElementById('organization_details').classList.add('d-none');
 }
 
-// save form ######################################################
+// save form #######################################  STEP1 ################
 function save_customer_info(){
     
     let formData = new FormData();
@@ -491,6 +444,55 @@ function save_customer_info(){
         }
     });
 }
+// save form #######################################  STEP2 ################
+
+function saveDependents() {
+    const form = document.getElementById('userAccountSetupForm');
+    const formData = new FormData(form);
+
+    const dependentsData = [];
+    const firstNames = formData.getAll('dependent_first_name[]');
+    const lastNames = formData.getAll('dependent_last_name[]');
+    const emails = formData.getAll('dependent_email[]');
+    const phoneNumbers = formData.getAll('dependent_phone_number[]');
+    const secondPhoneNumbers = formData.getAll('dependent_second_phone_number[]');
+    const passportFronts = formData.getAll('dependent_passport_front[]');
+    const passportBacks = formData.getAll('dependent_passport_back[]');
+    const aadharFronts = formData.getAll('dependent_aadhar_front[]');
+    const aadharBacks = formData.getAll('dependent_aadhar_back[]');
+
+    for (let i = 0; i < firstNames.length; i++) {
+        dependentsData.push({
+            firstName: firstNames[i],
+            lastName: lastNames[i],
+            email: emails[i],
+            phoneNumber: phoneNumbers[i],
+            secondPhoneNumber: secondPhoneNumbers[i],
+            passportFront: passportFronts[i],
+            passportBack: passportBacks[i],
+            aadharFront: aadharFronts[i],
+            aadharBack: aadharBacks[i]
+        });
+    }
+    formData.append('dependents', JSON.stringify(dependentsData));
+    $.ajax({
+        url: '/add_dependent_info/',
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+            show_success(response['message'])
+        
+        },
+        error: function(xhr, status, error) {
+            show_error(response.responseJSON['message'])
+        }
+    })
+}
+
+
+
 
 
 // function submitForm() {

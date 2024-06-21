@@ -1,4 +1,5 @@
 from datetime import datetime
+import json
 from django.conf import settings
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
@@ -305,6 +306,45 @@ def add_user_info(request):
             
 
             return JsonResponse({'message': 'User added successfully'})
+        except Exception as e:
+            return JsonResponse({'message': str(e)}, status=401)
+    else:
+        return JsonResponse({'message': 'Invalid request method'}, status=405)
+
+
+@csrf_exempt
+def add_dependent_info(request): 
+    if request.method == 'POST':
+        try:
+            userid = request.POST.get('customer_id')
+            visa_user = VisaApplication.objects.filter(user_id= userid).first()
+            dependents_data = json.loads(request.POST.get('dependents'))
+
+            passport_fronts = request.FILES.getlist('dependent_passport_front[]')
+            passport_backs = request.FILES.getlist('dependent_passport_back[]')
+            aadhar_fronts = request.FILES.getlist('dependent_aadhar_front[]')
+            aadhar_backs = request.FILES.getlist('dependent_aadhar_back[]')
+
+            for i, dependent_data in enumerate(dependents_data):
+                # Create a new DependentDetails instance and assign the data
+                dependent = DependentDetails(
+                    dependent_first_name=dependent_data['firstName'],
+                    dependent_last_name=dependent_data['lastName'],
+                    dependent_email=dependent_data['email'],
+                    dependent_phone=dependent_data['phoneNumber'],
+                    dependent_phone_number_two=dependent_data['secondPhoneNumber'],
+                    upload_passport_front=passport_fronts[i] if i < len(passport_fronts) else None,
+                    upload_passport_back=passport_backs[i] if i < len(passport_backs) else None,
+                    aadhar_front=aadhar_fronts[i] if i < len(aadhar_fronts) else None,
+                    aadhar_back=aadhar_backs[i] if i < len(aadhar_backs) else None,
+                    application_user=visa_user
+                )
+
+                # Save the DependentDetails instance to the database
+                dependent.save()
+
+    
+            return JsonResponse({'message': 'Dependent added successfully'})
         except Exception as e:
             return JsonResponse({'message': str(e)}, status=401)
     else:
