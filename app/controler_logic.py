@@ -326,7 +326,6 @@ def add_dependent_info(request):
             aadhar_backs = request.FILES.getlist('dependent_aadhar_back[]')
 
             for i, dependent_data in enumerate(dependents_data):
-                # Create a new DependentDetails instance and assign the data
                 dependent = DependentDetails(
                     dependent_first_name=dependent_data['firstName'],
                     dependent_last_name=dependent_data['lastName'],
@@ -339,12 +338,47 @@ def add_dependent_info(request):
                     aadhar_back=aadhar_backs[i] if i < len(aadhar_backs) else None,
                     application_user=visa_user
                 )
-
-                # Save the DependentDetails instance to the database
                 dependent.save()
 
     
             return JsonResponse({'message': 'Dependent added successfully'})
+        except Exception as e:
+            return JsonResponse({'message': str(e)}, status=401)
+    else:
+        return JsonResponse({'message': 'Invalid request method'}, status=405)
+    
+@csrf_exempt
+def add_uspoint_ofcontact_info(request): 
+    if request.method == 'POST':
+        try:
+            post_data = request.POST
+            userid = request.POST.get('customer_id')
+            visa_user = VisaApplication.objects.filter(user_id= userid).first()
+
+            
+            organization_yes_no=post_data.get('organization_yes_no'),
+
+            us_point_of_contact = PointOfContact()
+            us_point_of_contact.first_name=post_data.get('first_name')
+            us_point_of_contact.last_name=post_data.get('last_name')
+            
+            if organization_yes_no[0] == 'yes':
+                us_point_of_contact.organization_name=post_data.get('organization_name')
+                us_point_of_contact.organization_address=post_data.get('organization_address')
+                us_point_of_contact.professional_experience=int(post_data.get('years_experience'))
+            
+            us_point_of_contact.relation_ship=post_data.get('relationship_to_you')
+            us_point_of_contact.street_name=post_data.get('us_street_name')
+            us_point_of_contact.street_name_address=post_data.get('us_street_address')
+            us_point_of_contact.city=post_data.get('city')
+            us_point_of_contact.state=post_data.get('state')
+            us_point_of_contact.zipcode=post_data.get('zipcode')
+            us_point_of_contact.phone=post_data.get('phone')
+            us_point_of_contact.email=post_data.get('email')
+            us_point_of_contact.application_user = visa_user 
+
+            us_point_of_contact.save()
+            return JsonResponse({'message': 'Us point of contact added successfully'})
         except Exception as e:
             return JsonResponse({'message': str(e)}, status=401)
     else:

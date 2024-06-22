@@ -33,7 +33,7 @@ class AdminDependentDetails(admin.ModelAdmin):
 
 
 class AdminPointOfContact(admin.ModelAdmin):
-    list_display=('id','first_name','email','phone','address_line1','city','state','zipcode')
+    list_display=('id','first_name','email','phone','city','state','zipcode')
 
 
 class AdminSecurityQuestion(admin.ModelAdmin):

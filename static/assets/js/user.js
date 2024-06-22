@@ -493,41 +493,58 @@ function saveDependents() {
 
 
 
+// save form #######################################  STEP 3 ################
+
+function save_UsPoint_of_contact() {
+    const customer_id = $('#customer_id').val();
+    var first_name = $("#us_point_first_name").val();
+    var last_name = $("#us_point_last_name").val();
+    // var experience_type = $("#us_point_experience_type").val();
+    var years_experience = parseInt($("#us_point_years_experience").val());
+    var organization_yes_no = $("input[name='us_point_organization_yes_no']:checked").val();
+    var organization_name = $("#us_point_organization_name").val();
+    var organization_address = $("#us_point_organization_address").val();
+    var relationship_to_you = $("#us_point_relationship_to_you").val();
+    var us_street_name = $("#us_point_us_street_name").val();
+    var us_street_address = $("#us_point_us_street_address").val();
+    var city = $("#us_point_city").val();
+    var state = $("#us_point_state").val();
+    var zipcode = $("#us_point_zipcode").val();
+    var phone = $("#us_point_phone").val();
+    var email = $("#us_point_email").val();
+
+    var formData = new FormData();
+    formData.append('customer_id', customer_id);
+    formData.append('first_name', first_name);
+    formData.append('last_name', last_name);
+    // formData.append('experience_type', experience_type);
+    formData.append('years_experience', years_experience);
+    formData.append('organization_yes_no', organization_yes_no);
+    formData.append('organization_name', organization_name);
+    formData.append('organization_address', organization_address);
+    formData.append('relationship_to_you', relationship_to_you);
+    formData.append('us_street_name', us_street_name);
+    formData.append('us_street_address', us_street_address);
+    formData.append('city', city);
+    formData.append('state', state);
+    formData.append('zipcode', zipcode);
+    formData.append('phone', phone);
+    formData.append('email', email);
 
 
-// function submitForm() {
-//     const formData = {
-//         first_name: document.getElementById('first_name').value,
-//         last_name: document.getElementById('last_name').value,
-//         experience_type: document.getElementById('experience_type').value,
-//         years_experience: document.getElementById('years_experience').value,
-//         organization_yes_no: document.querySelector('input[name="organization_yes_no"]:checked').value,
-//         organization_name: document.getElementById('organization_name').value,
-//         organization_address: document.getElementById('organization_address').value,
-//         relationship_to_you: document.getElementById('relationship_to_you').value,
-//         us_street_name: document.getElementById('us_street_name').value,
-//         us_street_address: document.getElementById('us_street_address').value,
-//         city: document.getElementById('city').value,
-//         state: document.getElementById('state').value,
-//         zipcode: document.getElementById('zipcode').value,
-//         phone: document.getElementById('phone').value,
-//         email: document.getElementById('email').value
-//     };
-
-//     fetch('/save', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(formData)
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log('Success:', data);
-//         // Handle success (e.g., navigate to next step, show a success message)
-//     })
-//     .catch((error) => {
-//         console.error('Error:', error);
-//         // Handle error
-//     });
-// }
+    $.ajax({
+        url: '/us_point_of_contact/',
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+            show_success(response['message'])
+        
+        },
+        error: function(xhr, status, error) {
+            show_error(response.responseJSON['message'])
+        }
+    })
+   
+}

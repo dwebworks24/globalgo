@@ -272,38 +272,44 @@
                                                             <div class="row">
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                                                     <label for="first_name">First Name</label>
-                                                                    <input type="text" id="first_name" name="first_name"
+                                                                    <input type="text" id="us_point_first_name" name="us_point_first_name"
                                                                         value="" class="form-control"
                                                                         placeholder="Please enter your first name">
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                                                     <label for="last_name">Last Name</label>
-                                                                    <input type="text" id="last_name" name="last_name"
+                                                                    <input type="text" id="us_point_last_name" name="us_point_last_name"
                                                                         value="" class="form-control"
                                                                         placeholder="Please enter your last name">
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                    <label for="email">Email</label>
+                                                                    <input type="text" id="us_point_email" name="us_point_email" value=""
+                                                                        class="form-control"
+                                                                        placeholder="Please enter email">
+                                                                </div>
+                                                                <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                                                                     <label for="experience_type">Professional Experience
                                                                         Type</label>
-                                                                    <input type="text" id="experience_type"
-                                                                        name="professional_details" value=""
+                                                                    <input type="text" id="us_point_experience_type"
+                                                                        name="us_point_professional_details" value=""
                                                                         class="form-control"
                                                                         placeholder="Please enter experience type">
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                </div> -->
+                                                                <!-- <div class="col-md-4 col-sm-12 col-xs-12">
                                                                     <label for="years_experience">Years of Professional
                                                                         Experience</label>
-                                                                    <input type="text" id="years_experience"
-                                                                        name="years_experience" value=""
+                                                                    <input type="text" id="us_point_years_experience"
+                                                                        name="us_point_years_experience" value=""
                                                                         class="form-control"
                                                                         placeholder="Please enter your years of experience">
-                                                                </div>
+                                                                </div> -->
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                                                     <label for="organization_yes_no">Are you associated
                                                                         with an organization?</label>
                                                                     <div>
-                                                                        <input type="radio" id="organization_yes"
-                                                                            name="organization_yes_no" value="yes"
+                                                                        <input type="radio" id="us_point_organization_yes"
+                                                                            name="us_point_organization_yes_no" value="yes"
                                                                             onclick="showOrganizationDetails()"> Yes
                                                                         <input type="radio" id="organization_no"
                                                                             name="organization_yes_no" value="no"
@@ -311,28 +317,39 @@
                                                                     </div>
                                                                 </div>
                                                                 <div id="organization_details" class="d-none">
-                                                                    <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                        <label for="organization_name">Organization
-                                                                            Name</label>
-                                                                        <input type="text" id="organization_name"
-                                                                            name="organization_name" value=""
-                                                                            class="form-control"
-                                                                            placeholder="Please enter organization name">
+                                                                    <div class="d-flex">
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                            <label for="organization_name">Organization
+                                                                                Name</label>
+                                                                            <input type="text" id="us_point_organization_name"
+                                                                                name="us_point_organization_name" value=""
+                                                                                class="form-control"
+                                                                                placeholder="Please enter organization name">
+                                                                        </div>&nbsp;&nbsp;&nbsp;
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                            <label for="organization_address">Organization
+                                                                                Address</label>
+                                                                            <input type="text" id="us_point_organization_address"
+                                                                                name="us_point_organization_address" value=""
+                                                                                class="form-control"
+                                                                                placeholder="Please enter organization address">
+                                                                        </div>&nbsp;&nbsp;&nbsp;
+                                                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                                                            <label for="years_experience">Years of Professional
+                                                                                Experience</label>
+                                                                            <input type="text" id="us_point_years_experience"
+                                                                                name="us_point_years_experience" value=""
+                                                                                class="form-control"
+                                                                                placeholder="Please enter your years of experience">
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                        <label for="organization_address">Organization
-                                                                            Address</label>
-                                                                        <input type="text" id="organization_address"
-                                                                            name="organization_address" value=""
-                                                                            class="form-control"
-                                                                            placeholder="Please enter organization address">
-                                                                    </div>
+                                                                    
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                                                     <label for="relationship_to_you">Relationship to
                                                                         You</label>
-                                                                    <select id="relationship_to_you"
-                                                                        name="relationship_to_you" class="form-control">
+                                                                    <select id="us_point_relationship_to_you"
+                                                                        name="us_point_relationship_to_you" class="form-control">
                                                                         <option value="brother">Brother</option>
                                                                         <option value="brother">Sister</option>
                                                                         <option value="brother">uncle</option>
@@ -341,51 +358,48 @@
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                                                     <label for="us_street_name">US Street Name</label>
-                                                                    <input type="text" id="us_street_name"
-                                                                        name="us_street_name" value=""
+                                                                    <input type="text" id="us_point_us_street_name"
+                                                                        name="us_point_us_street_name" value=""
                                                                         class="form-control"
                                                                         placeholder="Please enter US street name">
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                                                     <label for="us_street_address">US Street
                                                                         Address</label>
-                                                                    <input type="text" id="us_street_address"
-                                                                        name="us_street_address" value=""
+                                                                    <input type="text" id="us_point_us_street_address"
+                                                                        name="us_point_us_street_address" value=""
                                                                         class="form-control"
                                                                         placeholder="Please enter US street address">
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                                                     <label for="city">City</label>
-                                                                    <input type="text" id="city" name="city" value=""
+                                                                    <input type="text" id="us_point_city" name="us_point_city" value=""
                                                                         class="form-control"
                                                                         placeholder="Please enter city">
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                                                     <label for="state">State</label>
-                                                                    <input type="text" id="state" name="state" value=""
+                                                                    <input type="text" id="us_point_state" name="us_point_state" value=""
                                                                         class="form-control"
                                                                         placeholder="Please enter state">
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                                                     <label for="zipcode">Zip Code</label>
-                                                                    <input type="text" id="zipcode" name="zipcode"
+                                                                    <input type="text" id="us_point_zipcode" name="us_point_zipcode"
                                                                         value="" class="form-control"
                                                                         placeholder="Please enter zip code">
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                                                     <label for="phone">Phone</label>
-                                                                    <input type="text" id="phone" name="phone" value=""
+                                                                    <input type="text" id="us_point_phone" name="us_point_phone" value=""
                                                                         class="form-control"
                                                                         placeholder="Please enter phone number">
                                                                 </div>
-                                                                <div class="col-md-4 col-sm-12 col-xs-12">
-                                                                    <label for="email">Email</label>
-                                                                    <input type="text" id="email" name="email" value=""
-                                                                        class="form-control"
-                                                                        placeholder="Please enter email">
-                                                                </div>
+                                                               
                                                             </div>
                                                             <div class="mt-3">
+                                                                <button class="button bg-success"
+                                                                    type="button" onclick="save_UsPoint_of_contact()">Save</button>
                                                                 <button class="button btn-navigate-form-step"
                                                                     type="button" step_number="2">Prev</button>
                                                                 <button class="button btn-navigate-form-step"
