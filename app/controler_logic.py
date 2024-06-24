@@ -383,3 +383,74 @@ def add_uspoint_ofcontact_info(request):
             return JsonResponse({'message': str(e)}, status=401)
     else:
         return JsonResponse({'message': 'Invalid request method'}, status=405)
+    
+@csrf_exempt
+def add_cgi_application_info(request): 
+    if request.method == 'POST':
+        try:
+            post_data = request.POST
+            userid = post_data.get('customer_id')
+            application_user = VisaApplication.objects.filter(user_id= userid).first()
+
+            username = post_data.get('username')
+            password = post_data.get('password')
+            security_question_1 = post_data.get('security_question_1')
+            security_answer_1 = post_data.get('security_answer_1')
+            security_question_2 = post_data.get('security_question_2')
+            security_answer_2 = post_data.get('security_answer_2')
+            security_question_3 = post_data.get('security_question_3')
+            security_answer_3 = post_data.get('security_answer_3')
+
+            
+            new_application = SecurityQuestion.objects.create(
+               
+                username=username,
+                password=password,
+                questio1=security_question_1,
+                answer1=security_answer_1,
+                questio2=security_question_2,
+                answer2=security_answer_2,
+                questio3=security_question_3,
+                answer3=security_answer_3,
+                application_user=application_user
+            )
+            new_application.save()
+
+            return JsonResponse({'message': 'application details added successfully'})
+        except Exception as e:
+            return JsonResponse({'message': str(e)}, status=401)
+    else:
+        return JsonResponse({'message': 'Invalid request method'}, status=405)
+    
+
+    
+@csrf_exempt
+def save_ceac_application(request): 
+    if request.method == 'POST':
+        try:
+            post_data = request.POST
+            userid = post_data.get('customer_id')
+            application_user = VisaApplication.objects.filter(user_id= userid).first()
+
+            username = post_data.get('username')
+            password = post_data.get('password')
+            location = post_data.get('location')
+        
+            
+
+            
+            new_application = SecurityQuestion.objects.create(
+                username=username,
+                password=password,
+                questio1=location,
+              
+            )
+            new_application.save()
+
+            return JsonResponse({'message': 'application details added successfully'})
+        except Exception as e:
+            return JsonResponse({'message': str(e)}, status=401)
+    else:
+        return JsonResponse({'message': 'Invalid request method'}, status=405)
+
+

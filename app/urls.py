@@ -40,6 +40,7 @@ urlpatterns = [
     path('add_user_info/',add_user_info, name="add_user_info"),
     path('add_dependent_info/',add_dependent_info, name="add_dependent_info"),
     path('us_point_of_contact/',add_uspoint_ofcontact_info, name="us_point_of_contact"),
+    path('cgi_application/',add_cgi_application_info, name="cgi_application"),
     
 
 ]

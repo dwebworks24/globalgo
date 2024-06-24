@@ -438,14 +438,13 @@
                                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                                         <label for="relationship_to_you">Select Security
                                                                             Question 1*</label>
-                                                                        <select id="relationship_to_you"
-                                                                            name="relationship_to_you"
-                                                                            class="form-control">
-                                                                            <option value="brother">Brother</option>
-                                                                            <option value="brother">Sister</option>
-                                                                            <option value="brother">uncle</option>
-                                                                            <option value="other">Other</option>
-                                                                        </select>
+                                                                            <select id="security_question_1" name="security_question_1" class="form-control">
+                                                                                <option value="mother_maiden_name">What is your mother's maiden name?</option>
+                                                                                <option value="first_pet_name">What was the name of your first/current/favorite pet?</option>
+                                                                                <option value="first_car">What was your first car?</option>
+                                                                                <option value="elementary_school">What elementary school did you attend?</option>
+                                                                                <option value="birth_city">What is the name of the town/city where you were born?</option>
+                                                                            </select>
                                                                     </div>
                                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                                         <label for="security_answer_1">Answer to
@@ -459,20 +458,20 @@
                                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                                         <label for="relationship_to_you">Select Security
                                                                             Question 2*</label>
-                                                                        <select id="relationship_to_you"
-                                                                            name="relationship_to_you"
-                                                                            class="form-control">
-                                                                            <option value="brother">Brother</option>
-                                                                            <option value="brother">Sister</option>
-                                                                            <option value="brother">uncle</option>
-                                                                            <option value="other">Other</option>
-                                                                        </select>
+                                                                            <select id="security_question_2" name="security_question_2" class="form-control">
+                                                                                <option value="road_grew_up_on">What is the name of the road/street you grew up on?</option>
+                                                                                <option value="least_favorite_food">What is your least favorite food?</option>
+                                                                                <option value="first_company">What was the first company that you worked for?</option>
+                                                                                <option value="favorite_food">What is your favorite food?</option>
+                                                                                <option value="high_school">What high school did you attend?</option>
+                                                                            </select>
+                                                            
                                                                     </div>
                                                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                                                        <label for="security_question_1">Answer to
+                                                                        <label for="security_answer_2">Answer to
                                                                             Security Question 2*</label>
-                                                                        <input type="text" id="security_question_1"
-                                                                            name="security_question_1"
+                                                                        <input type="text" id="security_answer_2"
+                                                                            name="security_answer_2"
                                                                             class="form-control"
                                                                             placeholder="Enter your security question"
                                                                             required>
@@ -480,14 +479,13 @@
                                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                                         <label for="relationship_to_you">Select Security
                                                                             Question 3*</label>
-                                                                        <select id="relationship_to_you"
-                                                                            name="relationship_to_you"
-                                                                            class="form-control">
-                                                                            <option value="brother">Brother</option>
-                                                                            <option value="brother">Sister</option>
-                                                                            <option value="brother">uncle</option>
-                                                                            <option value="other">Other</option>
-                                                                        </select>
+                                                                            <select id="security_question_3" name="security_question_3" class="form-control">
+                                                                                <option value="spouse_meet_location">Where did you meet your spouse?</option>
+                                                                                <option value="sibling_middle_name">What is your sibling's middle name?</option>
+                                                                                <option value="childhood_hero">Who was your childhood hero?</option>
+                                                                                <option value="first_job_city">In what city or town was your first job?</option>
+                                                                                <option value="college_applied_to">What is the name of a college you applied to but didn’t attend?</option>
+                                                                            </select>
                                                                     </div>
                                                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                                                         <label for="security_answer_3">Answer to
@@ -503,6 +501,8 @@
                                                             </div>
 
                                                             <div class="mt-3">
+                                                                <button class="button bg-success"
+                                                                    type="button" onclick="save_cgi_application()">Save</button>
                                                                 <button class="button btn-navigate-form-step"
                                                                     type="button" step_number="3">Prev</button>
                                                                 <button class="button btn-navigate-form-step"
@@ -522,20 +522,27 @@
                                                                 </div>
                                                                 <div class="col-md-5 col-sm-12 col-xs-12">
                                                                     <label for="username">Username</label>
-                                                                    <input type="text" id="username" name="username"
+                                                                    <input type="text" id="ceac_username" name="ceac_username"
                                                                         class="form-control"
                                                                         placeholder="Enter your username" required>
                                                                 </div>
                                                                 <div class="col-md-5 col-sm-12 col-xs-12">
-                                                                    <label for="username">Username</label>
-                                                                    <input type="text" id="username" name="username"
+                                                                    <label for="password">Password</label>
+                                                                    <input type="text" id="ceac_password" name="ceac_password"
                                                                         class="form-control"
-                                                                        placeholder="Enter your username" required>
+                                                                        placeholder="Enter your password" required>
                                                                 </div>
                                                                 <h4 class="font-normal mt-3">Security Questions</h4>
                                                                 <div class="col-md-12 col-sm-12 col-xs-12">
-                                                                    <label for="security_answer_1">Answer to Security
-                                                                        Question 1</label>
+                                                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                                                        <label for="relationship_to_you">Select location</label>
+                                                                            <select id="location" name="location" class="form-control">
+                                                                                <option value="india">India</option>
+                                                                                <option value="usa">usa</option>
+                                                                                <option value="uk">uk</option>
+                                                                                
+                                                                            </select>
+                                                                    </div>
                                                                     <input type="text" id="security_answer_1"
                                                                         name="security_answer_1" class="form-control"
                                                                         placeholder="Enter your answer" required>
@@ -543,6 +550,8 @@
 
                                                             </div>
                                                             <div class="mt-3">
+                                                                <button class="button bg-success"
+                                                                type="button" onclick="save_ceac_application()">Save</button>
                                                                 <button class="button btn-navigate-form-step"
                                                                     type="button" step_number="4">Prev</button>
                                                                 <button class="button submit-btn" type="submit">Submit

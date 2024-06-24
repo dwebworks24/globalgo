@@ -548,3 +548,72 @@ function save_UsPoint_of_contact() {
     })
    
 }
+
+function save_cgi_application(){
+    const customer_id = $('#customer_id').val();
+    var username = $("#username").val();
+    var password = $("#password").val();
+    var security_question_1 = $("#security_question_1").val();
+    var security_answer_1 = $("#security_answer_1").val();
+    var security_question_2 = $("#security_question_2").val();
+    var security_answer_2 = $("#security_answer_2").val();
+    var security_question_3 = $("#security_question_3").val();
+    var security_answer_3 = $("#security_answer_3").val();  
+    
+    var formData = new FormData();
+    formData.append('customer_id', customer_id);
+    formData.append('username', username);
+    formData.append('password', password);
+    formData.append('security_question_1', security_question_1);
+    formData.append('security_answer_1', security_answer_1);
+    formData.append('security_question_2', security_question_2);
+    formData.append('security_answer_2', security_answer_2);
+    formData.append('security_question_3', security_question_3);
+    formData.append('security_answer_3', security_answer_3);
+
+    $.ajax({
+        url: '/cgi_application/',
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            show_success(response['message'])
+        },
+        error: function(xhr, status, error) {
+            show_error(response.responseJSON['message'])
+        }
+    });
+}
+
+
+
+
+function save_ceac_application(){
+    const customer_id = $('#customer_id').val();
+    var username = $("#ceac_username").val();
+    var password = $("#ceac_password").val();
+    var location = $("#location").val();
+   
+    
+    var formData = new FormData();
+    formData.append('customer_id', customer_id);
+    formData.append('username', username);
+    formData.append('password', password);
+    formData.append('location', location);
+
+
+    $.ajax({
+        url: '/ceac_application/',
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            show_success(response['message'])
+        },
+        error: function(xhr, status, error) {
+            show_error(response.responseJSON['message'])
+        }
+    });
+}
