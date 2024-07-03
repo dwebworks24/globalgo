@@ -349,11 +349,10 @@
                                                                     <label for="relationship_to_you">Relationship to
                                                                         You</label>
                                                                     <select id="us_point_relationship_to_you"
-                                                                        name="us_point_relationship_to_you" value="{{uspoint.relation_ship}}" class="form-control">
-                                                                        <option value="brother">Brother</option>
-                                                                        <option value="brother">Sister</option>
-                                                                        <option value="brother">uncle</option>
-                                                                        <option value="other">Other</option>
+                                                                        name="us_point_relationship_to_you"  class="form-control">
+                                                                        <option value="brother" {% if uspoint.relation_ship == 'brother' %}selected{% endif %}>Brother</option>
+                                                                        <option value="sister" {% if uspoint.relation_ship == 'sister' %}selected{% endif %}>uncle</option>
+                                                                        <option value="other" {% if uspoint.relation_ship == 'other' %}selected{% endif %}>Other</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-md-4 col-sm-12 col-xs-12">
