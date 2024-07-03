@@ -434,20 +434,21 @@ def save_ceac_application(request):
 
             username = post_data.get('username')
             password = post_data.get('password')
-            location = post_data.get('location')
+            question = post_data.get('question')
+            answer = post_data.get('answer')
         
             
-
-            
-            new_application = SecurityQuestion.objects.create(
+            new_application = ceac_application.objects.create(
                 username=username,
                 password=password,
-                questio1=location,
+                questio=question,
+                answer=answer,
+                application_user=application_user
               
             )
             new_application.save()
 
-            return JsonResponse({'message': 'application details added successfully'})
+            return JsonResponse({'message': 'ceac application details added successfully'})
         except Exception as e:
             return JsonResponse({'message': str(e)}, status=401)
     else:

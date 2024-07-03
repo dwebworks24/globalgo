@@ -243,6 +243,11 @@ def visa_application(request,userid):
         save_user = Users.objects.filter(id=userid).first()
         context['applicant'] = VisaApplication.objects.filter(user_id=userid).first()
         context['customer'] = save_user 
+        application_number = context['applicant'].id
+        context['uspoint'] = PointOfContact.objects.filter(application_user_id=application_number).first()
+        context['cgi'] = SecurityQuestion.objects.filter(application_user_id=application_number).first()
+        context['ceac'] = ceac_application.objects.filter(application_user_id=application_number).first()
+        
         return render(request, 'uifiles/visa_application.html',context)
     
     except template.TemplateDoesNotExist:

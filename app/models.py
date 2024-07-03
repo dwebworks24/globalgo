@@ -173,6 +173,17 @@ class SecurityQuestion(models.Model):
         db_table = 'security_question'
 
 
+class ceac_application(models.Model):
+    username = models.CharField(max_length=100, blank=True, null=True)
+    password = models.CharField(max_length=100, blank=True, null=True)
+    questio = models.CharField(max_length=255)
+    answer = models.CharField(max_length=255)
+    application_user = models.ForeignKey('VisaApplication', models.DO_NOTHING, null=False,blank=False,db_column='visaApplication_id')
+    
+    class Meta:
+        managed = True
+        db_table = 'ceac_application'
+
 class VisaApplication(models.Model):
     applicationNo = models.IntegerField()
     phone_number_two = models.CharField(max_length=13, blank=True, null=True)

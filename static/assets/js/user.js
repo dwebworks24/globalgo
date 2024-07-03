@@ -593,14 +593,16 @@ function save_ceac_application(){
     const customer_id = $('#customer_id').val();
     var username = $("#ceac_username").val();
     var password = $("#ceac_password").val();
-    var location = $("#location").val();
+    var question = $("#ceac_question1").val();
+    var answer = $("#ceac_security_answer_1").val();
    
     
     var formData = new FormData();
     formData.append('customer_id', customer_id);
     formData.append('username', username);
     formData.append('password', password);
-    formData.append('location', location);
+    formData.append('question', question);
+    formData.append('answer', answer);
 
 
     $.ajax({
