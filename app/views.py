@@ -273,10 +273,10 @@ def update_profile_details(request, user_id):
         return HttpResponse(html_template.render(context, request))
 
 @login_required
-def visa_application_list(request):
+def visa_application_list(request,country,visatype):
     context = {}
     try:
-        context['application'] = VisaApplication.objects.filter(user__referal_code = request.user.referal_code).values(
+        context['application'] = VisaApplication.objects.filter(user__referal_code = request.user.referal_code,country=country,visa_type=visatype).values(
             'id','applicationNo','user__first_name','user__last_name','user__email','user__phone','user__id'
         )
         # context['user'] = Users.objects.filter(referal_code =request.user.referal_code)

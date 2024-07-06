@@ -34,7 +34,7 @@ urlpatterns = [
     path('visa_application/<int:userid>/',visa_application , name='visa_application'),
     path('update_profile_details/<int:user_id>/',update_profile_details, name="update_profile_details"),
     path('updateprofile/',updateprofile, name="updateprofile"),
-    path('visa_application_list/',visa_application_list, name="visa_application_list"),
+    path('visa_application_list/<str:countery_name>/<str:visatype>/',visa_application_list, name="visa_application_list"),
     
     # control logic
     path('add_user_info/',add_user_info, name="add_user_info"),

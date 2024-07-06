@@ -95,15 +95,15 @@ class Country(models.Model):
 
 
 Visa_Types = (
-        ('visit visa', 'visit visa'),
-        ('Tourist Visa', 'Tourist Visa'),
-        ('Study Visa', 'Study Visa'),
-        ('Medical Visa', 'Medical Visa'),
-        ('Migration Visa', 'Migration Visa'),
-        ('Family Visa', 'Family Visa'),
-        ('Diplomatic Visa', 'Diplomatic Visa'),
-        ('Working Visa', 'Working Visa'),
-        ('Business Visa', 'Business Visa'),
+        ('visit', 'visit'),
+        ('Tourist', 'Tourist'),
+        ('Study', 'Study'),
+        ('Medical', 'Medical'),
+        ('Migration', 'Migration'),
+        ('Family', 'Family'),
+        ('Diplomatic', 'Diplomatic'),
+        ('Working', 'Working'),
+        ('Business', 'Business'),
 
     )
 class VisaTypes(models.Model):
@@ -191,6 +191,9 @@ class VisaApplication(models.Model):
     upload_passport_back = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
     aadhar_front = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
     aadhar_back = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
+    country = models.CharField(max_length=13, blank=True, null=True, default='')
+    visa_type = models.CharField(max_length=13, blank=True, null=True, default='')
+    phone_number_two = models.CharField(max_length=13, blank=True, null=True)
     user = models.ForeignKey('Users', models.DO_NOTHING, null=False,blank=False,db_column='user_visa_application_id')
 
     class Meta:

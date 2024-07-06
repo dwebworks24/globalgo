@@ -41,7 +41,7 @@ def login_logic(request):
                         print("staff")
                         return JsonResponse({'redirect_url': '/staff_view/'})
                     else:
-                        print("student")
+                        print("customer")
                         return JsonResponse({'redirect_url': '/student_view/'})
             else:
                 msg = 'Invalid credentials'
