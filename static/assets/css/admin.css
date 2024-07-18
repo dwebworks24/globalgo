@@ -27,3 +27,8 @@
 .dropdown-item  {
     display: block;
 }
+
+.serviceItem01 .serContent p {
+    font-family: var(--heading-font);
+    margin: 0;
+}

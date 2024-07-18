@@ -23,6 +23,8 @@ def contactus(request):
     return render(request, 'uifiles/contact.html')
 def about(request):     
     return render(request, 'uifiles/about.html')
+def services(request):     
+    return render(request, 'uifiles/services.html')
 
 
 def signin(request):
