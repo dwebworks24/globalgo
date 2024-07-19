@@ -619,3 +619,33 @@ function save_ceac_application(){
         }
     });
 }
+
+
+
+function save_contact(){
+    var firstName = $("#firstName").val();
+    var conEmail = $("#conEmail").val();
+    var phone = $("#conPhone").val();
+    var subject = $("#conSubject").val();
+    var message = $("#conMessage").val();
+
+    var formData = {
+        firstName: firstName,
+        conEmail: conEmail,
+        conPhone: phone,
+        conSubject: subject,
+        conMessage: message,
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: '/contact_submit/',  
+        data: formData,
+        success: function(response) {
+            show_success(response['message'])
+        },
+        error: function(xhr, status, error) {
+            show_error(response.responseJSON['message'])
+        }
+    });
+}

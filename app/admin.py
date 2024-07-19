@@ -41,7 +41,10 @@ class AdminSecurityQuestion(admin.ModelAdmin):
 
 class AdminVisaApplication(admin.ModelAdmin):
     list_display=('applicationNo','phone_number_two','user_id')
-                  
+
+class AdminContact(admin.ModelAdmin):
+    list_display=('id','first_name' ,'email','phone','subject','message')                  
+
 admin.site.register(Users,AdminUserlist)
 admin.site.register(Country,AdminCountry)
 admin.site.register(VisaTypes,AdminCountryTpes)
@@ -49,3 +52,4 @@ admin.site.register(DependentDetails,AdminDependentDetails)
 admin.site.register(PointOfContact,AdminPointOfContact)
 admin.site.register(SecurityQuestion,AdminSecurityQuestion)
 admin.site.register(VisaApplication,AdminVisaApplication)
+admin.site.register(Contact,AdminContact)

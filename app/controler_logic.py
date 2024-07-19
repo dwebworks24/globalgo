@@ -455,3 +455,27 @@ def save_ceac_application(request):
         return JsonResponse({'message': 'Invalid request method'}, status=405)
 
 
+
+@csrf_exempt
+def contact_submit(request):
+    if request.method == 'POST':
+        firstName = request.POST.get('firstName')
+        conEmail = request.POST.get('conEmail')
+        conPhone = request.POST.get('conPhone')
+        conSubject = request.POST.get('conSubject')
+        conMessage = request.POST.get('conMessage')
+        
+        new_contact = Contact.objects.create(
+                first_name =firstName ,
+                email =conEmail,
+                phone =conPhone,
+                subject =conSubject,
+                message =conMessage,
+                created_at  =  datetime.now()
+              
+            )
+        new_contact.save()
+        
+        return JsonResponse({'message': 'Your message has been sent successfully!'})
+
+    return JsonResponse({'message': 'Invalid request'}, status=400)
