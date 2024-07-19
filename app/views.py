@@ -220,6 +220,19 @@ def student_view(request):
         html_template = loader.get_template('uifiles/page-500.html')
         return HttpResponse(html_template.render(context, request))
     
+@login_required
+@csrf_exempt    
+def customer_view(request):
+    context = {}
+    try:
+        country_list = Country.objects.all()
+        context['country'] = country_list 
+        return render(request, 'uifiles/customer_view.html',context)
+    
+    except template.TemplateDoesNotExist:
+        html_template = loader.get_template('uifiles/page-404.html')
+        return HttpResponse(html_template.render(context, request))
+                            
 
 @login_required
 @csrf_exempt    
@@ -275,10 +288,10 @@ def update_profile_details(request, user_id):
         return HttpResponse(html_template.render(context, request))
 
 @login_required
-def visa_application_list(request,country,visatype):
+def visa_application_list(request,countery_name,visatype):
     context = {}
     try:
-        context['application'] = VisaApplication.objects.filter(user__referal_code = request.user.referal_code,country=country,visa_type=visatype).values(
+        context['application'] = VisaApplication.objects.filter(user__referal_code = request.user.referal_code,country=countery_name,visa_type=visatype).values(
             'id','applicationNo','user__first_name','user__last_name','user__email','user__phone','user__id'
         )
         # context['user'] = Users.objects.filter(referal_code =request.user.referal_code)

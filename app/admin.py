@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from .models import *
 # Register your models here.
 class AdminUserlist(admin.ModelAdmin):
-    list_display=('id','username','email')
+    list_display=('id','username','password','email')
     list_filter = ['username','email','phone','referal_code']
     actions = ['export_to_csv']
     def export_to_csv(self, request,queryset):
