@@ -8879,3 +8879,24 @@ a{
 #visa-applications-table{
   border: 1px solid rgb(211, 210, 210);
 }
+
+.heroSection04 .heroSlider02 .sliderContent {
+  display: flex!important;
+  flex-direction: column!important;
+  justify-content: center!important;
+  align-items: center!important;
+}
+
+.heroSection04 .heroSlider02 .singleSlide .sliderContent h2 {
+  max-width: 100%!important;
+}
+.heroSection04 .heroSlider02 .sliderContent {
+  padding-left: 0px!important;
+}
+
+@media (max-width: 575px) {
+  .heroSection04 .heroSlider02 .singleSlide .sliderContent h2 {
+    font-size: 28px!important;
+
+  }
+}
