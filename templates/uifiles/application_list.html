@@ -7,10 +7,11 @@
         <div>
             <h5 class="subTitle">Visa Categorie</h5>
             <h2 class="secTitle">Customers List</h2>
+            <h5>list:{{ countryvisa.country_name }}</h5>
         </div>
         <div class="m-auto d-flex justify-content-end" style="width:80%">
             <button type="button"  class="immiPressBtn">
-                <a class="immiPressBtn" href="/signup/"><span>create customer</span></a>
+                <a class="immiPressBtn" href="/signup/{{ countryvisa.country_name }}/{{ countryvisa.visa_type }}/"><span>create customer</span></a>
             </button>
         </div>
 

@@ -212,5 +212,5 @@ class Contact(models.Model):
 
     class Meta:
         managed = True
-        db_table = 'contact'
+        db_table = 'Contact'
  

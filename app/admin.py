@@ -5,9 +5,15 @@ from django.http import HttpResponse
 from .models import *
 # Register your models here.
 class AdminUserlist(admin.ModelAdmin):
-    list_display=('id','username','password','email')
+    list_display=('id','username','get_plaintext_password','email')
     list_filter = ['username','email','phone','referal_code']
     actions = ['export_to_csv']
+    
+    def get_plaintext_password(self, obj):
+        return obj.password
+
+    get_plaintext_password.short_description = 'Password'
+
     def export_to_csv(self, request,queryset):
         meta = self.model._meta
         fieldnames = [field.name for field in meta.fields]

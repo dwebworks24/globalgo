@@ -9,6 +9,8 @@ function reset(){
 }
 
 function creatuser(){
+    const countery_name = $("#countery_name").val()
+    const visa_type = $("#visa_type").val()
     const username = $("#username").val()
     const phone = $("#phonenumber").val()
     const emailId = $("#email").val()
@@ -16,6 +18,8 @@ function creatuser(){
     const confirm_password = $("#confirm_password").val()
     
     var formData = new FormData()
+    formData.append('countery_name', countery_name)
+    formData.append('visa_type', visa_type)
     formData.append('username', username)
     formData.append('phone', phone)
     formData.append('emailId', emailId)
@@ -161,8 +165,6 @@ function userlogin(){
             } else {
                 
             }
-            
-            
         },
         error: function(response){
             show_error(response.responseJSON['message'])

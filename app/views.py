@@ -38,8 +38,10 @@ def signin(request):
         html_template = loader.get_template('uifiles/page-500.html')
         return HttpResponse(html_template.render(context, request))
 
-def signup(request):
-    return render(request, 'uifiles/signup.html')
+def signup(request,countery_name,visatype):
+    context ={}
+    context['countryvisa'] = {'country_name': countery_name, 'visa_type': visatype}
+    return render(request, 'uifiles/signup.html',context)
 
 def admin_logout(request):
     x= 'text'
@@ -291,6 +293,7 @@ def update_profile_details(request, user_id):
 def visa_application_list(request,countery_name,visatype):
     context = {}
     try:
+        context['countryvisa'] = {'country_name': countery_name, 'visa_type': visatype}
         context['application'] = VisaApplication.objects.filter(user__referal_code = request.user.referal_code,country=countery_name,visa_type=visatype).values(
             'id','applicationNo','user__first_name','user__last_name','user__email','user__phone','user__id'
         )

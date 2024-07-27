@@ -44,7 +44,8 @@ def login_logic(request):
                         print("customer")
                         return JsonResponse({'redirect_url': '/customer_view/'})
             else:
-                msg = 'Invalid credentials'
+                return JsonResponse({'message': 'Invalid credentials.'}, status=400)
+                # msg = 'Invalid credentials'
         
         except KeyError:
             return JsonResponse({'message': 'Invalid request parameters.'}, status=400)
@@ -60,6 +61,8 @@ def login_logic(request):
 def UserRegister(request):
     if request.method == 'POST':
         try:
+            countery_name = request.POST.get("countery_name")
+            visa_type = request.POST.get("visa_type")
             user_name = request.POST.get("username")
             phone = request.POST.get("phone")
             user_email = request.POST.get("emailId")
@@ -93,6 +96,8 @@ def UserRegister(request):
             application_number = f"{application_id}{user_id}"
             visa_application_obj = VisaApplication()
             visa_application_obj.applicationNo = int(application_number)
+            visa_application_obj.country = countery_name
+            visa_application_obj.visa_type = visa_type
             visa_application_obj.user_id = user_id
             visa_application_obj.save()
 
