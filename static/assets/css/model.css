@@ -1,0 +1,20 @@
+.modal .modal-content{
+    width: 850px !important; 
+    margin-left: -150px;
+}
+
+
+@media (max-width: 780px) {
+    .modal .modal-content{
+        width: 350px !important; 
+        margin-left: -8px !important;
+    }
+    .modal-body input{
+        width: 300px !important;
+    }
+}
+
+.site-btn{
+    background-color: #0e46a6 !important;
+    outline: none !important;
+}

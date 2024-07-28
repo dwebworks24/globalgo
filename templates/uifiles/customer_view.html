@@ -8,29 +8,46 @@
         <div class="factWrapper">
           <div class="row">
             <!-- Funfact Item -->
-            <div class="col-lg-3 col-sm-6 brRight text-center">
-              <div class="funfact01">
-                <h3 class="count-box counted"><span class="count-text" data-speed="3000" data-stop="420">Application Details</span></h3>
+            <div class="col-lg-4 col-sm-6 brRight text-center">
+              <div class="funfact01 shadow p-3 mb-5 bg-body rounded">
+                <h3 class="count-box counted"><span class="count-text" data-speed="3000"
+                    data-stop="420"></span>Application Details</h3>
                 <h5></h5>
                 <div class="btnInfo">
-                  <a class="immiPressBtn animated" href="contact.html"><span>Show</span></a>
-              </div>
+                  <a class="immiPressBtn animated" data-bs-toggle="modal" data-bs-target="#application-model"
+                    style="margin: auto !important;"><span>Show</span></a>
+                </div>
               </div>
             </div>
             <!-- Funfact Item -->
-             <!-- Funfact Item -->
-            <div class="col-lg-3 col-sm-6 brRight text-center">
-              <div class="funfact01">
-                <h3 class="count-box counted"><span class="count-text" data-speed="3000" data-stop="420">Dependent Details</span></h3>
+            <!-- Funfact Item -->
+            <div class="col-lg-4 col-sm-6 brRight text-center">
+              <div class="funfact01 shadow p-3 mb-5 bg-body rounded">
+                <h3 class="count-box counted"><span class="count-text" data-speed="3000" data-stop="420">Dependent
+                    Details</span></h3>
                 <h5></h5>
                 <div class="btnInfo">
-                  <a class="immiPressBtn animated" href="contact.html"><span>Show</span></a>
-              </div>
+                  <a class="immiPressBtn animated" data-bs-toggle="modal" data-bs-target="#dependent-model"
+                    style="margin: auto !important;"><span>Show</span></a>
+                </div>
               </div>
             </div>
             <!-- Funfact Item -->
-             <!-- Funfact Item -->
-            <div class="col-lg-3 col-sm-6 brRight text-center">
+            <!-- Funfact Item -->
+            <div class="col-lg-4 col-sm-6 brRight text-center">
+              <div class="funfact01 shadow p-3 mb-5 bg-body rounded">
+                <h3 class="count-box counted"><span class="count-text" data-speed="3000" data-stop="420">Us Point of
+                    Contcat</span></h3>
+                <h5></h5>
+                <div class="btnInfo">
+                  <a class="immiPressBtn animated" data-bs-toggle="modal" data-bs-target="#us-point-ofcontact-model"
+                    style="margin: auto !important;"><span>Show</span></a>
+                </div>
+              </div>
+            </div>
+            <!-- Funfact Item -->
+            <!-- Funfact Item -->
+            <!-- <div class="col-lg-3 col-sm-6 brRight text-center">
               <div class="funfact01">
                 <h3 class="count-box counted"><span class="count-text" data-speed="3000" data-stop="420">Application Details</span></h3>
                 <h5></h5>
@@ -38,24 +55,311 @@
                   <a class="immiPressBtn animated" href="contact.html"><span>Contact Us</span></a>
               </div>
               </div>
-            </div>
+            </div> -->
             <!-- Funfact Item -->
-             <!-- Funfact Item -->
-            <div class="col-lg-3 col-sm-6 brRight text-center">
-              <div class="funfact01">
-                <h3 class="count-box counted"><span class="count-text" data-speed="3000" data-stop="420">Application Details</span></h3>
-                <h5></h5>
-                <div class="btnInfo">
-                  <a class="immiPressBtn animated" href="contact.html"><span>Contact Us</span></a>
-              </div>
+            <!-- Vertically centered modal -->
+            <!-- Modal application-->
+            <div class="modal fade" id="application-model" data-bs-backdrop="static" data-bs-keyboard="false"
+              tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Add Application Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <section style="width: 800px;">
+                      <h4 class="font-normal">Customer Information</h4>
+                      <input type="hidden" name="customer_id" id="customer_id" value="{{customer.id}}">
+                      <div class="row">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="">First Name</label>
+                          <input type="text" id="first_name" name="first_name" value="{{customer.first_name}}"
+                            class="form-control" placeholder="Please enter first name" required
+                            data-error="Please enter your first name">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="">Last Name</label>
+                          <input type="text" id="last_name" name="last_name" value="{{customer.last_name}}"
+                            class="form-control" placeholder="Please enter first name" required
+                            data-error="Please enter your first name">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="">Email</label>
+                          <input type="text" id="email" name="email" value="{{customer.email}}" class="form-control"
+                            placeholder="Please enter email" data-error="Please enter your email">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                          <label for="">Phone Number</label>
+                          <input type="text" id="phone_number" name="phone_number" value="{{customer.phone}}"
+                            class="form-control" placeholder="Please enter phone number"
+                            data-error="Please enter your phone number">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                          <label for="">Second Phone Number (optional)</label>
+                          <input type="number" id="second_phone_number" name="second_phone_number"
+                            value="{{applicant.phone_number_two}}" class="form-control"
+                            placeholder="Please enter phone number" required
+                            data-error="Please enter your phone number">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                          <label for="">Upload Passport Front</label>
+                          <input type="file" id="passport_front" name="passport_front" value="" class="form-control"
+                            placeholder="Please enter phone number" data-error="Please enter your phone number">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                          <label for="">Upload Passport Back</label>
+                          <input type="file" id="passport_back" name="passport_back" value="" class="form-control"
+                            placeholder="Please enter phone number" data-error="Please enter your phone number">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                          <label for="">Upload Aadhar Front</label>
+                          <input type="file" id="aadhar_front" name="aadhar_front" value="" class="form-control"
+                            placeholder="Please enter phone number" required
+                            data-error="Please enter your phone number">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                          <label for="">Upload Aadhar Back</label>
+                          <input type="file" id="aadhar_back" name="aadhar_back" value="" class="form-control"
+                            placeholder="Please enter phone number" required
+                            data-error="Please enter your phone number">
+                        </div>
+                      </div>
+                      <div class="mt-3">
+                        <button class="button site-btn" onclick="save_customer_info()" type="button">submit</button>
+                      </div>
+                    </section>
+                  </div>
+                  <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" onclick="save_customer_info()">Save</button>
+                </div> -->
+                </div>
               </div>
             </div>
-            <!-- Funfact Item -->
-           
+            <!-- Modal dependent details-->
+            <div class="modal fade" id="dependent-model" data-bs-backdrop="static" data-bs-keyboard="false"
+              tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Add dependent Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <section id="step-2">
+                      <h4 class="font-normal">Dependent Details</h4>
+                      <!-- Step 2 input fields -->
+                      <div id="dependents-container">
+                        <div class="row dependent-row">
+                          <div class="col-md-4 col-sm-12 col-xs-12">
+                            <label for="dependent_first_name">First
+                              Name</label>
+                            <input type="text" id="dependent_first_name" name="dependent_first_name[]"
+                              class="form-control" placeholder="Please enter first name" required
+                              data-error="Please enter your first name">
+                          </div>
+                          <div class="col-md-4 col-sm-12 col-xs-12">
+                            <label for="dependent_last_name">Last
+                              Name</label>
+                            <input type="text" id="dependent_last_name" name="dependent_last_name[]"
+                              class="form-control" placeholder="Please enter last name" required
+                              data-error="Please enter your last name">
+                          </div>
+                          <div class="col-md-4 col-sm-12 col-xs-12">
+                            <label for="dependent_email">Email</label>
+                            <input type="email" id="dependent_email" name="dependent_email[]" class="form-control"
+                              placeholder="Please enter email" required data-error="Please enter your email">
+                          </div>
+                          <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                            <label for="dependent_phone_number">Phone
+                              Number</label>
+                            <input type="text" id="dependent_phone_number" name="dependent_phone_number[]"
+                              class="form-control" placeholder="Please enter phone number" required
+                              data-error="Please enter your phone number">
+                          </div>
+                          <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                            <label for="dependent_second_phone_number">Second
+                              Phone Number (optional)</label>
+                            <input type="text" id="dependent_second_phone_number" name="dependent_second_phone_number[]"
+                              class="form-control" placeholder="Please enter second phone number">
+                          </div>
+                          <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                            <label for="dependent_passport_front">Upload
+                              Passport Front</label>
+                            <input type="file" id="dependent_passport_front" name="dependent_passport_front[]"
+                              class="form-control" required data-error="Please upload passport front">
+                          </div>
+                          <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                            <label for="dependent_passport_back">Upload
+                              Passport Back</label>
+                            <input type="file" id="dependent_passport_back" name="dependent_passport_back[]"
+                              class="form-control" required data-error="Please upload passport back">
+                          </div>
+                          <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                            <label for="dependent_aadhar_front">Upload
+                              Aadhar Front</label>
+                            <input type="file" id="dependent_aadhar_front" name="dependent_aadhar_front[]"
+                              class="form-control" required data-error="Please upload Aadhar front">
+                          </div>
+                          <div class="col-md-4 col-sm-12 col-xs-12 mt-3">
+                            <label for="dependent_aadhar_back">Upload Aadhar
+                              Back</label>
+                            <input type="file" id="dependent_aadhar_back" name="dependent_aadhar_back[]"
+                              class="form-control" required data-error="Please upload Aadhar back">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div>
+                          <button class="btn btn-primary btn-sm mt-3" type="button" onclick="add_depented()">+ Add
+                            Dependent</button>
+                        </div>
+                      </div>
+                      <div class="mt-3">
+                        <button class="button site-btn" type="button" onclick="saveDependents()">Submit</button>
+
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal application-->
+            <div class="modal fade" id="us-point-ofcontact-model" data-bs-backdrop="static" data-bs-keyboard="false"
+              tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Add uspoint of contact Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <section id="step-3" >
+                      <h4 class="font-normal">US POINT OF CONTACT</h4>
+                      <!-- Step 3 input fields -->
+                      <div class="row">
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="first_name">First Name</label>
+                          <input type="text" id="us_point_first_name" name="us_point_first_name"
+                            value="{{uspoint.first_name}}" class="form-control"
+                            placeholder="Please enter your first name">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="last_name">Last Name</label>
+                          <input type="text" id="us_point_last_name" name="us_point_last_name"
+                            value="{{uspoint.last_name}}" class="form-control"
+                            placeholder="Please enter your last name">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="email">Email</label>
+                          <input type="text" id="us_point_email" name="us_point_email" value="{{uspoint.email}}"
+                            class="form-control" placeholder="Please enter email">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="organization_yes_no">Are you associated
+                            with an organization?</label>
+                          <div>
+                            <input type="radio" id="us_point_organization_yes" name="us_point_organization_yes_no"
+                              value="yes" onclick="showOrganizationDetails()"> Yes
+                            <input type="radio" id="organization_no" name="organization_yes_no" value="no"
+                              onclick="hideOrganizationDetails()"> No
+                          </div>
+                        </div>
+                        <div id="organization_details" class="d-none">
+                          <div class="d-flex">
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                              <label for="organization_name">Organization
+                                Name</label>
+                              <input type="text" id="us_point_organization_name" name="us_point_organization_name"
+                                value="{{uspoint.organization_name}}" class="form-control"
+                                placeholder="Please enter organization name">
+                            </div>&nbsp;&nbsp;&nbsp;
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                              <label for="organization_address">Organization
+                                Address</label>
+                              <input type="text" id="us_point_organization_address" name="us_point_organization_address"
+                                value="{{uspoint.organization_address}}" class="form-control"
+                                placeholder="Please enter organization address">
+                            </div>&nbsp;&nbsp;&nbsp;
+                            <div class="col-md-4 col-sm-12 col-xs-12">
+                              <label for="years_experience">Years of Professional
+                                Experience</label>
+                              <input type="text" id="us_point_years_experience" name="us_point_years_experience"
+                                value="{{uspoint.professional_experience}}" class="form-control"
+                                placeholder="Please enter your years of experience">
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="relationship_to_you">Relationship to
+                            You</label>
+                          <select id="us_point_relationship_to_you" name="us_point_relationship_to_you"
+                            class="form-control">
+                            <option value="brother">Brother
+                            </option>
+                            <option value="sister" >uncle
+                            </option>
+                            <option value="other">Other
+                            </option>
+                          </select>
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="us_street_name">US Street Name</label>
+                          <input type="text" id="us_point_us_street_name" name="us_point_us_street_name"
+                            value="{{uspoint.street_name}}" class="form-control"
+                            placeholder="Please enter US street name">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="us_street_address">US Street
+                            Address</label>
+                          <input type="text" id="us_point_us_street_address" name="us_point_us_street_address"
+                            value="{{uspoint.street_name_address}}" class="form-control"
+                            placeholder="Please enter US street address">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="city">City</label>
+                          <input type="text" id="us_point_city" name="us_point_city" value="{{uspoint.city}}"
+                            class="form-control" placeholder="Please enter city">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="state">State</label>
+                          <input type="text" id="us_point_state" name="us_point_state" value="{{uspoint.state}}"
+                            class="form-control" placeholder="Please enter state">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="zipcode">Zip Code</label>
+                          <input type="text" id="us_point_zipcode" name="us_point_zipcode" value="{{uspoint.zipcode}}"
+                            class="form-control" placeholder="Please enter zip code">
+                        </div>
+                        <div class="col-md-4 col-sm-12 col-xs-12">
+                          <label for="phone">Phone</label>
+                          <input type="text" id="us_point_phone" name="us_point_phone" value="{{uspoint.phone}}"
+                            class="form-control" placeholder="Please enter phone number">
+                        </div>
+
+                      </div>
+                      <div class="mt-3">
+                        <button class="button site-btn" type="button" onclick="save_UsPoint_of_contact()">Save</button>
+
+                      </div>
+                    </section>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+
+
+
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+<script src="{% static 'assets/js/user.js' %}"></script>
 {% endblock %}

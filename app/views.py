@@ -227,6 +227,11 @@ def student_view(request):
 def customer_view(request):
     context = {}
     try:
+        userid = request.user.id
+        save_user = Users.objects.filter(id=userid).first()
+        context['applicant'] = VisaApplication.objects.filter(user_id=userid).first()
+        context['customer'] = save_user 
+        application_number = context['applicant'].id
         country_list = Country.objects.all()
         context['country'] = country_list 
         return render(request, 'uifiles/customer_view.html',context)

@@ -441,7 +441,7 @@ function save_customer_info(){
             show_success(response['message'])
         
         },
-        error: function(xhr, status, error) {
+        error: function(response) {
             show_error(response.responseJSON['message'])
         }
     });
@@ -487,7 +487,7 @@ function saveDependents() {
             show_success(response['message'])
         
         },
-        error: function(xhr, status, error) {
+        error: function(response) {
             show_error(response.responseJSON['message'])
         }
     })
@@ -544,7 +544,7 @@ function save_UsPoint_of_contact() {
             show_success(response['message'])
         
         },
-        error: function(xhr, status, error) {
+        error: function(response) {
             show_error(response.responseJSON['message'])
         }
     })
@@ -582,7 +582,7 @@ function save_cgi_application(){
         success: function(response) {
             show_success(response['message'])
         },
-        error: function(xhr, status, error) {
+        error: function(response) {
             show_error(response.responseJSON['message'])
         }
     });
@@ -616,7 +616,7 @@ function save_ceac_application(){
         success: function(response) {
             show_success(response['message'])
         },
-        error: function(xhr, status, error) {
+        error: function(response) {
             show_error(response.responseJSON['message'])
         }
     });
@@ -646,7 +646,7 @@ function save_contact(){
         success: function(response) {
             show_success(response['message'])
         },
-        error: function(xhr, status, error) {
+        error: function(response) {
             show_error(response.responseJSON['message'])
         }
     });
