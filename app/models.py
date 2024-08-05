@@ -53,12 +53,20 @@ class Users(AbstractBaseUser, PermissionsMixin):
     referal_code  = models.CharField(max_length=100,blank=True, null=True)
     pincode = models.IntegerField(blank=True, null=True)
     address = models.TextField(blank=True, null=True)
+    videos_show = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    VISIBLE = True
+    HIDDEN = False
+    VISIBILITY_CHOICES = [
+        (VISIBLE, 'Visible'),
+        (HIDDEN, 'Hidden'),
+    ]
+    videos_show = models.BooleanField(choices=VISIBILITY_CHOICES, default=VISIBLE)
     # Required for custom user model
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+     
 
     # Define the field to be used as the unique identifier for logging in
     USERNAME_FIELD = 'email'

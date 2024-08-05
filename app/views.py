@@ -225,7 +225,7 @@ def student_view(request):
 @login_required
 @csrf_exempt    
 def customer_view(request):
-    context = {}
+    context = {'show_container': True }
     try:
         userid = request.user.id
         save_user = Users.objects.filter(id=userid).first()
@@ -234,6 +234,7 @@ def customer_view(request):
         application_number = context['applicant'].id
         country_list = Country.objects.all()
         context['country'] = country_list 
+      
         return render(request, 'uifiles/customer_view.html',context)
     
     except template.TemplateDoesNotExist:
