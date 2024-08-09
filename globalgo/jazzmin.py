@@ -9,7 +9,7 @@ JAZZMIN_SETTINGS = {
     "site_brand": "GlobalGo",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
-    "site_logo": "img/logo/jazmin-logo.png",
+    "site_logo": "/assets/images/bg/logo.gif",
 
     # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
     "login_logo": None,
@@ -48,7 +48,7 @@ JAZZMIN_SETTINGS = {
         {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
 
         # external url that opens in a new window (Permissions can be added)
-        {"name": "Visite Site", "url": "/", "new_window": True},
+        # {"name": "Visite Site", "url": "/", "new_window": True},
         {"name": "LogOut", "url": "/logout/"},
         {"name": "PasswordChange", "url": "/admin/password_change/"},
 

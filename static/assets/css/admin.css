@@ -33,3 +33,6 @@
     margin: 0;
 }
 
+.nav-link{
+    display: none !important;
+}
