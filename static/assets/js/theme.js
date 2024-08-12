@@ -127,6 +127,8 @@
             nav: true,
             navText: ['<i class="flaticon-right-arrow-angle"></i>', '<i class="flaticon-right-arrow-angle"></i>'],
             dots: false,
+            smartSpeed: 400,
+            autoplay: true,
             items: 4,
             responsiveClass:true,
             responsive:{
