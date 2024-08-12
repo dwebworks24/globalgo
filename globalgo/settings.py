@@ -30,6 +30,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
+# ALLOWED_HOSTS = ['globalgogateway.com','www.globalgogateway.com']
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -150,6 +152,19 @@ else:
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+# if DEBUG == True:
+#    STATICFILES_DIRS = (
+#     STATIC_DIRS,
+# )
+
+# else:
+#     STATIC_ROOT = '/home/nio5dbrery7o/globalgo/static/'
+
+# MEDIA_ROOT = '/home/nio5dbrery7o/globalgo/media/'
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -159,5 +174,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER =  'krystatesting@gmail.com'
+EMAIL_HOST_USER =  ''
 EMAIL_HOST_PASSWORD =  'taihppzbhoeqeklu '  
