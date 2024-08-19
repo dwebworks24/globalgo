@@ -144,13 +144,13 @@ function resetlogin() {
 
 function userlogin(){
     const email = $("#email").val()
-    const password = $("#password").val()
-    let csrfmiddlewaretoken = $('input[name=csrfmiddlewaretoken]').val()
+    // const password = $("#password").val()
+    // let csrfmiddlewaretoken = $('input[name=csrfmiddlewaretoken]').val()
     
     var formData = new FormData()
     formData.append('emailId', email)
-    formData.append('password', password)
-    formData.append('csrfmiddlewaretoken',csrfmiddlewaretoken)
+    // formData.append('password', password)
+    // formData.append('csrfmiddlewaretoken',csrfmiddlewaretoken)
    
     $.ajax({
         url: '/sigin/',
@@ -159,12 +159,14 @@ function userlogin(){
         processData: false,
         contentType: false,
         success: function(response){
-            if (response.redirect_url) {
-                resetlogin();
-                window.location.href = response.redirect_url;
-            } else {
-                
-            }
+            // show_success(response['message'])
+            window.location.href = '/otp_view/';
+            // if (response.redirect_url) {
+            //     resetlogin();
+            //     window.location.href = response.redirect_url;
+            // } else {
+            //     window.location.href = '/otp_view/';
+            // }
         },
         error: function(response){
             show_error(response.responseJSON['message'])
@@ -173,6 +175,35 @@ function userlogin(){
     })
 }
 
+//otp login
+function verify_otp_login(){
+    const entered_otp = getOtpText();
+    let csrfmiddlewaretoken = $('input[name=csrfmiddlewaretoken]').val();
+
+    var formData = new FormData();
+    formData.append('enterOtp', entered_otp)
+    formData.append('csrfmiddlewaretoken',csrfmiddlewaretoken)
+    $.ajax({
+        url: '/otp_pass_verification/',
+        method: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response){
+            show_success(response['message'])
+            if (response) {
+                window.location.href = response.redirect_url;
+            } else {
+                alert("fail to redirect")
+            }
+             
+        },
+        error: function(response){
+            show_error(response.responseJSON['message'])
+        }
+        
+    })
+}
 
 
 function verifyotp(){
@@ -451,7 +482,7 @@ function save_customer_info(){
 function saveDependents() {
     const form = document.getElementById('userAccountSetupForm');
     const formData = new FormData(form);
-
+  
     const dependentsData = [];
     const firstNames = formData.getAll('dependent_first_name[]');
     const lastNames = formData.getAll('dependent_last_name[]');

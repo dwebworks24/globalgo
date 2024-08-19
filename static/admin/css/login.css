@@ -59,3 +59,10 @@
 .login .password-reset-link {
     text-align: center;
 }
+
+a.nav-link.btn {
+    display: none;
+}
+#jazzy-navbar .nav-link{
+    display: none !important;
+}

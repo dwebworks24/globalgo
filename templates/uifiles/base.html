@@ -29,6 +29,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
         <!-- END: Favicon -->
+        
     </head>
     <body>
         <!-- BEGIN: PreLoder Section -->
@@ -53,7 +54,7 @@
                         <div class="header01Inner">
                             <!-- Logo -->
                             <div class="logo01" >
-                                <a href="index.html">
+                                <a href="/">
                                     <img src="{% static 'assets/images/bg/logo.gif' %}" style="height: 80px;" alt="ImmiPress"/>
                                 </a>
                             </div>
@@ -81,8 +82,11 @@
                                             {% endif %} 
                                             {% if request.user.is_authenticated %}
                                             <ul class="sub-menu">
-                                                <li><a href="/profile_view/{{request.user.id}}/"><i class="fas fa-brands fa-user"></i>&nbsp;Profile</a></li>
-                                                <li><a href="/otp_verification_mail/"><i class="fas fa-brands fa-key"></i>ChangePassword</a></li>
+                                                {% if request.user.is_authenticated and request.user.role == 'staff' %}
+                                                 <li><a href="/staff_view/"><i class="fas fa-brands fa-list"></i>&nbsp;Countrys</a></li>
+                                                {% endif %}
+                                                <!-- <li><a href="/profile_view/{{request.user.id}}/"><i class="fas fa-brands fa-user"></i>&nbsp;Profile</a></li> -->
+                                                <!-- <li><a href="/otp_verification_mail/"><i class="fas fa-brands fa-key"></i>ChangePassword</a></li> -->
                                                 <li><a href="/logout/"><i class="fas fa-brands fa-lock"></i>&nbsp;LogOut</a></li>                                        
                                             </ul>
                                             {% endif %}
@@ -147,12 +151,13 @@
                             <div class="iconBox01">
                                 <div class="ibBox"><i class="flaticon-phone-call"></i></div>
                                 <h3 class="ibTitle">Phone</h3>
-                                <p>+1(602)760-6618<br>+91 9182714452</p>
+                                <p>+91 9182714452 <br> +91 7680924452</p>
                             </div>
                             <div class="iconBox01">
                                 <div class="ibBox"><i class="flaticon-email-1"></i></div>
                                 <h3 class="ibTitle">Email</h3>
-                                <p>explorenexoverseas@gmail.com</p>
+                                <p>globalgogateway@gmail.com</p><br/>
+                                <p>info@globalgogateway.com</p>
                             </div>
                         </aside>
                     </div>
@@ -202,6 +207,7 @@
         <script src="{% static 'assets/js/theme.js' %}"></script>
         <!-- <script src="{% static 'assets/js/main.js' %}"></script> -->
         <script src="{% static 'assets/js/user.js' %}"></script>
+        <script src="{% static 'assets/js/otp_validate.js' %}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- END: JS -->
         <!-- Include DataTables JS -->

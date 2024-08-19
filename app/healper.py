@@ -25,7 +25,7 @@ def decrypt_user_id(encrypted_user_id):
 
 
 def generate_email_message(otp,name):
-    body = f"Hello {name},\n\nYour OTP for changing the password is: {otp}.\n\nPlease use this OTP to proceed with the password change process.\n\nIf you didn't request this change, please ignore this email.\n\nBest regards,\nGlobalGo"
+    body = f"Hello {name},\n\nYour OTP for login: {otp}.\n\nPlease use this OTP to proceed to login.\n\nIf you didn't request this change, please ignore this email.\n\nBest regards,\nGlobalGo"
     return body
 
 def send_otp_email(subject,body,sender_email, receipt_email):
@@ -41,16 +41,16 @@ def send_otp_email(subject,body,sender_email, receipt_email):
 def send_otp_email_notification(request,name,emailid):
     totp = pyotp.TOTP(pyotp.random_base32(), interval=60)
     otp = totp.now()
-    request.session['otp_secret_key'] = totp.secret
-    valid_date = datetime.now() + timedelta(minutes=2)
-    request.session['otp_valid_date'] = valid_date.isoformat()
+    # request.session['otp_secret_key'] = totp.secret
+    # valid_date = datetime.now() + timedelta(minutes=2)
+    # request.session['otp_valid_date'] = valid_date.isoformat()
     request.session['otp'] = otp  # Save OTP in session
     sender_emailid = settings.EMAIL_HOST_USER
     subject = 'Password Change OTP'
     body = generate_email_message(otp,name)
     # print('your OTP:',otp)
     send_otp_email(subject,body,sender_email=sender_emailid,receipt_email=emailid)
-    return valid_date 
+    return otp 
 
 class Attachments:
     filename: str = None

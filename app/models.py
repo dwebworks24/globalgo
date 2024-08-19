@@ -75,7 +75,7 @@ class Users(AbstractBaseUser, PermissionsMixin):
 
     # Custom user manager
     objects = UserManager()
-
+    otp = models.IntegerField(blank=True, null=True)
     role = models.CharField(choices=user_roles,max_length=100,null=True,blank=True,default='admin')
 
     def __str__(self):
@@ -100,7 +100,8 @@ class Country(models.Model):
     class Meta:
         managed = True
         db_table = 'country_list'
-
+    def __str__(self):
+        return self.countery_name
 
 Visa_Types = (
         ('visit', 'visit'),

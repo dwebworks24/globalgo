@@ -147,11 +147,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <section id="step-2">
+                    <form id="userAccountSetupForm" >
                       <h4 class="font-normal">Dependent Details</h4>
                       <!-- Step 2 input fields -->
-                      <div id="dependents-container">
+                      <div  id="dependents-container" >
                         <div class="row dependent-row">
+                          <input type="hidden" name="customer_id" id="customer_id" value="{{customer.id}}">
                           <div class="col-md-4 col-sm-12 col-xs-12">
                             <label for="dependent_first_name">First
                               Name</label>
@@ -221,7 +222,7 @@
                         <button class="button site-btn" type="button" onclick="saveDependents()">Submit</button>
 
                       </div>
-                    </section>
+                    </form>
                   </div>
                 </div>
               </div>

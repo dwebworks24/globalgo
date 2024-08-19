@@ -62,6 +62,19 @@ def staff_signup(request):
         return HttpResponse(html_template.render(context, request))
 
 
+def otp_login(request):
+    context ={}
+    try:
+        return render(request, 'uifiles/otp-view.html')
+    
+    except template.TemplateDoesNotExist:
+        html_template = loader.get_template('uifiles/page-404.html')
+        return HttpResponse(html_template.render(context, request))
+    except:
+        html_template = loader.get_template('uifiles/page-500.html')
+        return HttpResponse(html_template.render(context, request))
+
+
 @login_required
 def logout_view(request):
     try:

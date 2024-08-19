@@ -13,7 +13,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from cryptography.fernet import Fernet
 import pyotp 
-
+from .healper import send_otp_email_notification,send_smtp_mail,encrypt_user_id
+from django.core.validators import validate_email
 
 @login_required
 def check_authentication(request):
@@ -23,14 +24,56 @@ def check_authentication(request):
         return JsonResponse({'authenticated': False})
     
 
-
+@csrf_exempt
 def login_logic(request):
     if request.method == "POST":
         try:
+            list_users = Users.objects.all()
             email = request.POST.get("emailId")
-            password = request.POST.get("password")
-            user = authenticate(email=email, password=password)
-            if user is not None and user.is_active:
+            for use_email in list_users:
+                if use_email.email == email:
+                    otp_val = send_otp_email_notification(request, name='globalgogateway', emailid=email)
+                    use_email.otp = otp_val
+                    use_email.save()
+                    return JsonResponse({'message': 'OTP Sending successfully.','redirect_url': '/otp_veiw/'})
+            return JsonResponse({'message': 'Invalid User email...'})
+            # password = request.POST.get("password")
+            # user = authenticate(email=email, password=password)
+            # if user is not None and user.is_active:
+            #     login(request, user)
+            #     if user:
+            #         if user.role == "admin":
+            #             print('admin')
+            #             return JsonResponse({'redirect_url': '/admin/'})
+                    
+            #         elif user.role == "staff":
+            #             print("staff")
+            #             return JsonResponse({'redirect_url': '/staff_view/'})
+            #         else:
+            #             print("customer")
+            #             return JsonResponse({'redirect_url': '/customer_view/'})
+            # else:
+            #     return JsonResponse({'message': 'Invalid credentials.'}, status=400)
+                # msg = 'Invalid credentials'
+        
+        except KeyError:
+            return JsonResponse({'message': 'Invalid request parameters.'}, status=400)
+        except Exception as e:
+            return JsonResponse({'message': str(e)}, status=500)
+    else:
+            return JsonResponse({'message': 'Method not allowed.'}, status=405)
+    
+
+@csrf_exempt
+def otp_pass_verification(request):
+    try:
+        post_data = request.POST
+        enter_otp = post_data['enterOtp']
+        if not enter_otp:
+            return JsonResponse({'message': 'OTP is required.'}, status=400)
+        
+        user = Users.objects.get(otp=enter_otp)
+        if user is not None and user.is_active:
                 login(request, user)
                 if user:
                     if user.role == "admin":
@@ -43,16 +86,18 @@ def login_logic(request):
                     else:
                         print("customer")
                         return JsonResponse({'redirect_url': '/customer_view/'})
-            else:
-                return JsonResponse({'message': 'Invalid credentials.'}, status=400)
-                # msg = 'Invalid credentials'
-        
-        except KeyError:
-            return JsonResponse({'message': 'Invalid request parameters.'}, status=400)
-        except Exception as e:
-            return JsonResponse({'message': str(e)}, status=500)
-    else:
-            return JsonResponse({'message': 'Method not allowed.'}, status=405)
+                else:
+                    return JsonResponse({'message': 'Invalid otp.'}, status=400)
+        else:
+            return JsonResponse({'message': 'OTP verification data not found in session.'}), 
+    except KeyError:
+        return JsonResponse({'message': 'Invalid request parameters.'}, status=400)
+    except Exception as e:
+        return JsonResponse({'message': str(e)}, status=500)
+
+
+
+
 
 
 

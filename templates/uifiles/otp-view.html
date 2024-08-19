@@ -1,0 +1,113 @@
+{% extends 'uifiles/base.html' %}
+{% load static %}
+{% block content %}
+   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+
+
+#otp-form {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+#otp-form input {
+  border: none;
+  background-color: #fffefe;
+  color: rgba(7, 7, 7, 0.979);
+  font-size: 32px;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  max-width: 70px;
+  height: 50px;
+  border-radius: 4px;
+  outline: 2px solid rgb(48, 81, 124);
+}
+#otp-form input:focus-visible {
+  outline: 2px solid royalblue;
+}
+#otp-form input.filled {
+  outline: 2px solid rgb(7, 192, 99);
+}
+#verify-btn {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 30px;
+  background: royalblue;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  border: none;
+}
+
+.request-btn {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 30px;
+    background: royalblue;
+    color: white;
+    padding: 7px 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    border: none;
+    margin: auto;
+  }
+
+  .otp-card{
+    height: 400px;
+  }
+
+  .otp-enter{
+    display: block;
+  }
+   </style>
+        <!-- End breadcumb Area -->
+        <div class="login-area page-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="login-page">
+                            <div class="login-form p-5">
+                                <div class="row contactForm d-flex justify-content-center">
+                                    <div class="card" style="width: 500px">
+                                        <div class="card-body p-5">
+                                            <div class="cwBg1">
+                                                <h4 class="secTitle text-center">Verify Your OTP</h4>
+                                                <div class="contactForm">
+                                                    <form>
+                                                        {% csrf_token %}
+                                                          <div id="otp-form">
+                                                              <input type="text" class="otp-input" maxlength="1">
+                                                              <input type="text" class="otp-input" maxlength="1">
+                                                              <input type="text" class="otp-input" maxlength="1">
+                                                              <input type="text" class="otp-input" maxlength="1">
+                                                              <input type="text" class="otp-input" maxlength="1">
+                                                              <input type="text" class="otp-input" maxlength="1">
+                                                          </div>
+                                                          <div class="mb-3 mx-auto" style="width: 50%;">
+                                                            <button class="btn btn-primary w-100 waves-effect waves-light mt-4" onclick="verify_otp_login()"  type="button">Verify OTP</button>
+                                                        </div>
+                                                          <!-- <div class="d-flex justify-content-center" >
+                                                              <button type="button" id="verify-btn">Verify OTP</button>
+                                                          </div> -->
+                                                       </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+   
+        <!-- Start Slider Area -->
+     {% endblock %}
+		

@@ -1143,3 +1143,11 @@ a.deletelink:focus, a.deletelink:hover {
 .base-svgs {
     display: none;
 }
+
+
+a.nav-link.btn {
+    display: none;
+}
+#jazzy-navbar .nav-link{
+    display: none !important;
+}
