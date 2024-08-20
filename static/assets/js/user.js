@@ -190,7 +190,7 @@ function verify_otp_login(){
         processData: false,
         contentType: false,
         success: function(response){
-            show_success(response['message'])
+            // show_success(response['message'])
             if (response) {
                 window.location.href = response.redirect_url;
             } else {
