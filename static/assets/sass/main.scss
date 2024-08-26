@@ -2110,6 +2110,7 @@ header.fixedHeader.header02{
         width: 100%;
         border-radius: 5px;
         padding: 43px 0 0;
+        height: 350px !important;
 
         &::after{
             position: absolute;
@@ -5880,6 +5881,9 @@ header.fixedHeader.header04{
             display: block;
         }
     }
+}
+.serviceItem02 .serviceWrapper {
+    height: 350px !important;
 }
 
 /*------------------- 18. Responsive -------------------*/
