@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-re9sc9tja(07sppmwdq47srj1w^m0abo2wbzdz8ley(-gi-li-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['globalgogateway.com','www.globalgogateway.com']
 
 
 # ALLOWED_HOSTS = ['globalgogateway.com','www.globalgogateway.com']
@@ -142,26 +142,26 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 
-if DEBUG == True:
-   STATICFILES_DIRS = (
-    STATIC_DIRS,
-)
-
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
 # if DEBUG == True:
 #    STATICFILES_DIRS = (
 #     STATIC_DIRS,
 # )
 
 # else:
-#     STATIC_ROOT = '/home/nio5dbrery7o/globalgo/static/'
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# MEDIA_ROOT = '/home/nio5dbrery7o/globalgo/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+if DEBUG == True:
+   STATICFILES_DIRS = (
+    STATIC_DIRS,
+)
+
+else:
+    STATIC_ROOT = '/home/nio5dbrery7o/globalgo/static/'
+
+MEDIA_ROOT = '/home/nio5dbrery7o/globalgo/media/'
 
 
 
