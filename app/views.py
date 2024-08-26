@@ -327,3 +327,21 @@ def visa_application_list(request,countery_name,visatype):
         return HttpResponse(html_template.render(context, request))
     
 
+@login_required
+def documents_list(request,applicationNo):
+    context = {}
+    try:
+       
+        context['application'] = VisaApplication.objects.filter(applicationNo=applicationNo).values(
+            'id','applicationNo','upload_passport_front','upload_passport_back','aadhar_front','aadhar_back','user__id'
+        ).first()
+        user = context['application']['id']
+        context['dependent'] = DependentDetails.objects.filter(application_user_id=user)
+        return render(request, 'uifiles/documents_list.html',context)
+    
+    except template.TemplateDoesNotExist:
+        html_template = loader.get_template('uifiles/page-404.html')
+        return HttpResponse(html_template.render(context, request))
+    except:
+        html_template = loader.get_template('uifiles/page-500.html')
+        return HttpResponse(html_template.render(context, request))

@@ -27,7 +27,8 @@
                             <th>Application NO</th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Phone</th>
+                            <th style="float: left;">Phone</th>
+                            <th style="float: left;">Documents</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -39,6 +40,7 @@
                             <td>{{item.user__first_name}}{{item.user__last_name}}</td>
                             <td>{{item.user__email}}</td>
                             <td>{{item.user__phone}}</td>
+                            <td class="text-center"><a href="/documents_list/{{item.applicationNo}}/"> <i class="fas fa-file-image"></i></a></td>
                             <td class="text-center"><a href="/visa_application/{{item.user__id}}/"> <i class="fa-solid fa-pencil"></i></a></td>
                         </tr>
                         {% endfor %}

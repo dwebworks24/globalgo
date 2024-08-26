@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-re9sc9tja(07sppmwdq47srj1w^m0abo2wbzdz8ley(-gi-li-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['globalgogateway.com','www.globalgogateway.com']
+ALLOWED_HOSTS = ['*']
 
 
 # ALLOWED_HOSTS = ['globalgogateway.com','www.globalgogateway.com']
@@ -87,22 +87,22 @@ WSGI_APPLICATION = 'globalgo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
-  'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'globalgo_gateway',
-        'USER': 'globalgo_gateway_user',
-        'PASSWORD': 'nkob47#~Q=s*',
-        'HOST': 'localhost',
-        'PORT': '3306',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#   'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'globalgo_gateway',
+#         'USER': 'globalgo_gateway_user',
+#         'PASSWORD': 'nkob47#~Q=s*',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
 
 
 # Password validation
@@ -142,26 +142,26 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 
-# if DEBUG == True:
-#    STATICFILES_DIRS = (
-#     STATIC_DIRS,
-# )
-
-# else:
-#     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
 if DEBUG == True:
    STATICFILES_DIRS = (
     STATIC_DIRS,
 )
 
 else:
-    STATIC_ROOT = '/home/nio5dbrery7o/globalgo/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_ROOT = '/home/nio5dbrery7o/globalgo/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# if DEBUG == True:
+#    STATICFILES_DIRS = (
+#     STATIC_DIRS,
+# )
+
+# else:
+#     STATIC_ROOT = '/home/nio5dbrery7o/globalgo/static/'
+
+# MEDIA_ROOT = '/home/nio5dbrery7o/globalgo/media/'
 
 
 
