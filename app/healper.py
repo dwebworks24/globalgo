@@ -48,7 +48,7 @@ def send_otp_email_notification(request,name,emailid):
     sender_emailid = settings.EMAIL_HOST_USER
     subject = 'Password Change OTP'
     body = generate_email_message(otp,name)
-    # print('your OTP:',otp)
+    print('your OTP:',otp)
     send_otp_email(subject,body,sender_email=sender_emailid,receipt_email=emailid)
     return otp 
 
