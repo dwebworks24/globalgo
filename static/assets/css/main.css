@@ -8941,4 +8941,9 @@ a{
 }
 /* background-image: url(../../static/assets/images/bg/globalcta.png) */
 
-.application-doc 
+.immiPressBtn{
+        height: 50px !important;
+        margin-right: 22px;
+        line-height: 48px;
+    }
+    
