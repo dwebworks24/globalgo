@@ -66,7 +66,10 @@
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/about/">About Us</a></li>
                                         <li><a href="/services/">Services</a></li>
-                                        <li><a href="/contactus/">Contact</a></li>                                        
+                                        <li><a href="/contactus/">Contact</a></li>   
+                                        {% if request.user.is_authenticated and request.user.role == 'staff' %}
+                                        <li><a href="/staff_view/" style="color:#FD2929 ;">&nbsp;Countrys</a></li>
+                                        {% endif %}                                     
                                     </ul>
                                 </nav>
                             </div>
@@ -82,9 +85,9 @@
                                             {% endif %} 
                                             {% if request.user.is_authenticated %}
                                             <ul class="sub-menu">
-                                                {% if request.user.is_authenticated and request.user.role == 'staff' %}
+                                                <!-- {% if request.user.is_authenticated and request.user.role == 'staff' %}
                                                  <li><a href="/staff_view/"><i class="fas fa-brands fa-list"></i>&nbsp;Countrys</a></li>
-                                                {% endif %}
+                                                {% endif %} -->
                                                 <!-- <li><a href="/profile_view/{{request.user.id}}/"><i class="fas fa-brands fa-user"></i>&nbsp;Profile</a></li> -->
                                                 <!-- <li><a href="/otp_verification_mail/"><i class="fas fa-brands fa-key"></i>ChangePassword</a></li> -->
                                                 <li><a href="/logout/"><i class="fas fa-brands fa-lock"></i>&nbsp;LogOut</a></li>                                        
