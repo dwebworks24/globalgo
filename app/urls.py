@@ -38,7 +38,7 @@ urlpatterns = [
     path('update_profile_details/<int:user_id>/',update_profile_details, name="update_profile_details"),
     path('updateprofile/',updateprofile, name="updateprofile"),
     path('visa_application_list/<str:countery_name>/<str:visatype>/',visa_application_list, name="visa_application_list"),
-     path('documents_list/<int:applicationNo>/',documents_list, name="documents_list"),
+    path('documents_list/<int:applicationNo>/',documents_list, name="documents_list"),
     
     # control logic
     path('add_user_info/',add_user_info, name="add_user_info"),
@@ -47,6 +47,7 @@ urlpatterns = [
     path('cgi_application/',add_cgi_application_info, name="cgi_application"),
     path('ceac_application/',save_ceac_application, name="ceac_application"),
     path('contact_submit/',contact_submit, name="contact_submit"),
+    path('save_doc/',save_other_doc, name="save_doc")
     
 
 ]

@@ -333,7 +333,7 @@ def documents_list(request,applicationNo):
     try:
        
         context['application'] = VisaApplication.objects.filter(applicationNo=applicationNo).values(
-            'id','applicationNo','upload_passport_front','upload_passport_back','aadhar_front','aadhar_back','user__id'
+            'id','applicationNo','upload_passport_front','upload_passport_back','aadhar_front','aadhar_back','user__id','doc_1', 'doc_2'
         ).first()
         user = context['application']['id']
         context['dependent'] = DependentDetails.objects.filter(application_user_id=user)

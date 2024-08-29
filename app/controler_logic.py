@@ -37,25 +37,6 @@ def login_logic(request):
                     use_email.save()
                     return JsonResponse({'message': 'OTP Sending successfully.','redirect_url': '/otp_veiw/'})
             return JsonResponse({'message': 'Invalid User email...'})
-            # password = request.POST.get("password")
-            # user = authenticate(email=email, password=password)
-            # if user is not None and user.is_active:
-            #     login(request, user)
-            #     if user:
-            #         if user.role == "admin":
-            #             print('admin')
-            #             return JsonResponse({'redirect_url': '/admin/'})
-                    
-            #         elif user.role == "staff":
-            #             print("staff")
-            #             return JsonResponse({'redirect_url': '/staff_view/'})
-            #         else:
-            #             print("customer")
-            #             return JsonResponse({'redirect_url': '/customer_view/'})
-            # else:
-            #     return JsonResponse({'message': 'Invalid credentials.'}, status=400)
-                # msg = 'Invalid credentials'
-        
         except KeyError:
             return JsonResponse({'message': 'Invalid request parameters.'}, status=400)
         except Exception as e:
@@ -529,3 +510,26 @@ def contact_submit(request):
         return JsonResponse({'message': 'Your message has been sent successfully!'})
 
     return JsonResponse({'message': 'Invalid request'}, status=400)
+
+
+
+@csrf_exempt
+def save_other_doc(request):
+    if request.method == 'POST':
+        application_id = request.POST.get('application_id')
+        doc_1_files  = request.FILES.getlist('doc_1', None)
+        doc_2_files  = request.FILES.getlist('doc_2', None)
+
+        new_doc_obj = VisaApplication.objects.get(applicationNo=application_id)
+        new_doc_obj.doc_1 = doc_1_files
+        new_doc_obj.doc_1 = doc_2_files
+        new_doc_obj.save()
+        return JsonResponse({'message': 'Your message has been sent successfully!'})
+
+    return JsonResponse({'message': 'Invalid request'}, status=400)
+
+
+
+
+
+   

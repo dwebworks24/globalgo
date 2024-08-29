@@ -1,6 +1,8 @@
+
 {% extends 'uifiles/base.html' %}
 {% load static %}
 {% block content %}
+
 <section class="countryPageSection">
   <div class="container">
     <div class="row">
@@ -54,7 +56,7 @@
                 <div class="btnInfo">
 
                   <!-- <td class="text-center"><a href="/documents_list/{{item.applicationNo}}/"> <i class="fas fa-file-image"></i></a></td> -->
-                  <a class="immiPressBtn animated"  style="margin: auto !important; href="/documents_list/{{applicant.applicationNo}}/"><span>Documents</span></a>
+                  <a class="immiPressBtn animated"  style="margin: auto !important;" href="/documents_list/{{applicant.applicationNo}}/" ><span>Documents</span></a>
               </div>
               </div>
             </div>
@@ -369,7 +371,7 @@
     <div class="row videos-row">
       <div class="col-sm-12 col-md-4 col-lg-4 mb-2">
         <video width="450" height="240" controls controlsList="nodownload">
-          <source src="{% static 'assets/videos/1.BIOMETRICS.mp4' %}" type="video/mp4">
+          <source src="{% static 'assets/videos/1.BIOMETRICS.mp4' %}" type="video/mp4" oncontextmenu="return false;">
           <source src="movie.ogg" type="video/ogg">
           Your browser does not support the video tag.
         </video>

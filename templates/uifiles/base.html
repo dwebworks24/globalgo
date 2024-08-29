@@ -31,7 +31,8 @@
         <!-- END: Favicon -->
         
     </head>
-    <body>
+    <!-- oncontextmenu="return false;" -->
+    <body >
         <!-- BEGIN: PreLoder Section -->
         <!--<section class="preloader" id="preloader">-->
         <!--    <button class="closeLoader immiPressBtn"><span>Cancel Preloader</span></button>-->
@@ -69,7 +70,10 @@
                                         <li><a href="/contactus/">Contact</a></li>   
                                         {% if request.user.is_authenticated and request.user.role == 'staff' %}
                                         <li><a href="/staff_view/" style="color:#FD2929 ;">&nbsp;Countrys</a></li>
-                                        {% endif %}                                     
+                                        {% endif %} 
+                                        {% if request.user.is_authenticated and request.user.role == 'customer' %}
+                                        <li><a href="/customer_view/" style="color:#FD2929 ;">&nbsp;Application</a></li>
+                                        {% endif %}                                      
                                     </ul>
                                 </nav>
                             </div>

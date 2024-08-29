@@ -144,6 +144,10 @@ function resetlogin() {
 
 function userlogin(){
     const email = $("#email").val()
+    if (!email) {
+        show_error('plese enter your register email')
+        return; // Exit the function if email is empty
+    }
     // const password = $("#password").val()
     // let csrfmiddlewaretoken = $('input[name=csrfmiddlewaretoken]').val()
     
@@ -159,14 +163,11 @@ function userlogin(){
         processData: false,
         contentType: false,
         success: function(response){
-            // show_success(response['message'])
-            window.location.href = '/otp_view/';
-            // if (response.redirect_url) {
-            //     resetlogin();
-            //     window.location.href = response.redirect_url;
-            // } else {
-            //     window.location.href = '/otp_view/';
-            // }
+            if (response.redirect_url) {
+                 window.location.href = '/otp_view/';
+            } else {
+                show_error(response['message'])
+            }
         },
         error: function(response){
             show_error(response.responseJSON['message'])
@@ -194,7 +195,7 @@ function verify_otp_login(){
             if (response) {
                 window.location.href = response.redirect_url;
             } else {
-                alert("fail to redirect")
+                 show_error("fail to redirect")
             }
              
         },
@@ -674,6 +675,33 @@ function save_contact(){
         type: 'POST',
         url: '/contact_submit/',  
         data: formData,
+        success: function(response) {
+            show_success(response['message'])
+        },
+        error: function(response) {
+            show_error(response.responseJSON['message'])
+        }
+    });
+}
+
+
+function upload_other_documents(){
+    var application_id = $("#application_id").val();
+    const doc_1 = $('#doc-1')[0].files[0];
+    const doc_2 = $('#doc-2')[0].files[0];
+
+    let formData = new FormData();
+    
+    formData.append('application_id', application_id);
+    formData.append('doc_1', doc_1);
+    formData.append('doc_2', doc_2);
+
+    $.ajax({
+        type: 'POST',
+        url: '/save_doc/',  
+        data: formData,
+        contentType: false,
+        processData: false,
         success: function(response) {
             show_success(response['message'])
         },

@@ -8946,4 +8946,6 @@ a{
         margin-right: 22px;
         line-height: 48px;
     }
-    
+.btnInfo span{
+  cursor:pointer;
+}

@@ -200,6 +200,8 @@ class VisaApplication(models.Model):
     upload_passport_back = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
     aadhar_front = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
     aadhar_back = models.ImageField(upload_to='visaapplication/', blank=True, null=True)
+    doc_1 = models.ImageField(upload_to='documents/', blank=True, null=True)
+    doc_2 = models.ImageField(upload_to='documents/', blank=True, null=True)
     country = models.CharField(max_length=13, blank=True, null=True, default='')
     visa_type = models.CharField(max_length=13, blank=True, null=True, default='')
     phone_number_two = models.CharField(max_length=13, blank=True, null=True)
