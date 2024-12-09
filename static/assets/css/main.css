@@ -8949,3 +8949,6 @@ a{
 .btnInfo span{
   cursor:pointer;
 }
+.sliderContent h1{
+  font-size: 3.0rem;
+}
