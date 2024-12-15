@@ -1,10 +1,12 @@
 
 from django.urls import path
 from .views import *
+from django.views.generic import TemplateView
 from .controler_logic import *
 
 urlpatterns = [
     path('login/',signin),
+     path('sitemap.xml', TemplateView.as_view(template_name="uifiles/sitemap.xml", content_type="text/xml"), name='sitemap.xml'),
     path('',home, name="home"),
     path('about/',about, name="about"),
     path('services/',services, name="services"),
