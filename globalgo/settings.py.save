@@ -7,7 +7,8 @@ For more information on this file, see
 https://docs.djangoproject.com/en/5.0/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/5.0/ref/settings/
+https://docs.dja
+ngoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
@@ -180,7 +181,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
-# Default primary key field type
+
+    STATIC_DIRS,# Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
