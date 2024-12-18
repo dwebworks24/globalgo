@@ -27,6 +27,9 @@ def about(request):
     return render(request, 'uifiles/about.html')
 def services(request):     
     return render(request, 'uifiles/services.html')
+def consultancy_in_vijayawada(request):     
+    return render(request, 'uifiles/consultancy_in_vijayawada.html')
+
 
 
 def signin(request):

@@ -1,10 +1,12 @@
 
 from django.urls import path
 from .views import *
+from django.views.generic import TemplateView
 from .controler_logic import *
 
 urlpatterns = [
     path('login/',signin),
+     path('sitemap.xml', TemplateView.as_view(template_name="uifiles/sitemap.xml", content_type="text/xml"), name='sitemap.xml'),
     path('',home, name="home"),
     path('about/',about, name="about"),
     path('services/',services, name="services"),
@@ -48,7 +50,12 @@ urlpatterns = [
     path('ceac_application/',save_ceac_application, name="ceac_application"),
     path('contact_submit/',contact_submit, name="contact_submit"),
     path('save_doc/',save_other_doc, name="save_doc"),
+<<<<<<< HEAD
     path('reviewsubmit/',submited_review, name="reviewsubmit"),
        
+=======
+    path('consultancy_in_vijayawada/',consultancy_in_vijayawada, name="consultancy_in_vijayawada")
+    
+>>>>>>> 1b76836d7bb99abc71436051fdf4d3c37119ea03
 
 ]
