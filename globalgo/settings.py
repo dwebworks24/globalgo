@@ -87,7 +87,6 @@ WSGI_APPLICATION = 'globalgo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-<<<<<<< HEAD
 # DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
@@ -110,30 +109,12 @@ DATABASES = {
 
 
 
-=======
->>>>>>> 1b76836d7bb99abc71436051fdf4d3c37119ea03
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
-<<<<<<< HEAD
 #}
-=======
-# }
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'GlobalgoDB',
-        'USER': 'globalgouser',
-        'PASSWORD': 'Globalgo@2024',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
->>>>>>> 1b76836d7bb99abc71436051fdf4d3c37119ea03
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
