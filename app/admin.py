@@ -51,6 +51,10 @@ class AdminVisaApplication(admin.ModelAdmin):
 class AdminContact(admin.ModelAdmin):
     list_display=('id','first_name' ,'email','phone','subject','message')                  
 
+class AdminReviews(admin.ModelAdmin):
+    list_display=('name', 'city_or_state', 'image', 'review_message')   
+
+
 admin.site.register(Users,AdminUserlist)
 admin.site.register(Country,AdminCountry)
 admin.site.register(VisaTypes,AdminCountryTpes)
@@ -59,3 +63,4 @@ admin.site.register(PointOfContact,AdminPointOfContact)
 admin.site.register(SecurityQuestion,AdminSecurityQuestion)
 admin.site.register(VisaApplication,AdminVisaApplication)
 admin.site.register(Contact,AdminContact)
+admin.site.register(Reviews,AdminReviews)

@@ -16,8 +16,10 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 
-def home(request):     
-    return render(request, 'uifiles/home.html')
+def home(request):
+    context ={}     
+    context['Reviews'] = Reviews.objects.filter(is_approved = "approved")     
+    return render(request, 'uifiles/home.html',context)
 
 def contactus(request):     
     return render(request, 'uifiles/contact.html')

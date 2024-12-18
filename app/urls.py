@@ -47,7 +47,8 @@ urlpatterns = [
     path('cgi_application/',add_cgi_application_info, name="cgi_application"),
     path('ceac_application/',save_ceac_application, name="ceac_application"),
     path('contact_submit/',contact_submit, name="contact_submit"),
-    path('save_doc/',save_other_doc, name="save_doc")
-    
+    path('save_doc/',save_other_doc, name="save_doc"),
+    path('reviewsubmit/',submited_review, name="reviewsubmit"),
+       
 
 ]

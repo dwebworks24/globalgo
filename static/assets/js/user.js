@@ -710,3 +710,37 @@ function upload_other_documents(){
         }
     });
 }
+
+
+
+
+function save_review(){
+
+    var Name = $("#name").val();
+    var location = $("#city_or_state").val();
+    var image = $("#image")[0].files[0];
+    var review_message = $("#review_message").val();
+   
+  
+    var formData = new FormData();
+    formData.append('Name', Name);
+    formData.append('location', location);
+    formData.append('image', image);
+    formData.append('review_message', review_message);
+
+
+    $.ajax({
+        type: 'POST',
+        url: '/reviewsubmit/',  
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+            show_success(response['message'])
+        },
+        error: function(response) {
+            show_error(response.responseJSON['message'])
+        }
+    });
+    
+  }

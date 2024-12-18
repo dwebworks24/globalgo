@@ -112,7 +112,7 @@
         {% block content %}
         {% endblock %}
          
-<!-- Modal application-->
+ <!-- Modal application-->
             <div class="modal fade" id="review-documents-model" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -122,7 +122,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <section style="margin-left: 10px;">
+                            <section style="width: 600px; margin-left: 10px;">
             
                                 <div class="row">
                                     <h1>Submit Your Review</h1>
@@ -159,7 +159,6 @@
                 </div>
             </div>
             <!-- Modal dependent details-->
-         
         <!-- BEGIN: Footer Start -->
         <footer class="footer_02"  style="background-image:url(../../static/assets/images/bg/login-bg.png);">
             <div class="container">
@@ -174,10 +173,6 @@
                                 <a href="javascript:void(0);"><i class="fa-brands fa-twitter"></i></a>
                                 <a href="javascript:void(0);"><i class="fa-brands fa-instagram"></i></a>
                                 <a href="javascript:void(0);"><i class="fa-brands fa-dribbble"></i></a>
-                            </div>
-                             <div>
-                             <a class="immiPressBtn animated mb-3 mt-3" data-bs-toggle="modal" data-bs-target="#review-documents-model"
-                                    style="margin-right: auto !important;" style="cursor: pointer;"><span>Give Us Feedback </span></a>
                             </div>
                         </aside>
                     </div>
