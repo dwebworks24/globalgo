@@ -27,6 +27,8 @@ def services(request):
     return render(request, 'uifiles/services.html')
 def consultancy_in_vijayawada(request):     
     return render(request, 'uifiles/consultancy_in_vijayawada.html')
+def visa_consultancy_services_in_vijayawada(request):     
+    return render(request, 'uifiles/visa_consultancy_services_in_vijayawada.html')
 
 
 

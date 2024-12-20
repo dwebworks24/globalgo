@@ -50,7 +50,8 @@ urlpatterns = [
     path('ceac_application/',save_ceac_application, name="ceac_application"),
     path('contact_submit/',contact_submit, name="contact_submit"),
     path('save_doc/',save_other_doc, name="save_doc"),
-    path('consultancy_in_vijayawada/',consultancy_in_vijayawada, name="consultancy_in_vijayawada")
+    path('consultancy_in_vijayawada/',consultancy_in_vijayawada, name="consultancy_in_vijayawada"),
+    path('visa_consultancy_services_in_vijayawada/',visa_consultancy_services_in_vijayawada, name="visa_consultancy_services_in_vijayawada")
     
 
 ]
