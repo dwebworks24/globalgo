@@ -16,6 +16,10 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 
+def abroad_consultancy_in_gannavaram(request):     
+    return render(request, 'uifiles/abroad_consultancy_in_gannavaram.html')
+def blogs(request):     
+    return render(request, 'uifiles/blogs.html')
 def home(request):     
     return render(request, 'uifiles/home.html')
 
