@@ -20,6 +20,12 @@ def home(request):
     context ={}     
     context['Reviews'] = Reviews.objects.filter(is_approved = "approved")     
     return render(request, 'uifiles/home.html',context)
+def abroad_consultancy_in_gannavaram(request):     
+    return render(request, 'uifiles/abroad_consultancy_in_gannavaram.html')
+def blogs(request):     
+    return render(request, 'uifiles/blogs.html')
+def home(request):     
+    return render(request, 'uifiles/home.html')
 
 def contactus(request):     
     return render(request, 'uifiles/contact.html')
@@ -29,6 +35,8 @@ def services(request):
     return render(request, 'uifiles/services.html')
 def consultancy_in_vijayawada(request):     
     return render(request, 'uifiles/consultancy_in_vijayawada.html')
+def visa_consultancy_services_in_vijayawada(request):     
+    return render(request, 'uifiles/visa_consultancy_services_in_vijayawada.html')
 
 
 

@@ -72,7 +72,9 @@
                                     <ul class="sub-menu">
                                         <li><a href="/">Home</a></li>
                                         <li><a href="/about/">About Us</a></li>
+
                                         <li><a href="/services/">Services</a></li>
+                                        <li><a href="/blogs/">Blogs</a></li>
                                         <li><a href="/contactus/">Contact</a></li>   
                                         {% if request.user.is_authenticated and request.user.role == 'staff' %}
                                         <li><a href="/staff_view/" style="color:#FD2929 ;">&nbsp;Countrys</a></li>
