@@ -16,6 +16,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 
 
+def abroad_consultancy_in_andhra_pradesh(request):     
+    return render(request, 'uifiles/abroad-consultancy-in-andhra-pradesh.html')
 def abroad_consultancy_in_gannavaram(request):     
     return render(request, 'uifiles/abroad_consultancy_in_gannavaram.html')
 def blogs(request):     
