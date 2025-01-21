@@ -4460,6 +4460,11 @@ header.fixedHeader.header02 {
   text-transform: capitalize;
   margin: 0 0 0px;
 }
+.listItem li {
+ 
+  font-weight: 300!important;
+
+}
 .testimonialSlider02 .testimonilaItem02 .tsAuthor .tsDesign {
   display: block;
   font-weight: 500;

@@ -20,6 +20,8 @@ def home(request):
     context ={}     
     context['Reviews'] = Reviews.objects.filter(is_approved = "approved")     
     return render(request, 'uifiles/home.html',context)
+def abroad_consultancy_in_andhra_pradesh(request):     
+    return render(request, 'uifiles/abroad-consultancy-in-andhra-pradesh.html')
 def abroad_consultancy_in_gannavaram(request):     
     return render(request, 'uifiles/abroad_consultancy_in_gannavaram.html')
 def blogs(request):     
