@@ -14,7 +14,8 @@ from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 
 
-
+def best_consultancy_in_vijayawada(request):     
+    return render(request, 'uifiles/best_consultancy_in_vijayawada.html')
 
 def home(request):
     context ={}     
