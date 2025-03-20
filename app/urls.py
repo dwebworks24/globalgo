@@ -54,6 +54,7 @@ urlpatterns = [
     path('visa_consultancy_services_in_vijayawada/',visa_consultancy_services_in_vijayawada, name="visa_consultancy_services_in_vijayawada"),
     path('blogs/',blogs, name="blogs"),
     path('best_consultancy_in_vijayawada/',best_consultancy_in_vijayawada, name="best_consultancy_in_vijayawada"),
+    path('best_abroad_consultancy_in_telangana/',best_abroad_consultancy_in_telangana, name="best_abroad_consultancy_in_telangana"),
     path('abroad_consultancy_in_gannavaram/',abroad_consultancy_in_gannavaram, name="abroad_consultancy_in_gannavaram"),
     path('best-abroad-consultancy-in-hyderabad/',best_abroad_consultancy_in_hyderabad, name="best-abroad-consultancy-in-hyderabad"),
     path('abroad-consultancy-in-andhra-pradesh/',abroad_consultancy_in_andhra_pradesh, name="abroad-consultancy-in-andhra-pradesh"),
