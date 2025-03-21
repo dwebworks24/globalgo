@@ -533,3 +533,24 @@ def save_other_doc(request):
 
 
    
+
+@csrf_exempt
+def submited_review(request):
+    if request.method == 'POST':
+        fullName = request.POST.get('Name')
+        location = request.POST.get('location')
+        photo = request.FILES.get("image")
+        reviews = request.POST.get('review_message')
+       
+        new_review = Reviews.objects.create(
+                name =fullName ,
+                city_or_state =location,
+                image =photo,
+                review_message =reviews, 
+                is_approved = "notapproved"
+            )
+        new_review.save()
+        
+        return JsonResponse({'message': 'Your review has been sent successfully!'})
+
+    return JsonResponse({'message': 'Invalid request'}, status=400)

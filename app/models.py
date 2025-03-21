@@ -62,7 +62,7 @@ class Users(AbstractBaseUser, PermissionsMixin):
         (VISIBLE, 'Visible'),
         (HIDDEN, 'Hidden'),
     ]
-    videos_show = models.BooleanField(choices=VISIBILITY_CHOICES, default=VISIBLE)
+    videos_show = models.BooleanField(choices=VISIBILITY_CHOICES, default=HIDDEN)
     # Required for custom user model
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -224,4 +224,22 @@ class Contact(models.Model):
     class Meta:
         managed = True
         db_table = 'Contact'
- 
+
+
+Reviw_Types = (
+        ('approved', 'approved'),
+        ('notapproved', 'notapproved'),
+        
+
+    ) 
+
+class Reviews(models.Model):
+    name = models.CharField(max_length=100)
+    city_or_state = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='reviews/')
+    review_message = models.TextField()
+    is_approved = models.CharField(choices=Reviw_Types,max_length=100,null=True,blank=True,default='notapproved')
+
+    class Meta: 
+        managed = True
+        db_table = 'Reviews'

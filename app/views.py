@@ -18,6 +18,11 @@ def best_abroad_consultancy_in_telangana(request):
     return render(request, 'uifiles/best_abroad_consultancy_in_telangana.html')
 def best_consultancy_in_vijayawada(request):     
     return render(request, 'uifiles/best_consultancy_in_vijayawada.html')
+
+def home(request):
+    context ={}     
+    context['Reviews'] = Reviews.objects.filter(is_approved = "approved")     
+    return render(request, 'uifiles/home.html',context)
 def best_abroad_consultancy_in_hyderabad(request):     
     return render(request, 'uifiles/best_abroad_consultancy_in_hyderabad.html')
 def abroad_consultancy_in_andhra_pradesh(request):     
