@@ -25,9 +25,9 @@ STATIC_DIRS = os.path.join(BASE_DIR,'static')
 SECRET_KEY = 'django-insecure-re9sc9tja(07sppmwdq47srj1w^m0abo2wbzdz8ley(-gi-li-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['88.222.241.153','globalgogateway.com','www.globalgogateway.com']
 
 
 # ALLOWED_HOSTS = ['globalgogateway.com','www.globalgogateway.com']
@@ -87,23 +87,34 @@ WSGI_APPLICATION = 'globalgo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'GlobalgoDB',
+        'USER': 'globalgouser',
+        'PASSWORD': 'Globalgo@2024',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-# DATABASES = {
-#   'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'globalgo_gateway',
-#         'USER': 'globalgo_gateway_user',
-#         'PASSWORD': 'nkob47#~Q=s*',
-#         'HOST': 'localhost',
-#         'PORT': '3306',
-#     }
-# }
 
+
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
