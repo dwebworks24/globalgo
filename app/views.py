@@ -14,6 +14,8 @@ from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 
 
+def visa_consultants_in_hyderabad(request):     
+    return render(request, 'uifiles/visa-consultants-in-hyderabad.html')
 def best_abroad_consultancy_in_telangana(request):     
     return render(request, 'uifiles/best_abroad_consultancy_in_telangana.html')
 def best_consultancy_in_vijayawada(request):     

@@ -61,4 +61,5 @@ urlpatterns = [
     path('abroad_consultancy_in_gannavaram/',abroad_consultancy_in_gannavaram, name="abroad_consultancy_in_gannavaram"),
     path('best-abroad-consultancy-in-hyderabad/',best_abroad_consultancy_in_hyderabad, name="best-abroad-consultancy-in-hyderabad"),
     path('abroad-consultancy-in-andhra-pradesh/',abroad_consultancy_in_andhra_pradesh, name="abroad-consultancy-in-andhra-pradesh"),
+     path('visa-consultants-in-hyderabad/',visa_consultants_in_hyderabad, name="visa-consultants-in-hyderabad"),
 ]
